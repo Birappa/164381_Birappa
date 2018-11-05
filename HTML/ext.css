@@ -1,0 +1,25 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+}
+
+th {
+    
+    text-align: left;
+    padding: 8px;
+    color:white;
+    background-color:red;
+}
+
+td, th{
+border: 1px dashed #dddddd;
+}
+
+
+img {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
