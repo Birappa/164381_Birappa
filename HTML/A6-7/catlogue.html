@@ -1,0 +1,62 @@
+<html>
+<head>
+<title>Login Page</title>
+</head>
+<body>
+<form name="loginForm" method="post" action="cart.html">
+<table width="100%" height="100%" bgcolor="#f1f1f1" align="center"  border="1px solid grey">
+
+
+<tr align="center">
+<td colspan=4><center><font size=4><b>Catlogue Form</b></font></center></td>
+</tr>
+
+<tr align="center">
+<th> Cover Image </th>
+<th> Author Details </th>
+<th> Price </th>
+<th> Add Cart </th>
+</tr>
+
+<tr align="center">
+<td><img src="minions.jpg" width="200" height="200"></td>
+<td>Book: C Programming<br> Author: B.W. Kernighan, Dennis M. Rithie</td>
+<td>120</td>
+<td><input type="submit" Value="ADD TO CART"></td>
+</tr>
+
+<tr align="center">
+<td><img src="minions.jpg" width="200" height="200"></td>
+<td>Book: Java Programming<br> Author: Herbert Schildt</td>
+<td>150</td>
+<td><input type="submit" Value="ADD TO CART"></td>
+</tr>
+
+<tr align="center">
+<td><img src="minions.jpg" width="200" height="200"></td>
+<td>Book: Data Structure<br> Author: S. lipschutz</td>
+<td>200</td>
+<td><input type="submit" Value="ADD TO CART" onClick="return check(this.form)"></td>
+</tr>
+
+
+</table>
+</form>
+<script language="javascript">
+function check(form)
+{
+
+if(form.userid.value == "Admin" && form.pwd.value == "Admin")
+{
+	return true;
+}
+else
+{
+	alert("Error Password or Username")
+	return false;
+}
+}
+</script>
+
+</body>
+</html>

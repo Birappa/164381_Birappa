@@ -1,0 +1,40 @@
+<!DOCTYPE html> 
+<html> 
+<body> 
+<div align="center">
+<video width="400" id="vid" controls>
+  <source src="2_HTML5 - Basic Syntax.mp4" type="video/mp4">
+  <source src="mov_bbb.ogg" type="video/ogg">
+  Your browser does not support HTML5 video.
+</video>
+
+<p>
+<button onClick="vmute()">Mute</button>
+<button onClick="vunmute()">Unmute</button>
+<button onClick="vpause()">Pause</button>
+<button onClick="vplay()">Play</button>
+<button onClick="vfscreen()">Fullscreen</button>
+</p>
+</div>
+<script> 
+var x=document.getElementById("vid");
+function vpause()
+{
+	x.pause();
+}
+function vplay()
+{
+	x.play();
+}
+function vmute()
+{
+	x.muted=true;
+}
+function vunmute()
+{
+	x.muted=false;
+}
+
+</script>
+</body> 
+</html>

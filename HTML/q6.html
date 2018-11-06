@@ -59,9 +59,9 @@ ul.cls1 li a:hover:not(.active) {
 
 ul.sidenav {
     list-style-type: none;
-    margin-top: 5%;
+    margin-top: 7.3%;
     padding: 0;
-    width: 25%;
+    width: 20%;
     background-color: #f1f1f1;
     position: fixed;
     height: 100%;
@@ -95,47 +95,56 @@ ul.sidenav li a:hover:not(.active) {
 </style>
 </head>
 <body>
-<header class="hclass">Hii</header>
+<header class="hclass"><img src="minions.jpg" height="50" width="72" style="float:left"><h2>Vishnu Online Book Shop<h2></header>
 <ul class="cls1">
-  <li><a class="active" href="#home">Home</a></li>
-  <li><a href="#news">News</a></li>
-  <li><a href="#contact">Contact</a></li>
-  <li><a href="#about">About</a></li>
+  <li><a class="active" href="javascript:check('home')">Home</a></li>
+  <li><a href="javascript:check('login')">Login</a></li>
+  <li><a href="javascript:check('reg')">Registration</a></li>
+  <li><a href="javascript:check('catlogue')">Catlogue</a></li>
+  <li><a href="javascript:check('cart')">Cart</a></li>
 </ul>
-
+<section>
 <ul class="sidenav">
-  <li><a class="active" href="#home">Home</a></li>
-  <li><a href="#news">News</a></li>
-  <li><a href="#contact">Contact</a></li>
-  <li><a href="#about">About</a></li>
+  <li><a href="javascript:check('cse')" >CSE</a></li>
+  <li><a href="javascript:check('it')">IT</a></li>
+  <li><a href="javascript:check('eee')">EEE</a></li>
+  <li><a href="javascript:check('extc')">EXTC</a></li>
 </ul>
 
-<div style="padding:20px;margin-top:30px;margin-left:25%;height:1500px;">
-<h1>Fixed Top Navigation Bar</h1>
-<h2>Scroll this page to see the effect</h2>
-<h2>The navigation bar will stay at the top of the page while scrolling</h2>
+<iframe id="page" src="home.html" height="540" width="1080" style="margin-left:20%;margin-top:7.3%"></iframe>
 
-<p>Some text some text some text some text..</p>
-<p>Some text some text some text some text..</p>
-<p>Some text some text some text some text..</p>
-<p>Some text some text some text some text..</p>
-<p>Some text some text some text some text..</p>
-<p>Some text some text some text some text..</p>
-<p>Some text some text some text some text..</p>
-<p>Some text some text some text some text..</p>
-<p>Some text some text some text some text..</p>
-<p>Some text some text some text some text..</p>
-<p>Some text some text some text some text..</p>
-<p>Some text some text some text some text..</p>
-<p>Some text some text some text some text..</p>
-<p>Some text some text some text some text..</p>
-<p>Some text some text some text some text..</p>
-<p>Some text some text some text some text..</p>
-<p>Some text some text some text some text..</p>
-<p>Some text some text some text some text..</p>
-<p>Some text some text some text some text..</p>
-<p>Some text some text some text some text..</p>
-</div>
+</section>
+
+
+<script language="javascript">
+
+
+	function check(str)
+	{	
+		if(str=='home')
+		document.getElementById('page').src = 'home.html';
+		else if(str=="login")
+		document.getElementById('page').src = 'login.html';
+		else if(str=='reg')
+		document.getElementById('page').src = 'reg.html';
+		else if(str=='catlogue')
+		document.getElementById('page').src = 'catlogue.html';
+		else if(str=='cart')
+		document.getElementById('page').src = 'cart.html';
+		
+		else if(str=='cse')
+		document.getElementById('page').src = 'cse.html';
+		else if(str=='it')
+		document.getElementById('page').src = 'it.html';
+		else if(str=='eee')
+		document.getElementById('page').src = 'eee.html';
+		else if(str=='extc')
+		document.getElementById('page').src = 'extc.html';
+		return true;
+	}
+
+</script>
+
 
 </body>
 </html>
