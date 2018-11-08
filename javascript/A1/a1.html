@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head><title> BMI </title>
+</head>
+<body>
+<script>
+var mark_mass=prompt("Enter Mark Mass");
+var mark_height=prompt("Enter Mark Height");
+var john_mass=prompt("Enter John Mass");
+var john_height=prompt("Enter John Height");
+	var mark_bmi=mark_mass/(john_height^2);
+	var john_bmi=john_mass/(john_height^2);
+	var bol=mark_bmi>john_bmi;
+if(mark_bmi!=john_bmi)
+{
+document.write("Is Mark's BMI is higher than John's? "+bol);	
+}
+else
+ document.write("Is Mark's BMI is higher than John's? "+"equal");	
+	
+</script>
+</body>
+</html>
