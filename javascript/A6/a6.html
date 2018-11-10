@@ -6,7 +6,7 @@
 </head>
 
 <body>
-<form>
+
 <table align="center" style="text-align:center">
 <tr>
 <th colspan="2"><label id="bill">Enter Mark's Mass and Height </label></th>
@@ -31,7 +31,7 @@
 </tr>
 
 </table>
-</form>
+
 
 <script>
 function check()
@@ -63,11 +63,12 @@ function check()
 	
 
 	 john_obj.mass=parseInt(document.getElementById("john_mass").value);
-	 john_obj.height=parseInt(document.getElementById("john_height").value);
+	 john_obj.height=parseFloat(document.getElementById("john_height").value);
 
 	 mark_obj.mass=parseInt(document.getElementById("mark_mass").value);
-	 mark_obj.height=parseInt(document.getElementById("mark_height").value);
-	console.log( john_obj.calc_bmi()+" "+mark_obj.calc_bmi()+" "+mark_obj.height+" "+ohn_obj.height);
+	 mark_obj.height=parseFloat(document.getElementById("mark_height").value);
+
+	console.log( john_obj.calc_bmi()+" "+mark_obj.calc_bmi()+" "+mark_obj.height+" "+john_obj.height);
 		
 	if( john_obj.calc_bmi()>mark_obj.calc_bmi())
 	{

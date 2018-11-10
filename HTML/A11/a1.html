@@ -62,13 +62,13 @@
 </table>
 
 <script>
-	var name;
+	var ename;
 	var eid;
-	var salary;
-	var addr;
-	var mob;
-	var city;
-	var pincode;
+	var esalary;
+	var eaddr;
+	var emob;
+	var ecity;
+	var epincode;
 	var email;
 
 function display()
@@ -76,7 +76,7 @@ function display()
 	
 	if(typeof(Storage)!=="undefined")
 	{
-		name.innerHTML = localStorage.name;
+		ename.innerHTML = localStorage.name;
 		eid.innerHTML = localStorage.eid; 
 		salary.innerHTML = localStorage.salary;
 		addr.innerHTML = localStorage.addr;
@@ -91,25 +91,25 @@ function display()
 
 function store()
 {
-	 name=document.getElementById("name").value;
-	 eid=document.getElementById("eid").value;
-	 salary=document.getElementById("salary").value;
-	 addr=document.getElementById("addr").value;
-	 mob=document.getElementById("mob").value;
-	 city=document.getElementById("city").value;
-	 pincode=document.getElementById("pincode").value;
-	 email=document.getElementById("email").value;
+	 ename=document.getElementById("name").value;
+	 eid=document.getElementById("id1").value;
+	 esalary=document.getElementById("salary").value;
+	 eaddr=document.getElementById("addr").value;
+	 emob=document.getElementById("mob").value;
+	 ecity=document.getElementById("city").value;
+	 epincode=document.getElementById("pincode").value;
+	 email=document.getElementById("mail").value;
 	
 	if(typeof(Storage)!=="undefined")
 	{
-		localStorage.name = name;
-		localStorage.eid = eid;
-		localStorage.salary = salary;
-		localStorage.addr = addr;
-		localStorage.mob = mob;
-		localStorage.city = city;
-		localStorage.pincode = pincode;
-		localStorage.email = email;	
+		localStorage.name = ename;
+		localStorage.id = eid;
+		localStorage.salary = esalary;
+		localStorage.addr = eaddr;
+		localStorage.mob = emob;
+		localStorage.city = ecity;
+		localStorage.pincode = epincode;
+		localStorage.mail = email;	
 
 	}
 	else
