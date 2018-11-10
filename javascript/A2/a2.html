@@ -4,22 +4,41 @@
 <title> Assignment 2</title>
 </head>
 <body>
-<table style="width:100%">
+<table >
+ 
   <tr>
-    <th>Firstname</th>
-    <th>Lastname</th> 
-    <th>Age</th>
+    <td><label for="temp">Enter Temperature in Fahrenheit</lebel></td>
+    <td><input type="text" id="temp" name="temp" required></td> 
+  
   </tr>
   <tr>
-    <td>Jill</td>
-    <td>Smith</td> 
-    <td>50</td>
-  </tr>
-  <tr>
-    <td>Eve</td>
-    <td>Jackson</td> 
-    <td>94</td>
+    <td><label id="cel"></label></td>
+    <td><input type="submit" value="Show Result" onClick=" return convert()"></td> 
+    
   </tr>
 </table> 
+
+<script>
+function convert()
+{	
+	var obj=document.getElementById("temp");
+	if(obj.value=="")
+	{
+		alert("Please Enter Temperature in Fahrenhiet");
+		obj.focus();
+		return false;
+	}
+	var fahrenheit=parseInt(obj.value);
+	if(isNaN(fahrenheit))
+	{
+		alert("Please Enter Temperature in Fahrenhiet");
+		obj.focus();
+		return false;
+	}
+	var celcius=(fahrenheit-32)*5/9;
+	document.getElementById("cel").innerHTML=celcius;
+	return false;
+}
+</script>
 </body>
 </html>
