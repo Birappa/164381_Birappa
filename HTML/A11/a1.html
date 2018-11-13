@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
 <title> Local Storage </title>
@@ -17,7 +17,7 @@
 
 <tr>
 <th> Emp Id </th>
-<td> <input type="text" id="eid"></td>
+<td> <input type="text" id="id1"></td>
 </tr>
 
 <tr>
@@ -47,7 +47,7 @@
 
 <tr>
 <th> Emp Email </th>
-<td> <input type="text" id="email"></td>
+<td> <input type="text" id="mail"></td>
 </tr>
 
 <tr>
@@ -76,14 +76,14 @@ function display()
 	
 	if(typeof(Storage)!=="undefined")
 	{
-		ename.innerHTML = localStorage.name;
-		eid.innerHTML = localStorage.eid; 
-		salary.innerHTML = localStorage.salary;
-		addr.innerHTML = localStorage.addr;
-		mob.innerHTML = localStorage.mob;
-		city.innerHTML = localStorage.city; 
-		pincode.innerHTML = localStorage.pincode; 
-		email.innerHTML = localStorage.email;
+		ename.value = localStorage.name;
+		eid.value = localStorage.eid; 
+		salary.value = localStorage.salary;
+		addr.value = localStorage.addr;
+		mob.value = localStorage.mob;
+		city.value = localStorage.city; 
+		pincode.value = localStorage.pincode; 
+		email.value = localStorage.email;
 	}
 	else
 	document.write("Your browser not support local storage");
@@ -91,25 +91,25 @@ function display()
 
 function store()
 {
-	 ename=document.getElementById("name").value;
-	 eid=document.getElementById("id1").value;
-	 esalary=document.getElementById("salary").value;
-	 eaddr=document.getElementById("addr").value;
-	 emob=document.getElementById("mob").value;
-	 ecity=document.getElementById("city").value;
-	 epincode=document.getElementById("pincode").value;
-	 email=document.getElementById("mail").value;
+	 ename=document.getElementById("name");
+	 eid=document.getElementById("id1");
+	 esalary=document.getElementById("salary");
+	 eaddr=document.getElementById("addr");
+	 emob=document.getElementById("mob");
+	 ecity=document.getElementById("city");
+	 epincode=document.getElementById("pincode");
+	 email=document.getElementById("mail");
 	
-	if(typeof(Storage)!=="undefined")
-	{
-		localStorage.name = ename;
-		localStorage.id = eid;
-		localStorage.salary = esalary;
-		localStorage.addr = eaddr;
-		localStorage.mob = emob;
-		localStorage.city = ecity;
-		localStorage.pincode = epincode;
-		localStorage.mail = email;	
+	if(typeof(Storage)!=="undefined"){
+	console.log("hii");
+		localStorage.name = ename.value;
+		localStorage.id = eid.value;
+		localStorage.salary = esalary.value;
+		localStorage.addr = eaddr.value;
+		localStorage.mob = emob.value;
+		localStorage.city = ecity.value;
+		localStorage.pincode = epincode.value;
+		localStorage.mail = email.value;	
 
 	}
 	else

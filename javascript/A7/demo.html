@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>HTML Forms</h2>
+
+<form>
+  First name:<br>
+  <input type="text" id="firstname" value="Mickey">
+  <br>
+ <!-- Last name:<br>
+  <input type="text" id="lastname" value="Mouse">
+  <br><br> -->
+  <input type="submit" value="Submit" onClick="check()">
+</form> 
+
+
+<script>
+function check(){
+	var name=document.getElementById("firstname");
+	document.write(name.value);
+}
+</script>
+</body>
+</html>

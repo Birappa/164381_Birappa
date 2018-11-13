@@ -1,0 +1,18 @@
+function BankAccount(name,balance,acc_number){
+			this.emp_name=name;
+			var account_balance=balance;
+			const account_number=acc_number;
+			return{
+				withdraw:function(amount){
+						account_balance-=amount;
+						return account_balance;	
+					},
+				deposit:function(amount){
+						account_balance+=amount;
+						return account_balance;	
+					},
+				print_account_balance:function(){
+						
+						return account_balance;	
+					}
+			}
