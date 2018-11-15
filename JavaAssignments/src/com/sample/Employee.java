@@ -18,9 +18,36 @@ public class Employee {
 		
 		//-----Assignments from pdf ---------
 		
-		ArmstrongNumber armstrongNumber=new ArmstrongNumber();
+		/* ArmstrongNumber armstrongNumber=new ArmstrongNumber();
 		//System.out.println(armstrongNumber.isArmstrongNumber(153));
-		armstrongNumber.findArmstrongNumbers();
+		armstrongNumber.findArmstrongNumbers();*/
+		
+		//---------Interest--------
+		/*Interest interest=new Interest();
+		System.out.println(interest.findSimpleInterest(10000, 10, 2));
+		System.out.println(interest.findCompoundInterest(10000, 10, 2));*/
+		
+		//------Result---------
+		
+		/*Result result=new Result();
+		result.getResult(67, 66, 68);*/
+		
+		//------------Income Tax ------
+		/*IncomeTax incomeTax=new IncomeTax();
+		System.out.println(incomeTax.findTaxAmount(500000));*/
+		
+		//-------Array Assignment Searching number-------
+		MyArray myArray=new MyArray();
+		//myArray.getArrayNumbers();
+		//myArray.searchNumber(53);
+		//myArray.ascendingSort();
+		//myArray.descendingSort();
+		//myArray.displayArray();
+		Sorting sorting=new Sorting();
+		sorting.displayArray(myArray.intArray);
+		sorting.bubbleSort(myArray.intArray);
+		sorting.displayArray(myArray.intArray);
+		
 	}
 
 }
