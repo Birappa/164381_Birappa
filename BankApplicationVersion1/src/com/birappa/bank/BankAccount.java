@@ -1,21 +1,21 @@
 package com.birappa.bank; // package is collection of logical classess
 
-public class BankAccount {
+public abstract class BankAccount {
 	//Static variables
 	private static int autoAccountNo;
 	
 	//instance variables/class variables
 	private int accountNo;
 	private String accountHolderName;
-	private double accountBalance;
+	protected double accountBalance;
 	
-	//init block reduce the redandancy
+	//init block reduce the redundancy
 	{
 		accountNo=++autoAccountNo;
 		//System.out.println("init block");
 	}
 	
-	//constructor overloading variety of constructor
+	//constructor overloading variety of constructors
 	//default constructor
 	public BankAccount(){
 	
@@ -62,7 +62,7 @@ public class BankAccount {
 			return;
 		}
 			
-		if(checkMinimumBalanceAfterAmountDeduction(amount)){
+		if(!checkMinimumBalanceAfterAmountDeduction(amount)){
 			System.out.println("Please, Enter valid Amount");
 			return;
 		}
@@ -110,9 +110,9 @@ public class BankAccount {
 	}
 	
 	public static void main(String[] args) {
-		BankAccount acc=new BankAccount();
-		BankAccount acc2=new BankAccount("Birappa",5000);
+		//BankAccount acc=new BankAccount();
+		//BankAccount acc2=new BankAccount("Birappa",5000);
 		
-		acc2.withdraw(0);
+		//acc2.withdraw(0);
 	}
 }
