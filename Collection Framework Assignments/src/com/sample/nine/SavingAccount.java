@@ -1,6 +1,6 @@
 package com.sample.nine;
 
-public class SavingAccount extends BankAccount {
+public class SavingAccount extends BankAccount implements Comparable<SavingAccount> {
 
 	private boolean isSalaryAccount;
 	
@@ -28,7 +28,7 @@ public class SavingAccount extends BankAccount {
 		// TODO Auto-generated method stub
 		super.withdraw(amount);
 	}
-	/*@Override
+	@Override
 	public int compareTo(SavingAccount arg0) {
 		// TODO Auto-generated method stub
 		if(this.getAccountNo()>arg0.getAccountNo())
@@ -37,7 +37,14 @@ public class SavingAccount extends BankAccount {
 			return -1;
 		else
 			return 0;
-	}*/
+	}
+	
+	@Override
+	public boolean equals(Object arg0) {
+		// TODO Auto-generated method stub
+		SavingAccount obj=(SavingAccount)arg0;
+		return this.getAccountHolderName().equals(obj.getAccountHolderName());
+	}
 	
 	@Override
 	public int hashCode() {
@@ -45,7 +52,6 @@ public class SavingAccount extends BankAccount {
 		int total=0;
 		for(char c:this.getAccountHolderName().toLowerCase().toCharArray())
 			total+=c;
-		System.out.println(total);
 		return total;
 	}
 }

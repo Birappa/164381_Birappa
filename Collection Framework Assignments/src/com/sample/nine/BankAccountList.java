@@ -1,7 +1,10 @@
 package com.sample.nine;
 
+
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class BankAccountList {
 
@@ -12,8 +15,11 @@ public class BankAccountList {
 		System.out.println(bank.add(new SavingAccount("Birappa", 50000, true)));
 		System.out.println(bank.add(new SavingAccount("Roshan", 60000, true)));
 		System.out.println(bank.add(new SavingAccount("Birappa", 50000, true)));
+		System.out.println(bank.add(new SavingAccount("Pradeep", 70000, true)));
 		
-		Iterator<SavingAccount> iterator=bank.iterator();
+		Set<SavingAccount> sorted=new TreeSet<SavingAccount>(bank);
+		
+		Iterator<SavingAccount> iterator=sorted.iterator();
 		while(iterator.hasNext()) {
 			System.out.println(iterator.next().getAccountHolderName());
 		}
