@@ -20,6 +20,12 @@ public class ServiceProvidor {
 		hm.put(10, "hii");
 		hm.put(20, "h");
 		System.out.println(hm.get(10));*/
+		
+		Integer a=new Integer(10);
+		Integer b=new Integer(10);
+		if(a==b){
+			System.out.println("hii");
+		}
 	}
 
 }
