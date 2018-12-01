@@ -2,7 +2,7 @@ package com.sample.classes;
 
 public class Transaction {
 
-	private Trader trader;
+	 public static Trader trader;
 	private int year;
 	private int value;
 	public Transaction(Trader trader, int year, int value) {
