@@ -1,4 +1,4 @@
-package com.spring.assignments.bank;
+package com.spring.third;
 
 public interface BankAccountService {
 

@@ -1,4 +1,4 @@
-package com.spring.assignments;
+package com.spring.first;
 
 public class Customer {
 
@@ -7,6 +7,9 @@ public class Customer {
 	private long customerContact;
 	private Address customerAddress;
 	
+	public Customer() {
+		
+	}
 
 	public Customer(int customerId, String customerName, long customerContact,
 			Address customerAddress) {
@@ -15,10 +18,6 @@ public class Customer {
 		this.customerName = customerName;
 		this.customerContact = customerContact;
 		this.customerAddress = customerAddress;
-	}
-
-	public Customer() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public int getCustomerId() {

@@ -1,4 +1,4 @@
-package com.spring.assignments.bank;
+package com.spring.third;
 
 public class BankAccount {
 
@@ -10,6 +10,16 @@ public class BankAccount {
 	
 	public BankAccount() {
 		// TODO Auto-generated constructor stub
+	}
+
+
+	public BankAccount(int accountId, String accountHolderName,
+			String accountType, double accountBalance) {
+		super();
+		this.accountId = accountId;
+		this.accountHolderName = accountHolderName;
+		this.accountType = accountType;
+		this.accountBalance = accountBalance;
 	}
 
 
@@ -50,6 +60,14 @@ public class BankAccount {
 
 	public void setAccountBalance(double accountBalance) {
 		this.accountBalance = accountBalance;
+	}
+
+
+	@Override
+	public String toString() {
+		return "BankAccount [accountId=" + accountId + ", accountHolderName="
+				+ accountHolderName + ", accountType=" + accountType
+				+ ", accountBalance=" + accountBalance + "]";
 	}
 
 	
