@@ -29,18 +29,12 @@ public class BankAccountRepositoryImpl implements BankAccountRepository {
 	
 
 	@Override
-	public double updateBalance(long accountId, double newBalance, String type) {
+	public double updateBalance(long accountId, double newBalance) {
 		
 		BankAccount account=getBeanOfBankAccount(accountId);
 		if(account!=null){
-			
-			if(type.equals("withdraw")){
-				account.setAccountBalance(account.getAccountBalance()-newBalance);
-			}
-			else if(type.equals("deposit"))
-				account.setAccountBalance(account.getAccountBalance()+newBalance);
-			return account.getAccountBalance();
-			
+			account.setAccountBalance(newBalance);	
+			return account.getAccountBalance();	
 		}
 		return 0;
 	}

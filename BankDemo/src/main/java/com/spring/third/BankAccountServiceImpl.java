@@ -17,12 +17,14 @@ public class BankAccountServiceImpl implements BankAccountService  {
 	@Override
 	public double withdraw(long accountId, double balance) {
 	
-		return bankAccountRepositoryImpl.updateBalance(accountId, balance, "withdraw");
+		double newBalance=bankAccountRepositoryImpl.getBalance(accountId) - balance;
+		return bankAccountRepositoryImpl.updateBalance(accountId, newBalance);
 	}
 
 	@Override
 	public double deposit(long accountId, double balance) {
-		return bankAccountRepositoryImpl.updateBalance(accountId, balance, "deposit");
+		double newBalance=bankAccountRepositoryImpl.getBalance(accountId) + balance;
+		return bankAccountRepositoryImpl.updateBalance(accountId, newBalance);
 		
 	}
 
