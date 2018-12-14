@@ -1,8 +1,9 @@
 package com.spring.aop.sample;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 
 public class Test {
 
@@ -16,6 +17,8 @@ public class Test {
 		ApplicationContext context=new AnnotationConfigApplicationContext(AppConfig.class);
 		Alien alien = context.getBean(Alien.class);
 		alien.show();
+		
+		((ConfigurableApplicationContext)context).close();
 	}
 
 }

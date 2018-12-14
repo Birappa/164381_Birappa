@@ -1,11 +1,10 @@
-package com.spring.aop.sample;
+package com.spring.aop.sample2;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-
 @Configuration
-@ComponentScan("com.spring.aop.sample")
+@ComponentScan("com.spring.aop.sample2")
 public class AppConfig {
 
 	public AppConfig() {
