@@ -1,0 +1,15 @@
+{
+  "name": "node-js",
+  "version": "1.0.0",
+  "description": "\"Adding json package\"",
+  "main": "second.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "\"Birappa\"",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.23.0"
+  }
+}
