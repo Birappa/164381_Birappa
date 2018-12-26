@@ -10,6 +10,8 @@
   "author": "\"Birappa\"",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
     "moment": "^2.23.0"
   }
 }
