@@ -1,0 +1,1317 @@
+MongoDB shell version v3.4.10
+connecting to: mongodb://127.0.0.1:27017
+MongoDB server version: 3.4.10
+Welcome to the MongoDB shell.
+For interactive help, type "help".
+For more comprehensive documentation, see
+        http://docs.mongodb.org/
+Questions? Try the support group
+        http://groups.google.com/group/mongodb-user
+Server has startup warnings:
+2018-12-26T23:15:59.373-0700 I CONTROL  [initandlisten]
+2018-12-26T23:15:59.373-0700 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2018-12-26T23:15:59.373-0700 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2018-12-26T23:15:59.374-0700 I CONTROL  [initandlisten]
+> shos dbs
+2018-12-27T11:46:44.094+0530 E QUERY    [thread1] SyntaxError: missing ; before statement @(shell):1:5
+> show dbs
+admin  0.000GB
+local  0.000GB
+> shows collections
+2018-12-27T11:47:57.414+0530 E QUERY    [thread1] SyntaxError: missing ; before statement @(shell):1:6
+> show collections
+> db.help()
+DB methods:
+        db.adminCommand(nameOrDocument) - switches to 'admin' db, and runs command [ just calls db.runCommand(...) ]
+        db.auth(username, password)
+        db.cloneDatabase(fromhost)
+        db.commandHelp(name) returns the help for the command
+        db.copyDatabase(fromdb, todb, fromhost)
+        db.createCollection(name, { size : ..., capped : ..., max : ... } )
+        db.createView(name, viewOn, [ { $operator: {...}}, ... ], { viewOptions } )
+        db.createUser(userDocument)
+        db.currentOp() displays currently executing operations in the db
+        db.dropDatabase()
+        db.eval() - deprecated
+        db.fsyncLock() flush data to disk and lock server for backups
+        db.fsyncUnlock() unlocks server following a db.fsyncLock()
+        db.getCollection(cname) same as db['cname'] or db.cname
+        db.getCollectionInfos([filter]) - returns a list that contains the names and options of the db's collections
+        db.getCollectionNames()
+        db.getLastError() - just returns the err msg string
+        db.getLastErrorObj() - return full status object
+        db.getLogComponents()
+        db.getMongo() get the server connection object
+        db.getMongo().setSlaveOk() allow queries on a replication slave server
+        db.getName()
+        db.getPrevError()
+        db.getProfilingLevel() - deprecated
+        db.getProfilingStatus() - returns if profiling is on and slow threshold
+        db.getReplicationInfo()
+        db.getSiblingDB(name) get the db at the same server as this one
+        db.getWriteConcern() - returns the write concern used for any operations on this db, inherited from server object if set
+        db.hostInfo() get details about the server's host
+        db.isMaster() check replica primary status
+        db.killOp(opid) kills the current operation in the db
+        db.listCommands() lists all the db commands
+        db.loadServerScripts() loads all the scripts in db.system.js
+        db.logout()
+        db.printCollectionStats()
+        db.printReplicationInfo()
+        db.printShardingStatus()
+        db.printSlaveReplicationInfo()
+        db.dropUser(username)
+        db.repairDatabase()
+        db.resetError()
+        db.runCommand(cmdObj) run a database command.  if cmdObj is a string, turns it into { cmdObj : 1 }
+        db.serverStatus()
+        db.setLogLevel(level,<component>)
+        db.setProfilingLevel(level,<slowms>) 0=off 1=slow 2=all
+        db.setWriteConcern( <write concern doc> ) - sets the write concern for writes to the db
+        db.unsetWriteConcern( <write concern doc> ) - unsets the write concern for writes to the db
+        db.setVerboseShell(flag) display extra information in shell output
+        db.shutdownServer()
+        db.stats()
+        db.version() current version of the server
+> db.mycoll.help()
+DBCollection help
+        db.mycoll.find().help() - show DBCursor help
+        db.mycoll.bulkWrite( operations, <optional params> ) - bulk execute write operations, optional parameters are: w, wtimeout, j
+        db.mycoll.count( query = {}, <optional params> ) - count the number of documents that matches the query, optional parameters are: limit, skip, hint, maxTimeMS
+        db.mycoll.copyTo(newColl) - duplicates collection by copying all documents to newColl; no indexes are copied.
+        db.mycoll.convertToCapped(maxBytes) - calls {convertToCapped:'mycoll', size:maxBytes}} command
+        db.mycoll.createIndex(keypattern[,options])
+        db.mycoll.createIndexes([keypatterns], <options>)
+        db.mycoll.dataSize()
+        db.mycoll.deleteOne( filter, <optional params> ) - delete first matching document, optional parameters are: w, wtimeout, j
+        db.mycoll.deleteMany( filter, <optional params> ) - delete all matching documents, optional parameters are: w, wtimeout, j
+        db.mycoll.distinct( key, query, <optional params> ) - e.g. db.mycoll.distinct( 'x' ), optional parameters are: maxTimeMS
+        db.mycoll.drop() drop the collection
+        db.mycoll.dropIndex(index) - e.g. db.mycoll.dropIndex( "indexName" ) or db.mycoll.dropIndex( { "indexKey" : 1 } )
+        db.mycoll.dropIndexes()
+        db.mycoll.ensureIndex(keypattern[,options]) - DEPRECATED, use createIndex() instead
+        db.mycoll.explain().help() - show explain help
+        db.mycoll.reIndex()
+        db.mycoll.find([query],[fields]) - query is an optional query filter. fields is optional set of fields to return.
+                                                      e.g. db.mycoll.find( {x:77} , {name:1, x:1} )
+        db.mycoll.find(...).count()
+        db.mycoll.find(...).limit(n)
+        db.mycoll.find(...).skip(n)
+        db.mycoll.find(...).sort(...)
+        db.mycoll.findOne([query], [fields], [options], [readConcern])
+        db.mycoll.findOneAndDelete( filter, <optional params> ) - delete first matching document, optional parameters are: projection, sort, maxTimeMS
+        db.mycoll.findOneAndReplace( filter, replacement, <optional params> ) - replace first matching document, optional parameters are: projection, sort, maxTimeMS, upsert, returnNewDocument
+        db.mycoll.findOneAndUpdate( filter, update, <optional params> ) - update first matching document, optional parameters are: projection, sort, maxTimeMS, upsert, returnNewDocument
+        db.mycoll.getDB() get DB object associated with collection
+        db.mycoll.getPlanCache() get query plan cache associated with collection
+        db.mycoll.getIndexes()
+        db.mycoll.group( { key : ..., initial: ..., reduce : ...[, cond: ...] } )
+        db.mycoll.insert(obj)
+        db.mycoll.insertOne( obj, <optional params> ) - insert a document, optional parameters are: w, wtimeout, j
+        db.mycoll.insertMany( [objects], <optional params> ) - insert multiple documents, optional parameters are: w, wtimeout, j
+        db.mycoll.mapReduce( mapFunction , reduceFunction , <optional params> )
+        db.mycoll.aggregate( [pipeline], <optional params> ) - performs an aggregation on a collection; returns a cursor
+        db.mycoll.remove(query)
+        db.mycoll.replaceOne( filter, replacement, <optional params> ) - replace the first matching document, optional parameters are: upsert, w, wtimeout, j
+        db.mycoll.renameCollection( newName , <dropTarget> ) renames the collection.
+        db.mycoll.runCommand( name , <options> ) runs a db command with the given name where the first param is the collection name
+        db.mycoll.save(obj)
+        db.mycoll.stats({scale: N, indexDetails: true/false, indexDetailsKey: <index key>, indexDetailsName: <index name>})
+        db.mycoll.storageSize() - includes free space allocated to this collection
+        db.mycoll.totalIndexSize() - size in bytes of all the indexes
+        db.mycoll.totalSize() - storage allocated for all data and indexes
+        db.mycoll.update( query, object[, upsert_bool, multi_bool] ) - instead of two flags, you can pass an object with fields: upsert, multi
+        db.mycoll.updateOne( filter, update, <optional params> ) - update the first matching document, optional parameters are: upsert, w, wtimeout, j
+        db.mycoll.updateMany( filter, update, <optional params> ) - update all matching documents, optional parameters are: upsert, w, wtimeout, j
+        db.mycoll.validate( <full> ) - SLOW
+        db.mycoll.getShardVersion() - only for use with sharding
+        db.mycoll.getShardDistribution() - prints statistics about data distribution in the cluster
+        db.mycoll.getSplitKeysForChunks( <maxChunkSize> ) - calculates split points over all chunks and returns splitter function
+        db.mycoll.getWriteConcern() - returns the write concern used for any operations on this collection, inherited from server/db if set
+        db.mycoll.setWriteConcern( <write concern doc> ) - sets the write concern for writes to the collection
+        db.mycoll.unsetWriteConcern( <write concern doc> ) - unsets the write concern for writes to the collection
+        db.mycoll.latencyStats() - display operation latency histograms for this collection
+> use mongo_practice
+switched to db mongo_practice
+> db
+mongo_practice
+> show dbs
+admin  0.000GB
+local  0.000GB
+> db.movie.insert({"title":"Fight Club","writer":"Chunk Palahniuk","yaer})  db.movie.insert({"title":"Fight Club","writer":"Chunk Palahniuk","year})  db.movie.insert({"title":"Fight Club","writer":"Chunk Palahniuk","year"}) db.movie.insert({"title":"Fight Club","writer":"Chunk Palahniuk","year":})db.movie.insert({"title":"Fight Club","writer":"Chunk Palahniuk","year":})db.movie.insert({"title":"Fight Club","writer":"Chunk Palahniuk","year":})db.movie.insert({"title":"Fight Club","writer":"Chunk Palahndb.movie.insert({"title":"Fight Club","writer":"Chunk Palahniuk","year":1999,"actors":["Brad Pitt","Edward Norton"})
+... ;
+... show dbs
+... ^C
+
+> show dbs
+admin  0.000GB
+local  0.000GB
+> db.createCollection("movie")
+{ "ok" : 1 }
+> show dbs
+admin           0.000GB
+local           0.000GB
+mongo_practice  0.000GB
+> db.mycol.insert({
+...    _id: ObjectId(7df78ad8902c),
+...    title: 'MongoDB Overview',
+...    description: 'MongoDB is no sql database',
+...    by: 'tutorials point',
+...    url: 'http://www.tutorialspoint.com',
+...    tags: ['mongodb', 'database', 'NoSQL'],
+...    likes: 100
+... show dbs
+... ^C
+
+> db.movie.insert({})
+WriteResult({ "nInserted" : 1 })
+> db.movie.insert({})
+WriteResult({ "nInserted" : 1 })
+> db.movie.insert({
+... "title":"Fight Club",
+... "writer":"Chunk Palahniuk",
+... "year":1999,
+... "actors":["Brad Pitt","Edward Norton"})
+...
+...
+>
+>
+> db.movie.insert({
+... "title":"Fight Club",
+... "writer":"Chunk Palahniuk",
+... "year":1999,
+... "actors":["Brad Pitt","Edward Norton"]
+... })
+WriteResult({ "nInserted" : 1 })
+> db
+mongo_practice
+> show collections
+movie
+> db.movie.find()
+{ "_id" : ObjectId("5c2473188f376e42e1ee1107") }
+{ "_id" : ObjectId("5c2473208f376e42e1ee1108") }
+{ "_id" : ObjectId("5c24741e8f376e42e1ee1109"), "title" : "Fight Club", "writer" : "Chunk Palahniuk", "year" : 1999, "actors" : [ "Brad Pitt", "Edward Norton" ] }
+> db.movie.insert({ "title":"Fight Club", "writer":"Quentin Tarantin", "year":1994, "actors":["John Travolta","Uma Thurman"] })  db.movie.insert({ "title":"Fight Club", "writer":"Quentin Tarantini", "year":1994, "actors":["John Travolta","Uma Thurman"] }) db.movie.insert({ "title":"Fight Club", "writer":"Quentin Tarantin", "year":1994, "actors":["John Travolta","Uma Thurman"] })  db.movie.insert({ "title":"Fight Club", "writer":"Quentin Tarantino", "year":1994, "actors":["John Travolta","Uma Thurman"]db.movie.insert({ "title":"Pulp Fiction", "writer":"Quentin Tarantino", "year":1994, "actors":["John Travolta","Uma Thurman"]   )
+...
+... db
+...
+...
+> db.movie.insert({ "title":"Pulb Fiction", "writer":"Quentin Tarantino", "year":1994, "actors":["John Travolta","Uma Thurman"] })
+Wr;
+> db.movie.insert({ "title":"The Habbit:Unexpected Journey", "writer":"J.R.R. Tolkein", "year":2012,"Franchise":The Hobbit", "actors":["Brad Pitt","Der","Eli Roth"] })
+> db.movie.insert({ "title":"The Habbit:Unexpected Journey", "writer":"J.R.R. Tolkein", "year":2012,"Franchise":The Hobbit", "actors":["Brad Pitt","Der","Eli Roth"] })
+> db.movie.insert({ "title":"The Habbit:Unexpected Journey", "writer":"J.R.R. Tolkein", "year":2012,"Franchise":The Hobbit", "actors":["Brad Pitt","Der","Eli Roth"] })
+> db.movie.insert({ "title":"The Hobbit:Unexpected Journey", "writer":"J.R.R. Tolkein", "year":2012, "Franchise":"The Hobbit"})
+WriteResult({ "nInserted" : 1 })
+> db.movie.insert({ "title":"The Hobbit:The Desilation Of Smaug", "writer":"J.R.R. Tolkein", "year":2013, "Franchise":"The Hobbit"})
+WriteResult({ "nInserted" : 1 })
+> db.movie.insert({ "title":"The Hobbit:The Battle Of Five Armies", "writer":"J.R.R. Tolkein", "year":2012, "Franchise":"The Hobbit","synopsis":"Bilbo and company are forced to enagage in a war against of array of combatants and keep the Lonely Mountain from falling into the hands of rising darkness."})
+WriteResult({ "nInserted" : 1 })
+> db.movie.find()
+{ "_id" : ObjectId("5c2473188f376e42e1ee1107") }
+{ "_id" : ObjectId("5c2473208f376e42e1ee1108") }
+{ "_id" : ObjectId("5c24741e8f376e42e1ee1109"), "title" : "Fight Club", "writer" : "Chunk Palahniuk", "year" : 1999, "actors" : [ "Brad Pitt", "Edward Norton" ] }
+{ "_id" : ObjectId("5c24759a8f376e42e1ee110a"), "title" : "Pulb Fiction", "writer" : "Quentin Tarantino", "year" : 1994, "actors" : [ "John Travolta", "Uma Thurman" ] }
+{ "_id" : ObjectId("5c24762d8f376e42e1ee110b"), "title" : "Inglorious Basterds", "writer" : "Quentin Tarantino", "year" : 2009, "actors" : [ "Brad Pitt", "Diane Kruger", "Eli Roth" ] }
+{ "_id" : ObjectId("5c24785f8f376e42e1ee110c"), "title" : "The Hobbit:Unexpected Journey", "writer" : "J.R.R. Tolkein", "year" : 2012, "Franchise" : "The Hobbit" }
+{ "_id" : ObjectId("5c2478e08f376e42e1ee110d"), "title" : "The Hobbit:The Desilation Of Smaug", "writer" : "J.R.R. Tolkein", "year" : 2013, "Franchise" : "The Hobbit" }
+{ "_id" : ObjectId("5c2479e48f376e42e1ee110e"), "title" : "The Hobbit:The Battle Of Five Armies", "writer" : "J.R.R. Tolkein", "year" : 2012, "Franchise" : "The Hobbit", "synopsis" : "Bilbo and company are forced to enagage in a war against of array of combatants and keep the Lonely Mountain from falling into the hands of rising darkness." }
+> db.movie.find().pretty()
+{ "_id" : ObjectId("5c2473188f376e42e1ee1107") }
+{ "_id" : ObjectId("5c2473208f376e42e1ee1108") }
+{
+        "_id" : ObjectId("5c24741e8f376e42e1ee1109"),
+        "title" : "Fight Club",
+        "writer" : "Chunk Palahniuk",
+        "year" : 1999,
+        "actors" : [
+                "Brad Pitt",
+                "Edward Norton"
+        ]
+}
+{
+        "_id" : ObjectId("5c24759a8f376e42e1ee110a"),
+        "title" : "Pulb Fiction",
+        "writer" : "Quentin Tarantino",
+        "year" : 1994,
+        "actors" : [
+                "John Travolta",
+                "Uma Thurman"
+        ]
+}
+{
+        "_id" : ObjectId("5c24762d8f376e42e1ee110b"),
+        "title" : "Inglorious Basterds",
+        "writer" : "Quentin Tarantino",
+        "year" : 2009,
+        "actors" : [
+                "Brad Pitt",
+                "Diane Kruger",
+                "Eli Roth"
+        ]
+}
+{
+        "_id" : ObjectId("5c24785f8f376e42e1ee110c"),
+        "title" : "The Hobbit:Unexpected Journey",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2012,
+        "Franchise" : "The Hobbit"
+}
+{
+        "_id" : ObjectId("5c2478e08f376e42e1ee110d"),
+        "title" : "The Hobbit:The Desilation Of Smaug",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2013,
+        "Franchise" : "The Hobbit"
+}
+{
+        "_id" : ObjectId("5c2479e48f376e42e1ee110e"),
+        "title" : "The Hobbit:The Battle Of Five Armies",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2012,
+        "Franchise" : "The Hobbit",
+        "synopsis" : "Bilbo and company are forced to enagage in a war against of array of combatants and keep the Lonely Mountain from falling into the hands of rising darkness."
+}
+> db.movie.remove({ "_id" : ObjectId("5c2473188f376e42e1ee1107")})
+WriteResult({ "nRemoved" : 1 })
+> db.movie.find().pretty()
+{ "_id" : ObjectId("5c2473208f376e42e1ee1108") }
+{
+        "_id" : ObjectId("5c24741e8f376e42e1ee1109"),
+        "title" : "Fight Club",
+        "writer" : "Chunk Palahniuk",
+        "year" : 1999,
+        "actors" : [
+                "Brad Pitt",
+                "Edward Norton"
+        ]
+}
+{
+        "_id" : ObjectId("5c24759a8f376e42e1ee110a"),
+        "title" : "Pulb Fiction",
+        "writer" : "Quentin Tarantino",
+        "year" : 1994,
+        "actors" : [
+                "John Travolta",
+                "Uma Thurman"
+        ]
+}
+{
+        "_id" : ObjectId("5c24762d8f376e42e1ee110b"),
+        "title" : "Inglorious Basterds",
+        "writer" : "Quentin Tarantino",
+        "year" : 2009,
+        "actors" : [
+                "Brad Pitt",
+                "Diane Kruger",
+                "Eli Roth"
+        ]
+}
+{
+        "_id" : ObjectId("5c24785f8f376e42e1ee110c"),
+        "title" : "The Hobbit:Unexpected Journey",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2012,
+        "Franchise" : "The Hobbit"
+}
+{
+        "_id" : ObjectId("5c2478e08f376e42e1ee110d"),
+        "title" : "The Hobbit:The Desilation Of Smaug",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2013,
+        "Franchise" : "The Hobbit"
+}
+{
+        "_id" : ObjectId("5c2479e48f376e42e1ee110e"),
+        "title" : "The Hobbit:The Battle Of Five Armies",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2012,
+        "Franchise" : "The Hobbit",
+        "synopsis" : "Bilbo and company are forced to enagage in a war against of array of combatants and keep the Lonely Mountain from falling into the hands of rising darkness."
+}
+> db.movie.remove({ "_id" : ObjectId("5c2473208f376e42e1ee1108") })
+WriteResult({ "nRemoved" : 1 })
+> db.movie.find().pretty()
+{
+        "_id" : ObjectId("5c24741e8f376e42e1ee1109"),
+        "title" : "Fight Club",
+        "writer" : "Chunk Palahniuk",
+        "year" : 1999,
+        "actors" : [
+                "Brad Pitt",
+                "Edward Norton"
+        ]
+}
+{
+        "_id" : ObjectId("5c24759a8f376e42e1ee110a"),
+        "title" : "Pulb Fiction",
+        "writer" : "Quentin Tarantino",
+        "year" : 1994,
+        "actors" : [
+                "John Travolta",
+                "Uma Thurman"
+        ]
+}
+{
+        "_id" : ObjectId("5c24762d8f376e42e1ee110b"),
+        "title" : "Inglorious Basterds",
+        "writer" : "Quentin Tarantino",
+        "year" : 2009,
+        "actors" : [
+                "Brad Pitt",
+                "Diane Kruger",
+                "Eli Roth"
+        ]
+}
+{
+        "_id" : ObjectId("5c24785f8f376e42e1ee110c"),
+        "title" : "The Hobbit:Unexpected Journey",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2012,
+        "Franchise" : "The Hobbit"
+}
+{
+        "_id" : ObjectId("5c2478e08f376e42e1ee110d"),
+        "title" : "The Hobbit:The Desilation Of Smaug",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2013,
+        "Franchise" : "The Hobbit"
+}
+{
+        "_id" : ObjectId("5c2479e48f376e42e1ee110e"),
+        "title" : "The Hobbit:The Battle Of Five Armies",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2012,
+        "Franchise" : "The Hobbit",
+        "synopsis" : "Bilbo and company are forced to enagage in a war against of array of combatants and keep the Lonely Mountain from falling into the hands of rising darkness."
+}
+> db.movie.find({"writer" : "Quentin Tarantino"}).pretty()
+{
+        "_id" : ObjectId("5c24759a8f376e42e1ee110a"),
+        "title" : "Pulb Fiction",
+        "writer" : "Quentin Tarantino",
+        "year" : 1994,
+        "actors" : [
+                "John Travolta",
+                "Uma Thurman"
+        ]
+}
+{
+        "_id" : ObjectId("5c24762d8f376e42e1ee110b"),
+        "title" : "Inglorious Basterds",
+        "writer" : "Quentin Tarantino",
+        "year" : 2009,
+        "actors" : [
+                "Brad Pitt",
+                "Diane Kruger",
+                "Eli Roth"
+        ]
+}
+> db.movie.find({"actors" : "Brad Pitt"}).pretty()
+{
+        "_id" : ObjectId("5c24741e8f376e42e1ee1109"),
+        "title" : "Fight Club",
+        "writer" : "Chunk Palahniuk",
+        "year" : 1999,
+        "actors" : [
+                "Brad Pitt",
+                "Edward Norton"
+        ]
+}
+{
+        "_id" : ObjectId("5c24762d8f376e42e1ee110b"),
+        "title" : "Inglorious Basterds",
+        "writer" : "Quentin Tarantino",
+        "year" : 2009,
+        "actors" : [
+                "Brad Pitt",
+                "Diane Kruger",
+                "Eli Roth"
+        ]
+}
+> db.movie.find({"franchise" : "The Hobbit"}).pretty()
+> db.movie.find({"Franchise" : "The Hobbit"}).pretty()
+{
+        "_id" : ObjectId("5c24785f8f376e42e1ee110c"),
+        "title" : "The Hobbit:Unexpected Journey",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2012,
+        "Franchise" : "The Hobbit"
+}
+{
+        "_id" : ObjectId("5c2478e08f376e42e1ee110d"),
+        "title" : "The Hobbit:The Desilation Of Smaug",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2013,
+        "Franchise" : "The Hobbit"
+}
+{
+        "_id" : ObjectId("5c2479e48f376e42e1ee110e"),
+        "title" : "The Hobbit:The Battle Of Five Armies",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2012,
+        "Franchise" : "The Hobbit",
+        "synopsis" : "Bilbo and company are forced to enagage in a war against of array of combatants and keep the Lonely Mountain from falling into the hands of rising darkness."
+}
+> db.movie.find({"year" : [{$gt:1990},{$lt:2000}]}).pretty()
+> db.movie.find({"year" : {$gt:1990},$or:{$lt:2000}}).pretty()
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "$or must be an array",
+        "code" : 2,
+        "codeName" : "BadValue"
+}
+> db.movie.find({"year" : {$gt:1990},$or:[{$lt:2000}]}).pretty()
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "unknown top level operator: $lt",
+        "code" : 2,
+        "codeName" : "BadValue"
+}
+> db.movie.find({&and:[{"year" : {$gt:1990}},{"year":{$lt:2000}}]}).pretty()
+2018-12-27T13:13:48.046+0530 E QUERY    [thread1] SyntaxError: invalid property id @(shell):1:15
+> db.movie.find({"year:{$gt:1990},$or:[{"year":{$lt:2000}}]}).pretty()
+2018-12-27T14:03:34.499+0530 E QUERY    [thread1] SyntaxError: missing : after property id @(shell):1:39
+> db.movie.find({"year":{$gt:1990},$or:[{"year":{$lt:2000}}]}).pretty()
+{
+        "_id" : ObjectId("5c24741e8f376e42e1ee1109"),
+        "title" : "Fight Club",
+        "writer" : "Chunk Palahniuk",
+        "year" : 1999,
+        "actors" : [
+                "Brad Pitt",
+                "Edward Norton"
+        ]
+}
+{
+        "_id" : ObjectId("5c24759a8f376e42e1ee110a"),
+        "title" : "Pulb Fiction",
+        "writer" : "Quentin Tarantino",
+        "year" : 1994,
+        "actors" : [
+                "John Travolta",
+                "Uma Thurman"
+        ]
+}
+> db.movie.find({$or:[{"year":{$lt:2000}},{"year":{$gt:2000}}]}).pretty()
+{
+        "_id" : ObjectId("5c24741e8f376e42e1ee1109"),
+        "title" : "Fight Club",
+        "writer" : "Chunk Palahniuk",
+        "year" : 1999,
+        "actors" : [
+                "Brad Pitt",
+                "Edward Norton"
+        ]
+}
+{
+        "_id" : ObjectId("5c24759a8f376e42e1ee110a"),
+        "title" : "Pulb Fiction",
+        "writer" : "Quentin Tarantino",
+        "year" : 1994,
+        "actors" : [
+                "John Travolta",
+                "Uma Thurman"
+        ]
+}
+{
+        "_id" : ObjectId("5c24762d8f376e42e1ee110b"),
+        "title" : "Inglorious Basterds",
+        "writer" : "Quentin Tarantino",
+        "year" : 2009,
+        "actors" : [
+                "Brad Pitt",
+                "Diane Kruger",
+                "Eli Roth"
+        ]
+}
+{
+        "_id" : ObjectId("5c24785f8f376e42e1ee110c"),
+        "title" : "The Hobbit:Unexpected Journey",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2012,
+        "Franchise" : "The Hobbit"
+}
+{
+        "_id" : ObjectId("5c2478e08f376e42e1ee110d"),
+        "title" : "The Hobbit:The Desilation Of Smaug",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2013,
+        "Franchise" : "The Hobbit"
+}
+{
+        "_id" : ObjectId("5c2479e48f376e42e1ee110e"),
+        "title" : "The Hobbit:The Battle Of Five Armies",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2012,
+        "Franchise" : "The Hobbit",
+        "synopsis" : "Bilbo and company are forced to enagage in a war against of array of combatants and keep the Lonely Mountain from falling into the hands of rising darkness."
+}
+> db.movie.find({$or:[{"year":{$lt:2000}},{"year":{$gt:2010}}]}).pretty()
+{
+        "_id" : ObjectId("5c24741e8f376e42e1ee1109"),
+        "title" : "Fight Club",
+        "writer" : "Chunk Palahniuk",
+        "year" : 1999,
+        "actors" : [
+                "Brad Pitt",
+                "Edward Norton"
+        ]
+}
+{
+        "_id" : ObjectId("5c24759a8f376e42e1ee110a"),
+        "title" : "Pulb Fiction",
+        "writer" : "Quentin Tarantino",
+        "year" : 1994,
+        "actors" : [
+                "John Travolta",
+                "Uma Thurman"
+        ]
+}
+{
+        "_id" : ObjectId("5c24785f8f376e42e1ee110c"),
+        "title" : "The Hobbit:Unexpected Journey",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2012,
+        "Franchise" : "The Hobbit"
+}
+{
+        "_id" : ObjectId("5c2478e08f376e42e1ee110d"),
+        "title" : "The Hobbit:The Desilation Of Smaug",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2013,
+        "Franchise" : "The Hobbit"
+}
+{
+        "_id" : ObjectId("5c2479e48f376e42e1ee110e"),
+        "title" : "The Hobbit:The Battle Of Five Armies",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2012,
+        "Franchise" : "The Hobbit",
+        "synopsis" : "Bilbo and company are forced to enagage in a war against of array of combatants and keep the Lonely Mountain from falling into the hands of rising darkness."
+}
+> db.movie.update({"title":"The Hobbit:Unexpected Journey"},{$set:{"synopsis":"The Hobbit: An Unexpected Journey" : "A reluctant hobbit, Bilbo Baggins, sets out to the Lonely Mountain with a spirited group of dwarves to reclaim their mountain home - and the gold within it - from the dragon Smaug."}})
+2018-12-27T14:10:50.152+0530 E QUERY    [thread1] SyntaxError: missing } after property list @(shell):1:112
+> db.movie.update({"title":"The Hobbit:Unexpected Journey"},{$set:{"synopsis":"A reluctant hobbit, Bilbo Baggins, sets out to the Lonely Mountain with a spirited group of dwarves to reclaim their mountain home - and the gold within it - from the dragon Smaug."}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.movie.find().pretty()
+{
+        "_id" : ObjectId("5c24741e8f376e42e1ee1109"),
+        "title" : "Fight Club",
+        "writer" : "Chunk Palahniuk",
+        "year" : 1999,
+        "actors" : [
+                "Brad Pitt",
+                "Edward Norton"
+        ]
+}
+{
+        "_id" : ObjectId("5c24759a8f376e42e1ee110a"),
+        "title" : "Pulb Fiction",
+        "writer" : "Quentin Tarantino",
+        "year" : 1994,
+        "actors" : [
+                "John Travolta",
+                "Uma Thurman"
+        ]
+}
+{
+        "_id" : ObjectId("5c24762d8f376e42e1ee110b"),
+        "title" : "Inglorious Basterds",
+        "writer" : "Quentin Tarantino",
+        "year" : 2009,
+        "actors" : [
+                "Brad Pitt",
+                "Diane Kruger",
+                "Eli Roth"
+        ]
+}
+{
+        "_id" : ObjectId("5c24785f8f376e42e1ee110c"),
+        "title" : "The Hobbit:Unexpected Journey",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2012,
+        "Franchise" : "The Hobbit",
+        "synopsis" : "A reluctant hobbit, Bilbo Baggins, sets out to the Lonely Mountain with a spirited group of dwarves to reclaim their mountain home - and the gold within it - from the dragon Smaug."
+}
+{
+        "_id" : ObjectId("5c2478e08f376e42e1ee110d"),
+        "title" : "The Hobbit:The Desilation Of Smaug",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2013,
+        "Franchise" : "The Hobbit"
+}
+{
+        "_id" : ObjectId("5c2479e48f376e42e1ee110e"),
+        "title" : "The Hobbit:The Battle Of Five Armies",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2012,
+        "Franchise" : "The Hobbit",
+        "synopsis" : "Bilbo and company are forced to enagage in a war against of array of combatants and keep the Lonely Mountain from falling into the hands of rising darkness."
+}
+> db.movie.update({"title":"The Hobbit:The Desilation Of Smaug"},{$set:{"synopsis":"The dwarves, along with Bilbo Baggins and Gandalf the Grey, continue their quest to reclaim Erebor, their homeland, from Smaug. Bilbo Baggins is in possession of a mysterious and magical ring."}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.movie.find().pretty()
+{
+        "_id" : ObjectId("5c24741e8f376e42e1ee1109"),
+        "title" : "Fight Club",
+        "writer" : "Chunk Palahniuk",
+        "year" : 1999,
+        "actors" : [
+                "Brad Pitt",
+                "Edward Norton"
+        ]
+}
+{
+        "_id" : ObjectId("5c24759a8f376e42e1ee110a"),
+        "title" : "Pulb Fiction",
+        "writer" : "Quentin Tarantino",
+        "year" : 1994,
+        "actors" : [
+                "John Travolta",
+                "Uma Thurman"
+        ]
+}
+{
+        "_id" : ObjectId("5c24762d8f376e42e1ee110b"),
+        "title" : "Inglorious Basterds",
+        "writer" : "Quentin Tarantino",
+        "year" : 2009,
+        "actors" : [
+                "Brad Pitt",
+                "Diane Kruger",
+                "Eli Roth"
+        ]
+}
+{
+        "_id" : ObjectId("5c24785f8f376e42e1ee110c"),
+        "title" : "The Hobbit:Unexpected Journey",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2012,
+        "Franchise" : "The Hobbit",
+        "synopsis" : "A reluctant hobbit, Bilbo Baggins, sets out to the Lonely Mountain with a spirited group of dwarves to reclaim their mountain home - and the gold within it - from the dragon Smaug."
+}
+{
+        "_id" : ObjectId("5c2478e08f376e42e1ee110d"),
+        "title" : "The Hobbit:The Desilation Of Smaug",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2013,
+        "Franchise" : "The Hobbit",
+        "synopsis" : "The dwarves, along with Bilbo Baggins and Gandalf the Grey, continue their quest to reclaim Erebor, their homeland, from Smaug. Bilbo Baggins is in possession of a mysterious and magical ring."
+}
+{
+        "_id" : ObjectId("5c2479e48f376e42e1ee110e"),
+        "title" : "The Hobbit:The Battle Of Five Armies",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2012,
+        "Franchise" : "The Hobbit",
+        "synopsis" : "Bilbo and company are forced to enagage in a war against of array of combatants and keep the Lonely Mountain from falling into the hands of rising darkness."
+}
+> db.movie.update({"title":"Pulp Fiction"},{$push:{"actors":"Samuel L. Jackson"}})
+WriteResult({ "nMatched" : 0, "nUpserted" : 0, "nModified" : 0 })
+> db.movie.update({"title":"Pulb Fiction"},{$push:{"actors":"Samuel L. Jackson"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.movie.find().pretty()
+{
+        "_id" : ObjectId("5c24741e8f376e42e1ee1109"),
+        "title" : "Fight Club",
+        "writer" : "Chunk Palahniuk",
+        "year" : 1999,
+        "actors" : [
+                "Brad Pitt",
+                "Edward Norton"
+        ]
+}
+{
+        "_id" : ObjectId("5c24759a8f376e42e1ee110a"),
+        "title" : "Pulb Fiction",
+        "writer" : "Quentin Tarantino",
+        "year" : 1994,
+        "actors" : [
+                "John Travolta",
+                "Uma Thurman",
+                "Samuel L. Jackson"
+        ]
+}
+{
+        "_id" : ObjectId("5c24762d8f376e42e1ee110b"),
+        "title" : "Inglorious Basterds",
+        "writer" : "Quentin Tarantino",
+        "year" : 2009,
+        "actors" : [
+                "Brad Pitt",
+                "Diane Kruger",
+                "Eli Roth"
+        ]
+}
+{
+        "_id" : ObjectId("5c24785f8f376e42e1ee110c"),
+        "title" : "The Hobbit:Unexpected Journey",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2012,
+        "Franchise" : "The Hobbit",
+        "synopsis" : "A reluctant hobbit, Bilbo Baggins, sets out to the Lonely Mountain with a spirited group of dwarves to reclaim their mountain home - and the gold within it - from the dragon Smaug."
+}
+{
+        "_id" : ObjectId("5c2478e08f376e42e1ee110d"),
+        "title" : "The Hobbit:The Desilation Of Smaug",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2013,
+        "Franchise" : "The Hobbit",
+        "synopsis" : "The dwarves, along with Bilbo Baggins and Gandalf the Grey, continue their quest to reclaim Erebor, their homeland, from Smaug. Bilbo Baggins is in possession of a mysterious and magical ring."
+}
+{
+        "_id" : ObjectId("5c2479e48f376e42e1ee110e"),
+        "title" : "The Hobbit:The Battle Of Five Armies",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2012,
+        "Franchise" : "The Hobbit",
+        "synopsis" : "Bilbo and company are forced to enagage in a war against of array of combatants and keep the Lonely Mountain from falling into the hands of rising darkness."
+}
+> db.users.find({$contains:{"synopsis":"Bilbo"}}).pretty()
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "unknown top level operator: $contains",
+        "code" : 2,
+        "codeName" : "BadValue"
+}
+> db.movie.find({"synopsis" : {$regex : ".*Bilbo.*"}}).pretty()
+{
+        "_id" : ObjectId("5c24785f8f376e42e1ee110c"),
+        "title" : "The Hobbit:Unexpected Journey",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2012,
+        "Franchise" : "The Hobbit",
+        "synopsis" : "A reluctant hobbit, Bilbo Baggins, sets out to the Lonely Mountain with a spirited group of dwarves to reclaim their mountain home - and the gold within it - from the dragon Smaug."
+}
+{
+        "_id" : ObjectId("5c2478e08f376e42e1ee110d"),
+        "title" : "The Hobbit:The Desilation Of Smaug",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2013,
+        "Franchise" : "The Hobbit",
+        "synopsis" : "The dwarves, along with Bilbo Baggins and Gandalf the Grey, continue their quest to reclaim Erebor, their homeland, from Smaug. Bilbo Baggins is in possession of a mysterious and magical ring."
+}
+{
+        "_id" : ObjectId("5c2479e48f376e42e1ee110e"),
+        "title" : "The Hobbit:The Battle Of Five Armies",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2012,
+        "Franchise" : "The Hobbit",
+        "synopsis" : "Bilbo and company are forced to enagage in a war against of array of combatants and keep the Lonely Mountain from falling into the hands of rising darkness."
+}
+> db.movie.find({"synopsis" : {$regex : ".*Gandalf.*"}}).pretty()
+{
+        "_id" : ObjectId("5c2478e08f376e42e1ee110d"),
+        "title" : "The Hobbit:The Desilation Of Smaug",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2013,
+        "Franchise" : "The Hobbit",
+        "synopsis" : "The dwarves, along with Bilbo Baggins and Gandalf the Grey, continue their quest to reclaim Erebor, their homeland, from Smaug. Bilbo Baggins is in possession of a mysterious and magical ring."
+}
+> db.movie.find({"synopsis" : {$regex : ".*Bilbo.*"},{$nin:['Gandalf']}}).pretty()
+2018-12-27T14:43:03.406+0530 E QUERY    [thread1] SyntaxError: invalid property id @(shell):1:51
+> db.movie.find({"synopsis" : {$regex : ".*Bilbo.*"},{$nin:["Gandalf"]}}).pretty()
+2018-12-27T14:43:40.671+0530 E QUERY    [thread1] SyntaxError: invalid property id @(shell):1:51
+> db.movie.find({"synopsis" : {$regex : ".*Bilbo.*"},{$nin:"Gandalf"}}).pretty()
+2018-12-27T14:43:54.919+0530 E QUERY    [thread1] SyntaxError: invalid property id @(shell):1:51
+> db.movie.find({$text: {$search: "Bilbo -Gandalf"}})
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "text index required for $text query",
+        "code" : 27,
+        "codeName" : "IndexNotFound"
+}
+> db.movie.find({$synopsis: {$search: "Bilbo -Gandalf"}})
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "unknown top level operator: $synopsis",
+        "code" : 2,
+        "codeName" : "BadValue"
+}
+> db.movie.createIndex({"synopsis":"text"})
+{
+        "createdCollectionAutomatically" : false,
+        "numIndexesBefore" : 1,
+        "numIndexesAfter" : 2,
+        "ok" : 1
+}
+> db.movie.createIndex({synopsis:"text"})
+{
+        "createdCollectionAutomatically" : false,
+        "numIndexesBefore" : 2,
+        "numIndexesAfter" : 2,
+        "note" : "all indexes already exist",
+        "ok" : 1
+}
+> db.movie.find({$text: {$search: "Bilbo -Gandalf"}})
+{ "_id" : ObjectId("5c24785f8f376e42e1ee110c"), "title" : "The Hobbit:Unexpected Journey", "writer" : "J.R.R. Tolkein", "year" : 2012, "Franchise" : "The Hobbit", "synopsis" : "A reluctant hobbit, Bilbo Baggins, sets out to the Lonely Mountain with a spirited group of dwarves to reclaim their mountain home - and the gold within it - from the dragon Smaug." }
+{ "_id" : ObjectId("5c2479e48f376e42e1ee110e"), "title" : "The Hobbit:The Battle Of Five Armies", "writer" : "J.R.R. Tolkein", "year" : 2012, "Franchise" : "The Hobbit", "synopsis" : "Bilbo and company are forced to enagage in a war against of array of combatants and keep the Lonely Mountain from falling into the hands of rising darkness." }
+> db.movie.find({$text: {$search: "Bilbo -Gandalf"}}).pretty()
+{
+        "_id" : ObjectId("5c24785f8f376e42e1ee110c"),
+        "title" : "The Hobbit:Unexpected Journey",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2012,
+        "Franchise" : "The Hobbit",
+        "synopsis" : "A reluctant hobbit, Bilbo Baggins, sets out to the Lonely Mountain with a spirited group of dwarves to reclaim their mountain home - and the gold within it - from the dragon Smaug."
+}
+{
+        "_id" : ObjectId("5c2479e48f376e42e1ee110e"),
+        "title" : "The Hobbit:The Battle Of Five Armies",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2012,
+        "Franchise" : "The Hobbit",
+        "synopsis" : "Bilbo and company are forced to enagage in a war against of array of combatants and keep the Lonely Mountain from falling into the hands of rising darkness."
+}
+> db.movie.find({$text: {$search: "dwarves hobbit"}})
+{ "_id" : ObjectId("5c2478e08f376e42e1ee110d"), "title" : "The Hobbit:The Desilation Of Smaug", "writer" : "J.R.R. Tolkein", "year" : 2013, "Franchise" : "The Hobbit", "synopsis" : "The dwarves, along with Bilbo Baggins and Gandalf the Grey, continue their quest to reclaim Erebor, their homeland, from Smaug. Bilbo Baggins is in possession of a mysterious and magical ring." }
+{ "_id" : ObjectId("5c24785f8f376e42e1ee110c"), "title" : "The Hobbit:Unexpected Journey", "writer" : "J.R.R. Tolkein", "year" : 2012, "Franchise" : "The Hobbit", "synopsis" : "A reluctant hobbit, Bilbo Baggins, sets out to the Lonely Mountain with a spirited group of dwarves to reclaim their mountain home - and the gold within it - from the dragon Smaug." }
+> db.movie.find({$text: {$search: "dwarves hobbit"}}).pretty()
+{
+        "_id" : ObjectId("5c2478e08f376e42e1ee110d"),
+        "title" : "The Hobbit:The Desilation Of Smaug",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2013,
+        "Franchise" : "The Hobbit",
+        "synopsis" : "The dwarves, along with Bilbo Baggins and Gandalf the Grey, continue their quest to reclaim Erebor, their homeland, from Smaug. Bilbo Baggins is in possession of a mysterious and magical ring."
+}
+{
+        "_id" : ObjectId("5c24785f8f376e42e1ee110c"),
+        "title" : "The Hobbit:Unexpected Journey",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2012,
+        "Franchise" : "The Hobbit",
+        "synopsis" : "A reluctant hobbit, Bilbo Baggins, sets out to the Lonely Mountain with a spirited group of dwarves to reclaim their mountain home - and the gold within it - from the dragon Smaug."
+}
+> db.movie.find({$text: {$search: "gold dragon"}}).pretty()
+{
+        "_id" : ObjectId("5c24785f8f376e42e1ee110c"),
+        "title" : "The Hobbit:Unexpected Journey",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2012,
+        "Franchise" : "The Hobbit",
+        "synopsis" : "A reluctant hobbit, Bilbo Baggins, sets out to the Lonely Mountain with a spirited group of dwarves to reclaim their mountain home - and the gold within it - from the dragon Smaug."
+}
+> db.movie.insert({"title":"Pee Wee Herman's Big Adventure"})
+WriteResult({ "nInserted" : 1 })
+> db.movie.insert({"title":"Avatar"})
+WriteResult({ "nInserted" : 1 })
+> db.movie.remove({"title":"Pee Wee Herman's Big Adventure"})
+WriteResult({ "nRemoved" : 1 })
+> db.movie.remove({"title":"Avatar"})
+WriteResult({ "nRemoved" : 1 })
+> db.createCollection("users")
+{ "ok" : 1 }
+> db.users.insert({"username" : "GoodGuyGreg", "first_name" : "Good Guy", "last_name" : "Greg", "username" : "ScumbagSteve", "full_name" : {first : "Scumbag", last : "Steve"}
+... )
+...
+...
+>  db.users.insert({"username" : "GoodGuyGreg", "first_name" : "Good Guy", "last_name" : "Greg", "username" : "ScumbagSteve", "full_name" : {first  db.users.insert({"username" : "GoodGuyGreg", "first_name" : "Good Guy", "last_name" : "Greg", "username" : "ScumbagSteve", "full_name" : {first : "Scumbag", last : "Steve"} db.users.insert({"username" : "GoodGuyGreg", "first_name" : "Good Guy", "last_name" : "Greg", "username" : "ScumbagSteve", "full_name" : {first : "Scumbag", last : "Steve"} db.users.insert({"username" : "GoodGuyGreg", "first_name" : "Good Guy", "last_name" : "Greg", "username" : "ScumbagSteve", "full_name" : {first : "Scumbag", last : "Steve"}: "Scumbag", last : "Steve"}
+...
+...
+>
+>  db.users.insert({"username" : "GoodGuyGreg", "first_name" : "Good Guy", "last_name" : "Greg", "username" : "ScumbagSteve", "full_name" : {"first" : "Scumbag", "last" : "Steve"}})
+WriteResult({ "nInserted" : 1 })
+> db.users.remove()
+2018-12-27T15:14:54.230+0530 E QUERY    [thread1] Error: remove needs a query :
+DBCollection.prototype._parseRemove@src/mongo/shell/collection.js:409:1
+DBCollection.prototype.remove@src/mongo/shell/collection.js:434:18
+@(shell):1:1
+> db.users.remove({"username":"GoodGuyGreg"})
+WriteResult({ "nRemoved" : 0 })
+> db.users.find().pretty()
+{
+        "_id" : ObjectId("5c249ee78f376e42e1ee1111"),
+        "username" : "ScumbagSteve",
+        "first_name" : "Good Guy",
+        "last_name" : "Greg",
+        "full_name" : {
+                "first" : "Scumbag",
+                "last" : "Steve"
+        }
+}
+> db.users.remove({"last_name":"Greg"})
+WriteResult({ "nRemoved" : 1 })
+> db.users.insert({username : "GoodGuyGreg", first_name : "Good Guy", last_name : "Greg"})
+WriteResult({ "nInserted" : 1 })
+> db.movie.update({"title":"Pulb Fiction"},{$set:{"writer:"Quentin Tarantino Bilbo"}})
+2018-12-27T15:32:52.355+0530 E QUERY    [thread1] SyntaxError: missing : after property id @(shell):1:57
+> db.movie.find().pretty()
+{
+        "_id" : ObjectId("5c24741e8f376e42e1ee1109"),
+        "title" : "Fight Club",
+        "writer" : "Chunk Palahniuk",
+        "year" : 1999,
+        "actors" : [
+                "Brad Pitt",
+                "Edward Norton"
+        ]
+}
+{
+        "_id" : ObjectId("5c24759a8f376e42e1ee110a"),
+        "title" : "Pulb Fiction",
+        "writer" : "Quentin Tarantino",
+        "year" : 1994,
+        "actors" : [
+                "John Travolta",
+                "Uma Thurman",
+                "Samuel L. Jackson"
+        ]
+}
+{
+        "_id" : ObjectId("5c24762d8f376e42e1ee110b"),
+        "title" : "Inglorious Basterds",
+        "writer" : "Quentin Tarantino",
+        "year" : 2009,
+        "actors" : [
+                "Brad Pitt",
+                "Diane Kruger",
+                "Eli Roth"
+        ]
+}
+{
+        "_id" : ObjectId("5c24785f8f376e42e1ee110c"),
+        "title" : "The Hobbit:Unexpected Journey",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2012,
+        "Franchise" : "The Hobbit",
+        "synopsis" : "A reluctant hobbit, Bilbo Baggins, sets out to the Lonely Mountain with a spirited group of dwarves to reclaim their mountain home - and the gold within it - from the dragon Smaug."
+}
+{
+        "_id" : ObjectId("5c2478e08f376e42e1ee110d"),
+        "title" : "The Hobbit:The Desilation Of Smaug",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2013,
+        "Franchise" : "The Hobbit",
+        "synopsis" : "The dwarves, along with Bilbo Baggins and Gandalf the Grey, continue their quest to reclaim Erebor, their homeland, from Smaug. Bilbo Baggins is in possession of a mysterious and magical ring."
+}
+{
+        "_id" : ObjectId("5c2479e48f376e42e1ee110e"),
+        "title" : "The Hobbit:The Battle Of Five Armies",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2012,
+        "Franchise" : "The Hobbit",
+        "synopsis" : "Bilbo and company are forced to enagage in a war against of array of combatants and keep the Lonely Mountain from falling into the hands of rising darkness."
+}
+> db.movie.update({"title":"Pulb Fiction"},{$set:{"actors":"Samuel L. Jackson Bilbo"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.movie.find({$text: {$search: "Bilbo"}}).pretty()
+{
+        "_id" : ObjectId("5c24785f8f376e42e1ee110c"),
+        "title" : "The Hobbit:Unexpected Journey",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2012,
+        "Franchise" : "The Hobbit",
+        "synopsis" : "A reluctant hobbit, Bilbo Baggins, sets out to the Lonely Mountain with a spirited group of dwarves to reclaim their mountain home - and the gold within it - from the dragon Smaug."
+}
+{
+        "_id" : ObjectId("5c2479e48f376e42e1ee110e"),
+        "title" : "The Hobbit:The Battle Of Five Armies",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2012,
+        "Franchise" : "The Hobbit",
+        "synopsis" : "Bilbo and company are forced to enagage in a war against of array of combatants and keep the Lonely Mountain from falling into the hands of rising darkness."
+}
+{
+        "_id" : ObjectId("5c2478e08f376e42e1ee110d"),
+        "title" : "The Hobbit:The Desilation Of Smaug",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2013,
+        "Franchise" : "The Hobbit",
+        "synopsis" : "The dwarves, along with Bilbo Baggins and Gandalf the Grey, continue their quest to reclaim Erebor, their homeland, from Smaug. Bilbo Baggins is in possession of a mysterious and magical ring."
+}
+> db.users.insert({username : "ScumbagSteve", full_name : {first : "Scumbag", last : "Steve"}})
+WriteResult({ "nInserted" : 1 })
+> db.createCollection("posts")
+{ "ok" : 1 }
+> db.posts.insert({username : "GoodGuyGreg", title : "Passes out at party", body : "Wakes up early and cleans house"})
+WriteResult({ "nInserted" : 1 })
+> db.posts.insert({username : "GoodGuyGreg", title : "Steals your identity", body : "Raises your credit score"})
+WriteResult({ "nInserted" : 1 })
+> db.posts.insert({username : "GoodGuyGreg", title : "Reports a bug in your code", body : "Sends you a Pull Request"})
+WriteResult({ "nInserted" : 1 })
+> db.posts.insert({username : "ScumbagSteve", title : "Borrows everything", body : "The end"})
+WriteResult({ "nInserted" : 1 })
+> db.posts.insert({username : "ScumbagSteve", title : "Forks your repo on github", body : "Sets to private"})
+WriteResult({ "nInserted" : 1 })
+> db.createCollection("comments")
+{ "ok" : 1 }
+> db.posts.find().pretty()
+{
+        "_id" : ObjectId("5c24a6a28f376e42e1ee1114"),
+        "username" : "GoodGuyGreg",
+        "title" : "Passes out at party",
+        "body" : "Wakes up early and cleans house"
+}
+{
+        "_id" : ObjectId("5c24a6e28f376e42e1ee1115"),
+        "username" : "GoodGuyGreg",
+        "title" : "Steals your identity",
+        "body" : "Raises your credit score"
+}
+{
+        "_id" : ObjectId("5c24a7158f376e42e1ee1116"),
+        "username" : "GoodGuyGreg",
+        "title" : "Reports a bug in your code",
+        "body" : "Sends you a Pull Request"
+}
+{
+        "_id" : ObjectId("5c24a7518f376e42e1ee1117"),
+        "username" : "ScumbagSteve",
+        "title" : "Borrows everything",
+        "body" : "The end"
+}
+{
+        "_id" : ObjectId("5c24a7b98f376e42e1ee1118"),
+        "username" : "ScumbagSteve",
+        "title" : "Forks your repo on github",
+        "body" : "Sets to private"
+}
+> db.posts.insert({username : "ScumbagSteve", title : "Borrows something", body : "Sells it"})
+WriteResult({ "nInserted" : 1 })
+> db.posts.find().pretty()
+{
+        "_id" : ObjectId("5c24a6a28f376e42e1ee1114"),
+        "username" : "GoodGuyGreg",
+        "title" : "Passes out at party",
+        "body" : "Wakes up early and cleans house"
+}
+{
+        "_id" : ObjectId("5c24a6e28f376e42e1ee1115"),
+        "username" : "GoodGuyGreg",
+        "title" : "Steals your identity",
+        "body" : "Raises your credit score"
+}
+{
+        "_id" : ObjectId("5c24a7158f376e42e1ee1116"),
+        "username" : "GoodGuyGreg",
+        "title" : "Reports a bug in your code",
+        "body" : "Sends you a Pull Request"
+}
+{
+        "_id" : ObjectId("5c24a7518f376e42e1ee1117"),
+        "username" : "ScumbagSteve",
+        "title" : "Borrows everything",
+        "body" : "The end"
+}
+{
+        "_id" : ObjectId("5c24a7b98f376e42e1ee1118"),
+        "username" : "ScumbagSteve",
+        "title" : "Forks your repo on github",
+        "body" : "Sets to private"
+}
+{
+        "_id" : ObjectId("5c24af118f376e42e1ee1119"),
+        "username" : "ScumbagSteve",
+        "title" : "Borrows something",
+        "body" : "Sells it"
+}
+> db.comments.insert({username : "GoodGuyGreg", comment : "Hope you got a good deal!", post : "5c24af118f376e42e1ee1119"})
+WriteResult({ "nInserted" : 1 })
+> db.comments.insert({username : "GoodGuyGreg", comment : "Don't violate the licensing agreement!", post : "5c24a7518f376e42e1ee1117"})
+WriteResult({ "nInserted" : 1 })
+> db.comments.insert({username : "ScumbagSteve", comment :"It still isn't clean", post : "5c24a6a28f376e42e1ee1114"})
+WriteResult({ "nInserted" : 1 })
+> db.comments.insert({username : "ScumbagSteve", comment :"Denied your PR cause I found a hack", post : "5c24a7158f376e42e1ee1116"})
+WriteResult({ "nInserted" : 1 })
+> db.users.find().pretty()
+{
+        "_id" : ObjectId("5c24a2dc8f376e42e1ee1112"),
+        "username" : "GoodGuyGreg",
+        "first_name" : "Good Guy",
+        "last_name" : "Greg"
+}
+{
+        "_id" : ObjectId("5c24a6008f376e42e1ee1113"),
+        "username" : "ScumbagSteve",
+        "full_name" : {
+                "first" : "Scumbag",
+                "last" : "Steve"
+        }
+}
+> db.posts.find().pretty()
+{
+        "_id" : ObjectId("5c24a6a28f376e42e1ee1114"),
+        "username" : "GoodGuyGreg",
+        "title" : "Passes out at party",
+        "body" : "Wakes up early and cleans house"
+}
+{
+        "_id" : ObjectId("5c24a6e28f376e42e1ee1115"),
+        "username" : "GoodGuyGreg",
+        "title" : "Steals your identity",
+        "body" : "Raises your credit score"
+}
+{
+        "_id" : ObjectId("5c24a7158f376e42e1ee1116"),
+        "username" : "GoodGuyGreg",
+        "title" : "Reports a bug in your code",
+        "body" : "Sends you a Pull Request"
+}
+{
+        "_id" : ObjectId("5c24a7518f376e42e1ee1117"),
+        "username" : "ScumbagSteve",
+        "title" : "Borrows everything",
+        "body" : "The end"
+}
+{
+        "_id" : ObjectId("5c24a7b98f376e42e1ee1118"),
+        "username" : "ScumbagSteve",
+        "title" : "Forks your repo on github",
+        "body" : "Sets to private"
+}
+{
+        "_id" : ObjectId("5c24af118f376e42e1ee1119"),
+        "username" : "ScumbagSteve",
+        "title" : "Borrows something",
+        "body" : "Sells it"
+}
+> db.posts.find({username: "GoodGuyGreg"})
+{ "_id" : ObjectId("5c24a6a28f376e42e1ee1114"), "username" : "GoodGuyGreg", "title" : "Passes out at party", "body" : "Wakes up early and cleans house" }
+{ "_id" : ObjectId("5c24a6e28f376e42e1ee1115"), "username" : "GoodGuyGreg", "title" : "Steals your identity", "body" : "Raises your credit score" }
+{ "_id" : ObjectId("5c24a7158f376e42e1ee1116"), "username" : "GoodGuyGreg", "title" : "Reports a bug in your code", "body" : "Sends you a Pull Request" }
+> db.posts.find({username: "GoodGuyGreg"}).pretty()
+{
+        "_id" : ObjectId("5c24a6a28f376e42e1ee1114"),
+        "username" : "GoodGuyGreg",
+        "title" : "Passes out at party",
+        "body" : "Wakes up early and cleans house"
+}
+{
+        "_id" : ObjectId("5c24a6e28f376e42e1ee1115"),
+        "username" : "GoodGuyGreg",
+        "title" : "Steals your identity",
+        "body" : "Raises your credit score"
+}
+{
+        "_id" : ObjectId("5c24a7158f376e42e1ee1116"),
+        "username" : "GoodGuyGreg",
+        "title" : "Reports a bug in your code",
+        "body" : "Sends you a Pull Request"
+}
+> db.posts.find({username: "ScumbagSteve"}).pretty()
+{
+        "_id" : ObjectId("5c24a7518f376e42e1ee1117"),
+        "username" : "ScumbagSteve",
+        "title" : "Borrows everything",
+        "body" : "The end"
+}
+{
+        "_id" : ObjectId("5c24a7b98f376e42e1ee1118"),
+        "username" : "ScumbagSteve",
+        "title" : "Forks your repo on github",
+        "body" : "Sets to private"
+}
+{
+        "_id" : ObjectId("5c24af118f376e42e1ee1119"),
+        "username" : "ScumbagSteve",
+        "title" : "Borrows something",
+        "body" : "Sells it"
+}
+> db.comments.find().pretty()
+{
+        "_id" : ObjectId("5c24af678f376e42e1ee111a"),
+        "username" : "GoodGuyGreg",
+        "comment" : "Hope you got a good deal!",
+        "post" : "5c24af118f376e42e1ee1119"
+}
+{
+        "_id" : ObjectId("5c24afc78f376e42e1ee111b"),
+        "username" : "GoodGuyGreg",
+        "comment" : "Don't violate the licensing agreement!",
+        "post" : "5c24a7518f376e42e1ee1117"
+}
+{
+        "_id" : ObjectId("5c24b18b8f376e42e1ee111c"),
+        "username" : "ScumbagSteve",
+        "comment" : "It still isn't clean",
+        "post" : "5c24a6a28f376e42e1ee1114"
+}
+{
+        "_id" : ObjectId("5c24b1da8f376e42e1ee111d"),
+        "username" : "ScumbagSteve",
+        "comment" : "Denied your PR cause I found a hack",
+        "post" : "5c24a7158f376e42e1ee1116"
+}
+> db.comments.find({username: "GoodGuyGreg"}).pretty()
+{
+        "_id" : ObjectId("5c24af678f376e42e1ee111a"),
+        "username" : "GoodGuyGreg",
+        "comment" : "Hope you got a good deal!",
+        "post" : "5c24af118f376e42e1ee1119"
+}
+{
+        "_id" : ObjectId("5c24afc78f376e42e1ee111b"),
+        "username" : "GoodGuyGreg",
+        "comment" : "Don't violate the licensing agreement!",
+        "post" : "5c24a7518f376e42e1ee1117"
+}
+> db.comments.find({username: "ScumbagSteve"}).pretty()
+{
+        "_id" : ObjectId("5c24b18b8f376e42e1ee111c"),
+        "username" : "ScumbagSteve",
+        "comment" : "It still isn't clean",
+        "post" : "5c24a6a28f376e42e1ee1114"
+}
+{
+        "_id" : ObjectId("5c24b1da8f376e42e1ee111d"),
+        "username" : "ScumbagSteve",
+        "comment" : "Denied your PR cause I found a hack",
+        "post" : "5c24a7158f376e42e1ee1116"
+}
+> var result=db.posts.find({title:"Reports a bug in your code"},{"_id":1})
+> db.comments.find({"post":{$in:result["_id"]}})
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "$in needs an array",
+        "code" : 2,
+        "codeName" : "BadValue"
+}
+> db.comments.find({"post":{"$in":result["_id"]}})
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "$in needs an array",
+        "code" : 2,
+        "codeName" : "BadValue"
+}
+> db.comments.find({"post":{"$in":[result["_id"]]}})
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "InMatchExpression equality cannot be undefined",
+        "code" : 2,
+        "codeName" : "BadValue"
+}
+>  db.comments.find({post: db.posts.findOne({title: "Reports a bug in your code"})._id})
+> db.comments.find({post: db.posts.findOne({title: "Reports a bug in your code"})._id})
+> db.comments.find({post: db.posts.findOne({title: "Reports a bug in your code"},{_id:1})})
+> db.comments.find({post: "5c24a7158f376e42e1ee1116"})
+{ "_id" : ObjectId("5c24b1da8f376e42e1ee111d"), "username" : "ScumbagSteve", "comment" : "Denied your PR cause I found a hack", "post" : "5c24a7158f376e42e1ee1116" }
+> db.comments.find({post: db.posts.findOne({title: "Reports a bug in your code"},{"_id":1})})
+> db.comments.find({post: db.posts.find({title: "Reports a bug in your code"},{"_id":1})})
+> db.posts.find({title: "Reports a bug in your code"},{"_id":1})
+{ "_id" : ObjectId("5c24a7158f376e42e1ee1116") }
+> var result=db.posts.find({title: "Reports a bug in your code"},{"_id":1})
+> db.comments.find({post:result})
+> db.comments.find({post:result["_id"]})
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "cannot compare to undefined",
+        "code" : 2,
+        "codeName" : "BadValue"
+}
+> for comment in comments.find({"post":posts.find_one({"title":"Reports a bug in your code"})["_id"]}):
+...     pprint(comment)
+2018-12-27T17:24:55.524+0530 E QUERY    [thread1] SyntaxError: missing ( after for @(shell):1:4
+> for comment in comments.find({"post":posts.findOne({"title":"Reports a bug in your code"})["_id"]}):     pprint(comment)
+2018-12-27T17:25:24.058+0530 E QUERY    [thread1] SyntaxError: missing ( after for @(shell):1:4
+> db.comments.find({post: db.posts.findOne({title: "Reports a bug in your code"})[_id]})
+2018-12-27T17:27:13.922+0530 E QUERY    [thread1] ReferenceError: _id is not defined :
+@(shell):1:25
+> db.comments.find({post: db.posts.findOne({title: "Reports a bug in your code"})["_id"]})
+> db.comments.aggregate([{$lookup:{post1:db.posts.findOne({title:"Reports a bug in your code"},{"_id":1})}},{$match:{post:post1}}]).pretty()
+2018-12-27T17:41:18.480+0530 E QUERY    [thread1] ReferenceError: post1 is not defined :
+@(shell):1:116
+> db.comments.aggregate([{$lookup:{post:db.posts.findOne({title:"Reports a bug in your code"},{"_id":1})}},{$match:{post:post}}]).pretty()
+2018-12-27T17:41:38.912+0530 E QUERY    [thread1] ReferenceError: post is not defined :
+@(shell):1:115

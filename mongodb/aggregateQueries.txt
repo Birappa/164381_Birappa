@@ -1,0 +1,2252 @@
+MongoDB shell version v3.4.10
+connecting to: mongodb://127.0.0.1:27017
+MongoDB server version: 3.4.10
+Server has startup warnings:
+2018-12-27T22:58:54.153-0700 I CONTROL  [initandlisten]
+2018-12-27T22:58:54.153-0700 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2018-12-27T22:58:54.154-0700 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2018-12-27T22:58:54.154-0700 I CONTROL  [initandlisten]
+> db.zipcodes.find()
+> show dbs
+admin           0.000GB
+local           0.000GB
+mongo_practice  0.000GB
+population      0.002GB
+> use population
+switched to db population
+> db.zipcodes.find().pretty()
+{
+        "_id" : "01005",
+        "city" : "BARRE",
+        "loc" : [
+                -72.108354,
+                42.409698
+        ],
+        "pop" : 4546,
+        "state" : "MA"
+}
+{
+        "_id" : "01007",
+        "city" : "BELCHERTOWN",
+        "loc" : [
+                -72.410953,
+                42.275103
+        ],
+        "pop" : 10579,
+        "state" : "MA"
+}
+{
+        "_id" : "01008",
+        "city" : "BLANDFORD",
+        "loc" : [
+                -72.936114,
+                42.182949
+        ],
+        "pop" : 1240,
+        "state" : "MA"
+}
+{
+        "_id" : "01010",
+        "city" : "BRIMFIELD",
+        "loc" : [
+                -72.188455,
+                42.116543
+        ],
+        "pop" : 3706,
+        "state" : "MA"
+}
+{
+        "_id" : "01012",
+        "city" : "CHESTERFIELD",
+        "loc" : [
+                -72.833309,
+                42.38167
+        ],
+        "pop" : 177,
+        "state" : "MA"
+}
+{
+        "_id" : "01011",
+        "city" : "CHESTER",
+        "loc" : [
+                -72.988761,
+                42.279421
+        ],
+        "pop" : 1688,
+        "state" : "MA"
+}
+{
+        "_id" : "01020",
+        "city" : "CHICOPEE",
+        "loc" : [
+                -72.576142,
+                42.176443
+        ],
+        "pop" : 31495,
+        "state" : "MA"
+}
+{
+        "_id" : "01022",
+        "city" : "WESTOVER AFB",
+        "loc" : [
+                -72.558657,
+                42.196672
+        ],
+        "pop" : 1764,
+        "state" : "MA"
+}
+{
+        "_id" : "01026",
+        "city" : "CUMMINGTON",
+        "loc" : [
+                -72.905767,
+                42.435296
+        ],
+        "pop" : 1484,
+        "state" : "MA"
+}
+{
+        "_id" : "01027",
+        "city" : "MOUNT TOM",
+        "loc" : [
+                -72.679921,
+                42.264319
+        ],
+        "pop" : 16864,
+        "state" : "MA"
+}
+{
+        "_id" : "01028",
+        "city" : "EAST LONGMEADOW",
+        "loc" : [
+                -72.505565,
+                42.067203
+        ],
+        "pop" : 13367,
+        "state" : "MA"
+}
+{
+        "_id" : "01030",
+        "city" : "FEEDING HILLS",
+        "loc" : [
+                -72.675077,
+                42.07182
+        ],
+        "pop" : 11985,
+        "state" : "MA"
+}
+{
+        "_id" : "01031",
+        "city" : "GILBERTVILLE",
+        "loc" : [
+                -72.198585,
+                42.332194
+        ],
+        "pop" : 2385,
+        "state" : "MA"
+}
+{
+        "_id" : "01032",
+        "city" : "GOSHEN",
+        "loc" : [
+                -72.844092,
+                42.466234
+        ],
+        "pop" : 122,
+        "state" : "MA"
+}
+{
+        "_id" : "01033",
+        "city" : "GRANBY",
+        "loc" : [
+                -72.520001,
+                42.255704
+        ],
+        "pop" : 5526,
+        "state" : "MA"
+}
+{
+        "_id" : "01034",
+        "city" : "TOLLAND",
+        "loc" : [
+                -72.908793,
+                42.070234
+        ],
+        "pop" : 1652,
+        "state" : "MA"
+}
+{
+        "_id" : "01035",
+        "city" : "HADLEY",
+        "loc" : [
+                -72.571499,
+                42.36062
+        ],
+        "pop" : 4231,
+        "state" : "MA"
+}
+{
+        "_id" : "01036",
+        "city" : "HAMPDEN",
+        "loc" : [
+                -72.431823,
+                42.064756
+        ],
+        "pop" : 4709,
+        "state" : "MA"
+}
+{
+        "_id" : "01038",
+        "city" : "HATFIELD",
+        "loc" : [
+                -72.616735,
+                42.38439
+        ],
+        "pop" : 3184,
+        "state" : "MA"
+}
+{
+        "_id" : "01013",
+        "city" : "CHICOPEE",
+        "loc" : [
+                -72.607962,
+                42.162046
+        ],
+        "pop" : 23396,
+        "state" : "MA"
+}
+Type "it" for more
+> db.zipcodes.find({"city":"ATLANTA","state":"GA"}).pretty()
+{
+        "_id" : "30305",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.385145,
+                33.831963
+        ],
+        "pop" : 19122,
+        "state" : "GA"
+}
+{
+        "_id" : "30303",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.388846,
+                33.752504
+        ],
+        "pop" : 1845,
+        "state" : "GA"
+}
+{
+        "_id" : "30306",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.351418,
+                33.786027
+        ],
+        "pop" : 20081,
+        "state" : "GA"
+}
+{
+        "_id" : "30307",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.335957,
+                33.769138
+        ],
+        "pop" : 16330,
+        "state" : "GA"
+}
+{
+        "_id" : "30308",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.375744,
+                33.771839
+        ],
+        "pop" : 8549,
+        "state" : "GA"
+}
+{
+        "_id" : "30309",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.388338,
+                33.798407
+        ],
+        "pop" : 14766,
+        "state" : "GA"
+}
+{
+        "_id" : "30310",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.423173,
+                33.727849
+        ],
+        "pop" : 34017,
+        "state" : "GA"
+}
+{
+        "_id" : "30311",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.470219,
+                33.722957
+        ],
+        "pop" : 34880,
+        "state" : "GA"
+}
+{
+        "_id" : "30315",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.380771,
+                33.705062
+        ],
+        "pop" : 41061,
+        "state" : "GA"
+}
+{
+        "_id" : "30314",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.425546,
+                33.756103
+        ],
+        "pop" : 26649,
+        "state" : "GA"
+}
+{
+        "_id" : "30316",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.333913,
+                33.721686
+        ],
+        "pop" : 34668,
+        "state" : "GA"
+}
+{
+        "_id" : "30317",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.31685,
+                33.749788
+        ],
+        "pop" : 16395,
+        "state" : "GA"
+}
+{
+        "_id" : "30318",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.445432,
+                33.786454
+        ],
+        "pop" : 53894,
+        "state" : "GA"
+}
+{
+        "_id" : "30319",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.335091,
+                33.868728
+        ],
+        "pop" : 32138,
+        "state" : "GA"
+}
+{
+        "_id" : "30324",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.354867,
+                33.820609
+        ],
+        "pop" : 15044,
+        "state" : "GA"
+}
+{
+        "_id" : "30313",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.39352,
+                33.76825
+        ],
+        "pop" : 8038,
+        "state" : "GA"
+}
+{
+        "_id" : "30312",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.378125,
+                33.746749
+        ],
+        "pop" : 17683,
+        "state" : "GA"
+}
+{
+        "_id" : "30326",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.358232,
+                33.848168
+        ],
+        "pop" : 125,
+        "state" : "GA"
+}
+{
+        "_id" : "30330",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.434735,
+                33.70645
+        ],
+        "pop" : 643,
+        "state" : "GA"
+}
+{
+        "_id" : "30329",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.321402,
+                33.823555
+        ],
+        "pop" : 17013,
+        "state" : "GA"
+}
+Type "it" for more
+> db.zipcodes.find({"city":"ATLANTA"},{$or:{"state":"GA"}}).pretty()
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "Unsupported projection option: $or: { state: \"GA\" }",
+        "code" : 2,
+        "codeName" : "BadValue"
+}
+> db.zipcodes.find({{"city":"ATLANTA"},{$or:{"state":"GA"}}}).pretty()
+2018-12-28T13:47:13.736+0530 E QUERY    [thread1] SyntaxError: invalid property id @(shell):1:18
+> db.zipcodes.find({$and:[{"city":"ATLANTA"},{"state":"GA"}]}).pretty()
+{
+        "_id" : "30305",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.385145,
+                33.831963
+        ],
+        "pop" : 19122,
+        "state" : "GA"
+}
+{
+        "_id" : "30303",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.388846,
+                33.752504
+        ],
+        "pop" : 1845,
+        "state" : "GA"
+}
+{
+        "_id" : "30306",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.351418,
+                33.786027
+        ],
+        "pop" : 20081,
+        "state" : "GA"
+}
+{
+        "_id" : "30307",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.335957,
+                33.769138
+        ],
+        "pop" : 16330,
+        "state" : "GA"
+}
+{
+        "_id" : "30308",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.375744,
+                33.771839
+        ],
+        "pop" : 8549,
+        "state" : "GA"
+}
+{
+        "_id" : "30309",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.388338,
+                33.798407
+        ],
+        "pop" : 14766,
+        "state" : "GA"
+}
+{
+        "_id" : "30310",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.423173,
+                33.727849
+        ],
+        "pop" : 34017,
+        "state" : "GA"
+}
+{
+        "_id" : "30311",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.470219,
+                33.722957
+        ],
+        "pop" : 34880,
+        "state" : "GA"
+}
+{
+        "_id" : "30315",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.380771,
+                33.705062
+        ],
+        "pop" : 41061,
+        "state" : "GA"
+}
+{
+        "_id" : "30314",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.425546,
+                33.756103
+        ],
+        "pop" : 26649,
+        "state" : "GA"
+}
+{
+        "_id" : "30316",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.333913,
+                33.721686
+        ],
+        "pop" : 34668,
+        "state" : "GA"
+}
+{
+        "_id" : "30317",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.31685,
+                33.749788
+        ],
+        "pop" : 16395,
+        "state" : "GA"
+}
+{
+        "_id" : "30318",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.445432,
+                33.786454
+        ],
+        "pop" : 53894,
+        "state" : "GA"
+}
+{
+        "_id" : "30319",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.335091,
+                33.868728
+        ],
+        "pop" : 32138,
+        "state" : "GA"
+}
+{
+        "_id" : "30324",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.354867,
+                33.820609
+        ],
+        "pop" : 15044,
+        "state" : "GA"
+}
+{
+        "_id" : "30313",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.39352,
+                33.76825
+        ],
+        "pop" : 8038,
+        "state" : "GA"
+}
+{
+        "_id" : "30312",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.378125,
+                33.746749
+        ],
+        "pop" : 17683,
+        "state" : "GA"
+}
+{
+        "_id" : "30326",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.358232,
+                33.848168
+        ],
+        "pop" : 125,
+        "state" : "GA"
+}
+{
+        "_id" : "30330",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.434735,
+                33.70645
+        ],
+        "pop" : 643,
+        "state" : "GA"
+}
+{
+        "_id" : "30329",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.321402,
+                33.823555
+        ],
+        "pop" : 17013,
+        "state" : "GA"
+}
+Type "it" for more
+> db.zipcodes.aggregate([{$match:{"city":"ATLANTA"}}])
+{ "_id" : "14808", "city" : "ATLANTA", "loc" : [ -77.480091, 42.556269 ], "pop" : 472, "state" : "NY" }
+{ "_id" : "30305", "city" : "ATLANTA", "loc" : [ -84.385145, 33.831963 ], "pop" : 19122, "state" : "GA" }
+{ "_id" : "30303", "city" : "ATLANTA", "loc" : [ -84.388846, 33.752504 ], "pop" : 1845, "state" : "GA" }
+{ "_id" : "30306", "city" : "ATLANTA", "loc" : [ -84.351418, 33.786027 ], "pop" : 20081, "state" : "GA" }
+{ "_id" : "30307", "city" : "ATLANTA", "loc" : [ -84.335957, 33.769138 ], "pop" : 16330, "state" : "GA" }
+{ "_id" : "30308", "city" : "ATLANTA", "loc" : [ -84.375744, 33.771839 ], "pop" : 8549, "state" : "GA" }
+{ "_id" : "30309", "city" : "ATLANTA", "loc" : [ -84.388338, 33.798407 ], "pop" : 14766, "state" : "GA" }
+{ "_id" : "30310", "city" : "ATLANTA", "loc" : [ -84.423173, 33.727849 ], "pop" : 34017, "state" : "GA" }
+{ "_id" : "30311", "city" : "ATLANTA", "loc" : [ -84.470219, 33.722957 ], "pop" : 34880, "state" : "GA" }
+{ "_id" : "30315", "city" : "ATLANTA", "loc" : [ -84.380771, 33.705062 ], "pop" : 41061, "state" : "GA" }
+{ "_id" : "30314", "city" : "ATLANTA", "loc" : [ -84.425546, 33.756103 ], "pop" : 26649, "state" : "GA" }
+{ "_id" : "30316", "city" : "ATLANTA", "loc" : [ -84.333913, 33.721686 ], "pop" : 34668, "state" : "GA" }
+{ "_id" : "30317", "city" : "ATLANTA", "loc" : [ -84.31685, 33.749788 ], "pop" : 16395, "state" : "GA" }
+{ "_id" : "30318", "city" : "ATLANTA", "loc" : [ -84.445432, 33.786454 ], "pop" : 53894, "state" : "GA" }
+{ "_id" : "30319", "city" : "ATLANTA", "loc" : [ -84.335091, 33.868728 ], "pop" : 32138, "state" : "GA" }
+{ "_id" : "30324", "city" : "ATLANTA", "loc" : [ -84.354867, 33.820609 ], "pop" : 15044, "state" : "GA" }
+{ "_id" : "30313", "city" : "ATLANTA", "loc" : [ -84.39352, 33.76825 ], "pop" : 8038, "state" : "GA" }
+{ "_id" : "30312", "city" : "ATLANTA", "loc" : [ -84.378125, 33.746749 ], "pop" : 17683, "state" : "GA" }
+{ "_id" : "30326", "city" : "ATLANTA", "loc" : [ -84.358232, 33.848168 ], "pop" : 125, "state" : "GA" }
+{ "_id" : "30330", "city" : "ATLANTA", "loc" : [ -84.434735, 33.70645 ], "pop" : 643, "state" : "GA" }
+Type "it" for more
+> db.zipcodes.aggregate([{$match:{"city":"ATLANTA"},{"state":"GA"}}]).pretty()
+2018-12-28T14:05:47.166+0530 E QUERY    [thread1] SyntaxError: invalid property id @(shell):1:50
+> db.zipcodes.aggregate([{$match:{$and:[{"city":"ATLANTA"},{"state":"GA"}]}}]).pretty()
+{
+        "_id" : "30305",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.385145,
+                33.831963
+        ],
+        "pop" : 19122,
+        "state" : "GA"
+}
+{
+        "_id" : "30303",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.388846,
+                33.752504
+        ],
+        "pop" : 1845,
+        "state" : "GA"
+}
+{
+        "_id" : "30306",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.351418,
+                33.786027
+        ],
+        "pop" : 20081,
+        "state" : "GA"
+}
+{
+        "_id" : "30307",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.335957,
+                33.769138
+        ],
+        "pop" : 16330,
+        "state" : "GA"
+}
+{
+        "_id" : "30308",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.375744,
+                33.771839
+        ],
+        "pop" : 8549,
+        "state" : "GA"
+}
+{
+        "_id" : "30309",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.388338,
+                33.798407
+        ],
+        "pop" : 14766,
+        "state" : "GA"
+}
+{
+        "_id" : "30310",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.423173,
+                33.727849
+        ],
+        "pop" : 34017,
+        "state" : "GA"
+}
+{
+        "_id" : "30311",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.470219,
+                33.722957
+        ],
+        "pop" : 34880,
+        "state" : "GA"
+}
+{
+        "_id" : "30315",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.380771,
+                33.705062
+        ],
+        "pop" : 41061,
+        "state" : "GA"
+}
+{
+        "_id" : "30314",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.425546,
+                33.756103
+        ],
+        "pop" : 26649,
+        "state" : "GA"
+}
+{
+        "_id" : "30316",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.333913,
+                33.721686
+        ],
+        "pop" : 34668,
+        "state" : "GA"
+}
+{
+        "_id" : "30317",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.31685,
+                33.749788
+        ],
+        "pop" : 16395,
+        "state" : "GA"
+}
+{
+        "_id" : "30318",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.445432,
+                33.786454
+        ],
+        "pop" : 53894,
+        "state" : "GA"
+}
+{
+        "_id" : "30319",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.335091,
+                33.868728
+        ],
+        "pop" : 32138,
+        "state" : "GA"
+}
+{
+        "_id" : "30324",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.354867,
+                33.820609
+        ],
+        "pop" : 15044,
+        "state" : "GA"
+}
+{
+        "_id" : "30313",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.39352,
+                33.76825
+        ],
+        "pop" : 8038,
+        "state" : "GA"
+}
+{
+        "_id" : "30312",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.378125,
+                33.746749
+        ],
+        "pop" : 17683,
+        "state" : "GA"
+}
+{
+        "_id" : "30326",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.358232,
+                33.848168
+        ],
+        "pop" : 125,
+        "state" : "GA"
+}
+{
+        "_id" : "30330",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.434735,
+                33.70645
+        ],
+        "pop" : 643,
+        "state" : "GA"
+}
+{
+        "_id" : "30329",
+        "city" : "ATLANTA",
+        "loc" : [
+                -84.321402,
+                33.823555
+        ],
+        "pop" : 17013,
+        "state" : "GA"
+}
+Type "it" for more
+> db.zipcodes.aggregate([{$group:{"city":"ATLANTA",count:{$sum:1}}}]).pretty()
+assert: command failed: {
+        "ok" : 0,
+        "errmsg" : "The field 'city' must be an accumulator object",
+        "code" : 40234,
+        "codeName" : "Location40234"
+} : aggregate failed
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+doassert@src/mongo/shell/assert.js:16:14
+assert.commandWorked@src/mongo/shell/assert.js:370:5
+DBCollection.prototype.aggregate@src/mongo/shell/collection.js:1319:5
+@(shell):1:1
+
+2018-12-28T14:08:57.130+0530 E QUERY    [thread1] Error: command failed: {
+        "ok" : 0,
+        "errmsg" : "The field 'city' must be an accumulator object",
+        "code" : 40234,
+        "codeName" : "Location40234"
+} : aggregate failed :
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+doassert@src/mongo/shell/assert.js:16:14
+assert.commandWorked@src/mongo/shell/assert.js:370:5
+DBCollection.prototype.aggregate@src/mongo/shell/collection.js:1319:5
+@(shell):1:1
+> db.zipcodes.aggregate([{$group:{_id:"$city",count:{$sum:1}}}]).pretty()
+{ "_id" : "HYDABURG", "count" : 1 }
+{ "_id" : "POINT BAKER", "count" : 1 }
+{ "_id" : "METLAKATLA", "count" : 1 }
+{ "_id" : "KETCHIKAN", "count" : 2 }
+{ "_id" : "HOONAH", "count" : 1 }
+{ "_id" : "GUSTAVUS", "count" : 1 }
+{ "_id" : "BORDER", "count" : 1 }
+{ "_id" : "VENETIE", "count" : 1 }
+{ "_id" : "NUIQSUT", "count" : 1 }
+{ "_id" : "CHALKYITSIK", "count" : 1 }
+{ "_id" : "BREVIG MISSION", "count" : 1 }
+{ "_id" : "TELLER", "count" : 1 }
+{ "_id" : "STEVENS VILLAGE", "count" : 1 }
+{ "_id" : "SHISHMAREF", "count" : 1 }
+{ "_id" : "SAVOONGA", "count" : 1 }
+{ "_id" : "SHAKTOOLIK", "count" : 1 }
+{ "_id" : "NENANA", "count" : 1 }
+{ "_id" : "RAMPART", "count" : 1 }
+{ "_id" : "NULATO", "count" : 1 }
+{ "_id" : "NOORVIK", "count" : 1 }
+Type "it" for more
+> db.zipcodes.aggregate([{$group:{_id:null,city:{"city":"ATLANTA"},count:{$sum:1}}}]).pretty()
+assert: command failed: {
+        "ok" : 0,
+        "errmsg" : "The field 'city' must be an accumulator object",
+        "code" : 40234,
+        "codeName" : "Location40234"
+} : aggregate failed
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+doassert@src/mongo/shell/assert.js:16:14
+assert.commandWorked@src/mongo/shell/assert.js:370:5
+DBCollection.prototype.aggregate@src/mongo/shell/collection.js:1319:5
+@(shell):1:1
+
+2018-12-28T14:17:06.096+0530 E QUERY    [thread1] Error: command failed: {
+        "ok" : 0,
+        "errmsg" : "The field 'city' must be an accumulator object",
+        "code" : 40234,
+        "codeName" : "Location40234"
+} : aggregate failed :
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+doassert@src/mongo/shell/assert.js:16:14
+assert.commandWorked@src/mongo/shell/assert.js:370:5
+DBCollection.prototype.aggregate@src/mongo/shell/collection.js:1319:5
+@(shell):1:1
+> db.zipcodes.aggregate([{$group:{_id:null,city:{$city:"ATLANTA"},count:{$sum:1}}}]).pretty()
+assert: command failed: {
+        "ok" : 0,
+        "errmsg" : "unknown group operator '$city'",
+        "code" : 15952,
+        "codeName" : "Location15952"
+} : aggregate failed
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+doassert@src/mongo/shell/assert.js:16:14
+assert.commandWorked@src/mongo/shell/assert.js:370:5
+DBCollection.prototype.aggregate@src/mongo/shell/collection.js:1319:5
+@(shell):1:1
+
+2018-12-28T14:25:42.023+0530 E QUERY    [thread1] Error: command failed: {
+        "ok" : 0,
+        "errmsg" : "unknown group operator '$city'",
+        "code" : 15952,
+        "codeName" : "Location15952"
+} : aggregate failed :
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+doassert@src/mongo/shell/assert.js:16:14
+assert.commandWorked@src/mongo/shell/assert.js:370:5
+DBCollection.prototype.aggregate@src/mongo/shell/collection.js:1319:5
+@(shell):1:1
+> db.zipcodes.aggregate([{$group:{_id:null,city:{"$city":"ATLANTA"},count:{$sum:1}}}]).pretty()
+assert: command failed: {
+        "ok" : 0,
+        "errmsg" : "unknown group operator '$city'",
+        "code" : 15952,
+        "codeName" : "Location15952"
+} : aggregate failed
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+doassert@src/mongo/shell/assert.js:16:14
+assert.commandWorked@src/mongo/shell/assert.js:370:5
+DBCollection.prototype.aggregate@src/mongo/shell/collection.js:1319:5
+@(shell):1:1
+
+2018-12-28T14:26:02.382+0530 E QUERY    [thread1] Error: command failed: {
+        "ok" : 0,
+        "errmsg" : "unknown group operator '$city'",
+        "code" : 15952,
+        "codeName" : "Location15952"
+} : aggregate failed :
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+doassert@src/mongo/shell/assert.js:16:14
+assert.commandWorked@src/mongo/shell/assert.js:370:5
+DBCollection.prototype.aggregate@src/mongo/shell/collection.js:1319:5
+@(shell):1:1
+> db.zipcodes.aggregate([{$group:{_id:null,city:{"city":"$city"},count:{$sum:1}}}]).pretty()
+assert: command failed: {
+        "ok" : 0,
+        "errmsg" : "The field 'city' must be an accumulator object",
+        "code" : 40234,
+        "codeName" : "Location40234"
+} : aggregate failed
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+doassert@src/mongo/shell/assert.js:16:14
+assert.commandWorked@src/mongo/shell/assert.js:370:5
+DBCollection.prototype.aggregate@src/mongo/shell/collection.js:1319:5
+@(shell):1:1
+
+2018-12-28T14:26:41.743+0530 E QUERY    [thread1] Error: command failed: {
+        "ok" : 0,
+        "errmsg" : "The field 'city' must be an accumulator object",
+        "code" : 40234,
+        "codeName" : "Location40234"
+} : aggregate failed :
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+doassert@src/mongo/shell/assert.js:16:14
+assert.commandWorked@src/mongo/shell/assert.js:370:5
+DBCollection.prototype.aggregate@src/mongo/shell/collection.js:1319:5
+@(shell):1:1
+> db.zipcodes.aggregate([{$group:{_id:"$city",count:{$sum:1}}}]).pretty()
+{ "_id" : "HYDABURG", "count" : 1 }
+{ "_id" : "POINT BAKER", "count" : 1 }
+{ "_id" : "METLAKATLA", "count" : 1 }
+{ "_id" : "KETCHIKAN", "count" : 2 }
+{ "_id" : "HOONAH", "count" : 1 }
+{ "_id" : "GUSTAVUS", "count" : 1 }
+{ "_id" : "BORDER", "count" : 1 }
+{ "_id" : "VENETIE", "count" : 1 }
+{ "_id" : "NUIQSUT", "count" : 1 }
+{ "_id" : "CHALKYITSIK", "count" : 1 }
+{ "_id" : "BREVIG MISSION", "count" : 1 }
+{ "_id" : "TELLER", "count" : 1 }
+{ "_id" : "STEVENS VILLAGE", "count" : 1 }
+{ "_id" : "SHISHMAREF", "count" : 1 }
+{ "_id" : "SAVOONGA", "count" : 1 }
+{ "_id" : "SHAKTOOLIK", "count" : 1 }
+{ "_id" : "NENANA", "count" : 1 }
+{ "_id" : "RAMPART", "count" : 1 }
+{ "_id" : "NULATO", "count" : 1 }
+{ "_id" : "NOORVIK", "count" : 1 }
+Type "it" for more
+> db.zipcodes.aggregate([{$group:{_id:"$city",count:{$sum:1}}}]).pretty()
+{ "_id" : "HYDABURG", "count" : 1 }
+{ "_id" : "POINT BAKER", "count" : 1 }
+{ "_id" : "METLAKATLA", "count" : 1 }
+{ "_id" : "KETCHIKAN", "count" : 2 }
+{ "_id" : "HOONAH", "count" : 1 }
+{ "_id" : "GUSTAVUS", "count" : 1 }
+{ "_id" : "BORDER", "count" : 1 }
+{ "_id" : "VENETIE", "count" : 1 }
+{ "_id" : "NUIQSUT", "count" : 1 }
+{ "_id" : "CHALKYITSIK", "count" : 1 }
+{ "_id" : "BREVIG MISSION", "count" : 1 }
+{ "_id" : "TELLER", "count" : 1 }
+{ "_id" : "STEVENS VILLAGE", "count" : 1 }
+{ "_id" : "SHISHMAREF", "count" : 1 }
+{ "_id" : "SAVOONGA", "count" : 1 }
+{ "_id" : "SHAKTOOLIK", "count" : 1 }
+{ "_id" : "NENANA", "count" : 1 }
+{ "_id" : "RAMPART", "count" : 1 }
+{ "_id" : "NULATO", "count" : 1 }
+{ "_id" : "NOORVIK", "count" : 1 }
+Type "it" for more
+> db.zipcodes.aggregate([{$match:{"city":"ATLANTA"}},{$group:{_id:"city",count:{$sum:1}}}]).pretty()
+{ "_id" : "city", "count" : 41 }
+> db.zipcodes.aggregate([{$match:{"city":"ATLANTA"}},{$group:{_id:"city",pop:{"pop":"$pop"},count:{$sum:1}}}]).pretty()
+assert: command failed: {
+        "ok" : 0,
+        "errmsg" : "The field 'pop' must be an accumulator object",
+        "code" : 40234,
+        "codeName" : "Location40234"
+} : aggregate failed
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+doassert@src/mongo/shell/assert.js:16:14
+assert.commandWorked@src/mongo/shell/assert.js:370:5
+DBCollection.prototype.aggregate@src/mongo/shell/collection.js:1319:5
+@(shell):1:1
+
+2018-12-28T14:37:55.695+0530 E QUERY    [thread1] Error: command failed: {
+        "ok" : 0,
+        "errmsg" : "The field 'pop' must be an accumulator object",
+        "code" : 40234,
+        "codeName" : "Location40234"
+} : aggregate failed :
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+doassert@src/mongo/shell/assert.js:16:14
+assert.commandWorked@src/mongo/shell/assert.js:370:5
+DBCollection.prototype.aggregate@src/mongo/shell/collection.js:1319:5
+@(shell):1:1
+> db.zipcodes.aggregate([{$match:{"city":"ATLANTA"}},{$group:{_id:"$city",count:{$sum:"$pop"}}}]).pretty()
+{ "_id" : "ATLANTA", "count" : 630046 }
+> db.zipcodes.aggregate([{$group:{_id:"$city",count:{$sum:"$pop"}}}]).pretty()
+{ "_id" : "HYDABURG", "count" : 891 }
+{ "_id" : "POINT BAKER", "count" : 426 }
+{ "_id" : "METLAKATLA", "count" : 1469 }
+{ "_id" : "KETCHIKAN", "count" : 14308 }
+{ "_id" : "HOONAH", "count" : 1670 }
+{ "_id" : "GUSTAVUS", "count" : 258 }
+{ "_id" : "BORDER", "count" : 1805 }
+{ "_id" : "VENETIE", "count" : 184 }
+{ "_id" : "NUIQSUT", "count" : 354 }
+{ "_id" : "CHALKYITSIK", "count" : 99 }
+{ "_id" : "BREVIG MISSION", "count" : 198 }
+{ "_id" : "TELLER", "count" : 260 }
+{ "_id" : "STEVENS VILLAGE", "count" : 110 }
+{ "_id" : "SHISHMAREF", "count" : 456 }
+{ "_id" : "SAVOONGA", "count" : 519 }
+{ "_id" : "SHAKTOOLIK", "count" : 183 }
+{ "_id" : "NENANA", "count" : 393 }
+{ "_id" : "RAMPART", "count" : 68 }
+{ "_id" : "NULATO", "count" : 492 }
+{ "_id" : "NOORVIK", "count" : 534 }
+Type "it" for more
+> db.zipcodes.aggregate([{$group:{_id:"$city",pop:{$sum:"$pop"}}}]).pretty()
+{ "_id" : "HYDABURG", "pop" : 891 }
+{ "_id" : "POINT BAKER", "pop" : 426 }
+{ "_id" : "METLAKATLA", "pop" : 1469 }
+{ "_id" : "KETCHIKAN", "pop" : 14308 }
+{ "_id" : "HOONAH", "pop" : 1670 }
+{ "_id" : "GUSTAVUS", "pop" : 258 }
+{ "_id" : "BORDER", "pop" : 1805 }
+{ "_id" : "VENETIE", "pop" : 184 }
+{ "_id" : "NUIQSUT", "pop" : 354 }
+{ "_id" : "CHALKYITSIK", "pop" : 99 }
+{ "_id" : "BREVIG MISSION", "pop" : 198 }
+{ "_id" : "TELLER", "pop" : 260 }
+{ "_id" : "STEVENS VILLAGE", "pop" : 110 }
+{ "_id" : "SHISHMAREF", "pop" : 456 }
+{ "_id" : "SAVOONGA", "pop" : 519 }
+{ "_id" : "SHAKTOOLIK", "pop" : 183 }
+{ "_id" : "NENANA", "pop" : 393 }
+{ "_id" : "RAMPART", "pop" : 68 }
+{ "_id" : "NULATO", "pop" : 492 }
+{ "_id" : "NOORVIK", "pop" : 534 }
+Type "it" for more
+> db.zipcodes.aggregate([{$match:{"city":"$city"}},{$group:{_id:"$city",pop:{$sum:"$pop"}}}]).pretty()
+> db.zipcodes.aggregate([{$match:{"city":"$city"}},{$group:{_id:"city",pop:{$sum:"$pop"}}}]).pretty()
+> db.zipcodes.aggregate([{$group:{_id:"$state",pop:{$sum:"$pop"}}}]).pretty()
+{ "_id" : "AK", "pop" : 544698 }
+{ "_id" : "AZ", "pop" : 3665228 }
+{ "_id" : "UT", "pop" : 1722850 }
+{ "_id" : "WY", "pop" : 453528 }
+{ "_id" : "CO", "pop" : 3293755 }
+{ "_id" : "ID", "pop" : 1006749 }
+{ "_id" : "OK", "pop" : 3145585 }
+{ "_id" : "AR", "pop" : 2350725 }
+{ "_id" : "LA", "pop" : 4217595 }
+{ "_id" : "NV", "pop" : 1201833 }
+{ "_id" : "NE", "pop" : 1578139 }
+{ "_id" : "KS", "pop" : 2475285 }
+{ "_id" : "MO", "pop" : 5110648 }
+{ "_id" : "IL", "pop" : 11427576 }
+{ "_id" : "OH", "pop" : 10846517 }
+{ "_id" : "KY", "pop" : 3675484 }
+{ "_id" : "IN", "pop" : 5544136 }
+{ "_id" : "WI", "pop" : 4891769 }
+{ "_id" : "HI", "pop" : 1108229 }
+{ "_id" : "MS", "pop" : 2573216 }
+Type "it" for more
+> db.zipcodes.aggregate([{$group:{_id:"$state",pop:{$sum:"$pop"}}},{$sort:{pop:-1}}]).pretty()
+{ "_id" : "CA", "pop" : 29754890 }
+{ "_id" : "NY", "pop" : 17990402 }
+{ "_id" : "TX", "pop" : 16984601 }
+{ "_id" : "FL", "pop" : 12686644 }
+{ "_id" : "PA", "pop" : 11881643 }
+{ "_id" : "IL", "pop" : 11427576 }
+{ "_id" : "OH", "pop" : 10846517 }
+{ "_id" : "MI", "pop" : 9295297 }
+{ "_id" : "NJ", "pop" : 7730188 }
+{ "_id" : "NC", "pop" : 6628637 }
+{ "_id" : "GA", "pop" : 6478216 }
+{ "_id" : "VA", "pop" : 6181479 }
+{ "_id" : "MA", "pop" : 6016425 }
+{ "_id" : "IN", "pop" : 5544136 }
+{ "_id" : "MO", "pop" : 5110648 }
+{ "_id" : "WI", "pop" : 4891769 }
+{ "_id" : "TN", "pop" : 4876457 }
+{ "_id" : "WA", "pop" : 4866692 }
+{ "_id" : "MD", "pop" : 4781379 }
+{ "_id" : "MN", "pop" : 4372982 }
+Type "it" for more
+> db.zipcodes.aggregate([{$group:{_id:"$state",pop:{$sum:"$pop"}}},{$sort:{pop:-1}},{ $limit : 3 }]).pretty()
+{ "_id" : "CA", "pop" : 29754890 }
+{ "_id" : "NY", "pop" : 17990402 }
+{ "_id" : "TX", "pop" : 16984601 }
+> db.zipcodes.aggregate([{$group:{city:"$city",state:"$state",pop:{$sum:"$pop"}}}]).pretty()
+assert: command failed: {
+        "ok" : 0,
+        "errmsg" : "The field 'city' must be an accumulator object",
+        "code" : 40234,
+        "codeName" : "Location40234"
+} : aggregate failed
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+doassert@src/mongo/shell/assert.js:16:14
+assert.commandWorked@src/mongo/shell/assert.js:370:5
+DBCollection.prototype.aggregate@src/mongo/shell/collection.js:1319:5
+@(shell):1:1
+
+2018-12-28T14:53:17.146+0530 E QUERY    [thread1] Error: command failed: {
+        "ok" : 0,
+        "errmsg" : "The field 'city' must be an accumulator object",
+        "code" : 40234,
+        "codeName" : "Location40234"
+} : aggregate failed :
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+doassert@src/mongo/shell/assert.js:16:14
+assert.commandWorked@src/mongo/shell/assert.js:370:5
+DBCollection.prototype.aggregate@src/mongo/shell/collection.js:1319:5
+@(shell):1:1
+> db.zipcodes.aggregate([{$group:{_id:{city:"$city",state:"$state"},pop:{$sum:"$pop"}}}]).pretty()
+{ "_id" : { "city" : "HYDABURG", "state" : "AK" }, "pop" : 891 }
+{ "_id" : { "city" : "POINT BAKER", "state" : "AK" }, "pop" : 426 }
+{ "_id" : { "city" : "SITKA", "state" : "AK" }, "pop" : 8638 }
+{ "_id" : { "city" : "CRAIG", "state" : "AK" }, "pop" : 1398 }
+{ "_id" : { "city" : "KETCHIKAN", "state" : "AK" }, "pop" : 14308 }
+{ "_id" : { "city" : "PETERSBURG", "state" : "AK" }, "pop" : 4253 }
+{ "_id" : { "city" : "GUSTAVUS", "state" : "AK" }, "pop" : 258 }
+{ "_id" : { "city" : "ANGOON", "state" : "AK" }, "pop" : 1002 }
+{ "_id" : { "city" : "JUNEAU", "state" : "AK" }, "pop" : 24947 }
+{ "_id" : { "city" : "NUIQSUT", "state" : "AK" }, "pop" : 354 }
+{ "_id" : { "city" : "CHALKYITSIK", "state" : "AK" }, "pop" : 99 }
+{ "_id" : { "city" : "AMBLER", "state" : "AK" }, "pop" : 8 }
+{ "_id" : { "city" : "WHITE MOUNTAIN", "state" : "AK" }, "pop" : 194 }
+{ "_id" : { "city" : "RUBY", "state" : "AK" }, "pop" : 172 }
+{ "_id" : { "city" : "TELLER", "state" : "AK" }, "pop" : 260 }
+{ "_id" : { "city" : "SHUNGNAK", "state" : "AK" }, "pop" : 0 }
+{ "_id" : { "city" : "SHAKTOOLIK", "state" : "AK" }, "pop" : 183 }
+{ "_id" : { "city" : "NULATO", "state" : "AK" }, "pop" : 492 }
+{ "_id" : { "city" : "NOATAK", "state" : "AK" }, "pop" : 395 }
+{ "_id" : { "city" : "POINT LAY", "state" : "AK" }, "pop" : 139 }
+Type "it" for more
+> db.zipcodes.aggregate([{$group:{_id:{city:"$city",state:"$state"},pop:{$sum:"$pop"}}}]).pretty()
+{ "_id" : { "city" : "HYDABURG", "state" : "AK" }, "pop" : 891 }
+{ "_id" : { "city" : "POINT BAKER", "state" : "AK" }, "pop" : 426 }
+{ "_id" : { "city" : "SITKA", "state" : "AK" }, "pop" : 8638 }
+{ "_id" : { "city" : "CRAIG", "state" : "AK" }, "pop" : 1398 }
+{ "_id" : { "city" : "KETCHIKAN", "state" : "AK" }, "pop" : 14308 }
+{ "_id" : { "city" : "PETERSBURG", "state" : "AK" }, "pop" : 4253 }
+{ "_id" : { "city" : "GUSTAVUS", "state" : "AK" }, "pop" : 258 }
+{ "_id" : { "city" : "ANGOON", "state" : "AK" }, "pop" : 1002 }
+{ "_id" : { "city" : "JUNEAU", "state" : "AK" }, "pop" : 24947 }
+{ "_id" : { "city" : "NUIQSUT", "state" : "AK" }, "pop" : 354 }
+{ "_id" : { "city" : "CHALKYITSIK", "state" : "AK" }, "pop" : 99 }
+{ "_id" : { "city" : "AMBLER", "state" : "AK" }, "pop" : 8 }
+{ "_id" : { "city" : "WHITE MOUNTAIN", "state" : "AK" }, "pop" : 194 }
+{ "_id" : { "city" : "RUBY", "state" : "AK" }, "pop" : 172 }
+{ "_id" : { "city" : "TELLER", "state" : "AK" }, "pop" : 260 }
+{ "_id" : { "city" : "SHUNGNAK", "state" : "AK" }, "pop" : 0 }
+{ "_id" : { "city" : "SHAKTOOLIK", "state" : "AK" }, "pop" : 183 }
+{ "_id" : { "city" : "NULATO", "state" : "AK" }, "pop" : 492 }
+{ "_id" : { "city" : "NOATAK", "state" : "AK" }, "pop" : 395 }
+{ "_id" : { "city" : "POINT LAY", "state" : "AK" }, "pop" : 139 }
+Type "it" for more
+> /
+2018-12-28T14:56:34.668+0530 E QUERY    [thread1] SyntaxError: unterminated regular expression literal @(shell):1:0
+> it
+{ "_id" : { "city" : "MANLEY HOT SPRIN", "state" : "AK" }, "pop" : 122 }
+{ "_id" : { "city" : "KOYUK", "state" : "AK" }, "pop" : 231 }
+{ "_id" : { "city" : "KOBUK", "state" : "AK" }, "pop" : 306 }
+{ "_id" : { "city" : "KAKTOVIK", "state" : "AK" }, "pop" : 245 }
+{ "_id" : { "city" : "PRUDHOE BAY", "state" : "AK" }, "pop" : 153 }
+{ "_id" : { "city" : "HUGHES", "state" : "AK" }, "pop" : 64 }
+{ "_id" : { "city" : "HEALY", "state" : "AK" }, "pop" : 1057 }
+{ "_id" : { "city" : "GAMBELL", "state" : "AK" }, "pop" : 525 }
+{ "_id" : { "city" : "CIRCLE", "state" : "AK" }, "pop" : 73 }
+{ "_id" : { "city" : "CANTWELL", "state" : "AK" }, "pop" : 210 }
+{ "_id" : { "city" : "BUCKLAND", "state" : "AK" }, "pop" : 318 }
+{ "_id" : { "city" : "BEAVER", "state" : "AK" }, "pop" : 103 }
+{ "_id" : { "city" : "NORTH POLE", "state" : "AK" }, "pop" : 14672 }
+{ "_id" : { "city" : "FORT WAINWRIGHT", "state" : "AK" }, "pop" : 6238 }
+{ "_id" : { "city" : "BREVIG MISSION", "state" : "AK" }, "pop" : 198 }
+{ "_id" : { "city" : "NIKOLAI", "state" : "AK" }, "pop" : 109 }
+{ "_id" : { "city" : "YAKUTAT", "state" : "AK" }, "pop" : 705 }
+{ "_id" : { "city" : "UNALASKA", "state" : "AK" }, "pop" : 3089 }
+{ "_id" : { "city" : "UNALAKLEET", "state" : "AK" }, "pop" : 716 }
+{ "_id" : { "city" : "TRAPPER CREEK", "state" : "AK" }, "pop" : 20 }
+Type "it" for more
+> it
+{ "_id" : { "city" : "SOLDOTNA", "state" : "AK" }, "pop" : 9825 }
+{ "_id" : { "city" : "TYONEK", "state" : "AK" }, "pop" : 277 }
+{ "_id" : { "city" : "TUNUNAK", "state" : "AK" }, "pop" : 889 }
+{ "_id" : { "city" : "STEBBINS", "state" : "AK" }, "pop" : 400 }
+{ "_id" : { "city" : "SLEETMUTE", "state" : "AK" }, "pop" : 0 }
+{ "_id" : { "city" : "RUSSIAN MISSION", "state" : "AK" }, "pop" : 0 }
+{ "_id" : { "city" : "SCAMMON BAY", "state" : "AK" }, "pop" : 343 }
+{ "_id" : { "city" : "PLATINUM", "state" : "AK" }, "pop" : 4 }
+{ "_id" : { "city" : "PILOT STATION", "state" : "AK" }, "pop" : 463 }
+{ "_id" : { "city" : "PILOT POINT", "state" : "AK" }, "pop" : 63 }
+{ "_id" : { "city" : "NINILCHIK", "state" : "AK" }, "pop" : 767 }
+{ "_id" : { "city" : "BUTTE", "state" : "AK" }, "pop" : 12358 }
+{ "_id" : { "city" : "NONDALTON", "state" : "AK" }, "pop" : 233 }
+{ "_id" : { "city" : "MOOSE PASS", "state" : "AK" }, "pop" : 1649 }
+{ "_id" : { "city" : "LOWER KALSKAG", "state" : "AK" }, "pop" : 291 }
+{ "_id" : { "city" : "LEVELOCK", "state" : "AK" }, "pop" : 204 }
+{ "_id" : { "city" : "KWETHLUK", "state" : "AK" }, "pop" : 558 }
+{ "_id" : { "city" : "KASILOF", "state" : "AK" }, "pop" : 963 }
+{ "_id" : { "city" : "HOLY CROSS", "state" : "AK" }, "pop" : 277 }
+{ "_id" : { "city" : "GOODNEWS BAY", "state" : "AK" }, "pop" : 305 }
+Type "it" for more
+> it
+{ "_id" : { "city" : "GLENNALLEN", "state" : "AK" }, "pop" : 1024 }
+{ "_id" : { "city" : "CROOKED CREEK", "state" : "AK" }, "pop" : 1 }
+{ "_id" : { "city" : "FALSE PASS", "state" : "AK" }, "pop" : 68 }
+{ "_id" : { "city" : "EGEGIK", "state" : "AK" }, "pop" : 122 }
+{ "_id" : { "city" : "EEK", "state" : "AK" }, "pop" : 254 }
+{ "_id" : { "city" : "CHENEGA BAY", "state" : "AK" }, "pop" : 96 }
+{ "_id" : { "city" : "COOPER LANDING", "state" : "AK" }, "pop" : 252 }
+{ "_id" : { "city" : "CLARKS POINT", "state" : "AK" }, "pop" : 68 }
+{ "_id" : { "city" : "ATMAUTLUAK", "state" : "AK" }, "pop" : 7188 }
+{ "_id" : { "city" : "CLAM GULCH", "state" : "AK" }, "pop" : 133 }
+{ "_id" : { "city" : "CHEFORNAK", "state" : "AK" }, "pop" : 320 }
+{ "_id" : { "city" : "CHEVAK", "state" : "AK" }, "pop" : 0 }
+{ "_id" : { "city" : "ASOTIN", "state" : "WA" }, "pop" : 89 }
+{ "_id" : { "city" : "ALEKNAGIK", "state" : "AK" }, "pop" : 185 }
+{ "_id" : { "city" : "AKIACHAK", "state" : "AK" }, "pop" : 481 }
+{ "_id" : { "city" : "AKUTAN", "state" : "AK" }, "pop" : 589 }
+{ "_id" : { "city" : "PORT HEIDEN", "state" : "AK" }, "pop" : 119 }
+{ "_id" : { "city" : "FORT RICHARDSON", "state" : "AK" }, "pop" : 7979 }
+{ "_id" : { "city" : "WASHTUCNA", "state" : "WA" }, "pop" : 625 }
+{ "_id" : { "city" : "WALLA WALLA", "state" : "WA" }, "pop" : 34993 }
+Type "it" for more
+> it
+{ "_id" : { "city" : "LOWDEN", "state" : "WA" }, "pop" : 1234 }
+{ "_id" : { "city" : "ROYAL CITY", "state" : "WA" }, "pop" : 3388 }
+{ "_id" : { "city" : "PROSSER", "state" : "WA" }, "pop" : 9714 }
+{ "_id" : { "city" : "ROOSEVELT", "state" : "WA" }, "pop" : 172 }
+{ "_id" : { "city" : "POMEROY", "state" : "WA" }, "pop" : 2467 }
+{ "_id" : { "city" : "CUNNINGHAM", "state" : "WA" }, "pop" : 511 }
+{ "_id" : { "city" : "PLYMOUTH", "state" : "WA" }, "pop" : 219 }
+{ "_id" : { "city" : "PATERSON", "state" : "WA" }, "pop" : 94 }
+{ "_id" : { "city" : "MATTAWA", "state" : "WA" }, "pop" : 11812 }
+{ "_id" : { "city" : "MESA", "state" : "WA" }, "pop" : 2382 }
+{ "_id" : { "city" : "LIND", "state" : "WA" }, "pop" : 1134 }
+{ "_id" : { "city" : "KENNEWICK", "state" : "WA" }, "pop" : 59822 }
+{ "_id" : { "city" : "CONNELL", "state" : "WA" }, "pop" : 2699 }
+{ "_id" : { "city" : "COLLEGE PLACE", "state" : "WA" }, "pop" : 6904 }
+{ "_id" : { "city" : "WILBUR", "state" : "WA" }, "pop" : 1238 }
+{ "_id" : { "city" : "VALLEY", "state" : "WA" }, "pop" : 1328 }
+{ "_id" : { "city" : "SPRINGDALE", "state" : "WA" }, "pop" : 361 }
+{ "_id" : { "city" : "RICE", "state" : "WA" }, "pop" : 615 }
+{ "_id" : { "city" : "SAINT JOHN", "state" : "WA" }, "pop" : 765 }
+{ "_id" : { "city" : "ROSALIA", "state" : "WA" }, "pop" : 1081 }
+Type "it" for more
+> it
+{ "_id" : { "city" : "PULLMAN", "state" : "WA" }, "pop" : 25909 }
+{ "_id" : { "city" : "PALOUSE", "state" : "WA" }, "pop" : 1270 }
+{ "_id" : { "city" : "ODESSA", "state" : "WA" }, "pop" : 1324 }
+{ "_id" : { "city" : "NORTHPORT", "state" : "WA" }, "pop" : 462 }
+{ "_id" : { "city" : "METALINE FALLS", "state" : "WA" }, "pop" : 729 }
+{ "_id" : { "city" : "LINCOLN", "state" : "WA" }, "pop" : 31 }
+{ "_id" : { "city" : "MALO", "state" : "WA" }, "pop" : 396 }
+{ "_id" : { "city" : "LACROSSE", "state" : "WA" }, "pop" : 1066 }
+{ "_id" : { "city" : "KETTLE FALLS", "state" : "WA" }, "pop" : 3668 }
+{ "_id" : { "city" : "GRAND COULEE", "state" : "WA" }, "pop" : 1073 }
+{ "_id" : { "city" : "KELLER", "state" : "WA" }, "pop" : 255 }
+{ "_id" : { "city" : "INCHELIUM", "state" : "WA" }, "pop" : 1297 }
+{ "_id" : { "city" : "HARRINGTON", "state" : "WA" }, "pop" : 786 }
+{ "_id" : { "city" : "HARTLINE", "state" : "WA" }, "pop" : 315 }
+{ "_id" : { "city" : "GARFIELD", "state" : "WA" }, "pop" : 795 }
+{ "_id" : { "city" : "GIFFORD", "state" : "WA" }, "pop" : 60 }
+{ "_id" : { "city" : "FARMINGTON", "state" : "WA" }, "pop" : 355 }
+{ "_id" : { "city" : "FRUITLAND", "state" : "WA" }, "pop" : 515 }
+{ "_id" : { "city" : "COULEE DAM", "state" : "WA" }, "pop" : 4636 }
+{ "_id" : { "city" : "ELECTRIC CITY", "state" : "WA" }, "pop" : 1152 }
+Type "it" for more
+> it
+{ "_id" : { "city" : "DAVENPORT", "state" : "WA" }, "pop" : 2383 }
+{ "_id" : { "city" : "CUSICK", "state" : "WA" }, "pop" : 439 }
+{ "_id" : { "city" : "CRESTON", "state" : "WA" }, "pop" : 527 }
+{ "_id" : { "city" : "BENGE", "state" : "WA" }, "pop" : 2 }
+{ "_id" : { "city" : "COULEE CITY", "state" : "WA" }, "pop" : 1013 }
+{ "_id" : { "city" : "COLFAX", "state" : "WA" }, "pop" : 3592 }
+{ "_id" : { "city" : "CLAYTON", "state" : "WA" }, "pop" : 1621 }
+{ "_id" : { "city" : "CHEWELAH", "state" : "WA" }, "pop" : 5239 }
+{ "_id" : { "city" : "VERADALE", "state" : "WA" }, "pop" : 8397 }
+{ "_id" : { "city" : "VALLEYFORD", "state" : "WA" }, "pop" : 698 }
+{ "_id" : { "city" : "TUMTUM", "state" : "WA" }, "pop" : 312 }
+{ "_id" : { "city" : "SPANGLE", "state" : "WA" }, "pop" : 1434 }
+{ "_id" : { "city" : "NEWMAN LAKE", "state" : "WA" }, "pop" : 3092 }
+{ "_id" : { "city" : "LIBERTY LAKE", "state" : "WA" }, "pop" : 2372 }
+{ "_id" : { "city" : "COLBERT", "state" : "WA" }, "pop" : 3926 }
+{ "_id" : { "city" : "GREENACRES", "state" : "WA" }, "pop" : 5312 }
+{ "_id" : { "city" : "FORD", "state" : "WA" }, "pop" : 790 }
+{
+        "_id" : {
+                "city" : "FAIRCHILD AIR FO",
+                "state" : "WA"
+        },
+        "pop" : 4854
+}
+{ "_id" : { "city" : "DEER PARK", "state" : "WA" }, "pop" : 7287 }
+{ "_id" : { "city" : "ELK", "state" : "WA" }, "pop" : 2386 }
+Type "it" for more
+> it
+{ "_id" : { "city" : "EDWALL", "state" : "WA" }, "pop" : 379 }
+{ "_id" : { "city" : "ZILLAH", "state" : "WA" }, "pop" : 5266 }
+{ "_id" : { "city" : "WHITE SWAN", "state" : "WA" }, "pop" : 1941 }
+{ "_id" : { "city" : "WAPATO", "state" : "WA" }, "pop" : 10262 }
+{ "_id" : { "city" : "SUNNYSIDE", "state" : "WA" }, "pop" : 16774 }
+{ "_id" : { "city" : "TOPPENISH", "state" : "WA" }, "pop" : 11101 }
+{ "_id" : { "city" : "THORP", "state" : "WA" }, "pop" : 1082 }
+{ "_id" : { "city" : "OUTLOOK", "state" : "WA" }, "pop" : 1705 }
+{ "_id" : { "city" : "MABTON", "state" : "WA" }, "pop" : 3586 }
+{ "_id" : { "city" : "MOXEE", "state" : "WA" }, "pop" : 4194 }
+{ "_id" : { "city" : "HARRAH", "state" : "WA" }, "pop" : 2643 }
+{ "_id" : { "city" : "GRANGER", "state" : "WA" }, "pop" : 3562 }
+{ "_id" : { "city" : "WINTHROP", "state" : "WA" }, "pop" : 1263 }
+{ "_id" : { "city" : "GRANDVIEW", "state" : "WA" }, "pop" : 10558 }
+{ "_id" : { "city" : "ELLENSBURG", "state" : "WA" }, "pop" : 20344 }
+{ "_id" : { "city" : "YAKIMA", "state" : "WA" }, "pop" : 39091 }
+{
+        "_id" : {
+                "city" : "TERRACE HEIGHTS",
+                "state" : "WA"
+        },
+        "pop" : 22057
+}
+{ "_id" : { "city" : "SOAP LAKE", "state" : "WA" }, "pop" : 2482 }
+{ "_id" : { "city" : "RIVERSIDE", "state" : "WA" }, "pop" : 1871 }
+{ "_id" : { "city" : "QUINCY", "state" : "WA" }, "pop" : 7429 }
+Type "it" for more
+> it
+{ "_id" : { "city" : "PATEROS", "state" : "WA" }, "pop" : 696 }
+{ "_id" : { "city" : "PESHASTIN", "state" : "WA" }, "pop" : 1030 }
+{ "_id" : { "city" : "ORONDO", "state" : "WA" }, "pop" : 1424 }
+{ "_id" : { "city" : "MANSFIELD", "state" : "WA" }, "pop" : 960 }
+{ "_id" : { "city" : "OKANOGAN", "state" : "WA" }, "pop" : 3782 }
+{ "_id" : { "city" : "MOSES LAKE", "state" : "WA" }, "pop" : 22935 }
+{ "_id" : { "city" : "METHOW", "state" : "WA" }, "pop" : 623 }
+{ "_id" : { "city" : "MANSON", "state" : "WA" }, "pop" : 2309 }
+{ "_id" : { "city" : "ENTIAT", "state" : "WA" }, "pop" : 1507 }
+{ "_id" : { "city" : "CASHMERE", "state" : "WA" }, "pop" : 7504 }
+{ "_id" : { "city" : "CHELAN", "state" : "WA" }, "pop" : 4949 }
+{ "_id" : { "city" : "WENATCHEE", "state" : "WA" }, "pop" : 28906 }
+{ "_id" : { "city" : "FELIDA", "state" : "WA" }, "pop" : 13972 }
+{ "_id" : { "city" : "CASCADE PARK", "state" : "WA" }, "pop" : 26400 }
+{ "_id" : { "city" : "WOODLAND", "state" : "WA" }, "pop" : 6266 }
+{ "_id" : { "city" : "WASHOUGAL", "state" : "WA" }, "pop" : 10873 }
+{ "_id" : { "city" : "WAHKIACUS", "state" : "WA" }, "pop" : 442 }
+{ "_id" : { "city" : "ORCHARDS", "state" : "WA" }, "pop" : 17842 }
+{ "_id" : { "city" : "VANCOUVER", "state" : "WA" }, "pop" : 100971 }
+{ "_id" : { "city" : "SKAMOKAWA", "state" : "WA" }, "pop" : 361 }
+Type "it" for more
+> it
+{ "_id" : { "city" : "UNDERWOOD", "state" : "WA" }, "pop" : 1161 }
+{ "_id" : { "city" : "TOUTLE", "state" : "WA" }, "pop" : 599 }
+{ "_id" : { "city" : "STEVENSON", "state" : "WA" }, "pop" : 3203 }
+{ "_id" : { "city" : "RIDGEFIELD", "state" : "WA" }, "pop" : 7845 }
+{ "_id" : { "city" : "LONGVIEW", "state" : "WA" }, "pop" : 42028 }
+{ "_id" : { "city" : "LONG BEACH", "state" : "WA" }, "pop" : 3648 }
+{ "_id" : { "city" : "GRAYS RIVER", "state" : "WA" }, "pop" : 209 }
+{ "_id" : { "city" : "GLENWOOD", "state" : "WA" }, "pop" : 549 }
+{ "_id" : { "city" : "COUGAR", "state" : "WA" }, "pop" : 122 }
+{ "_id" : { "city" : "CAMAS", "state" : "WA" }, "pop" : 12058 }
+{ "_id" : { "city" : "CARSON", "state" : "WA" }, "pop" : 2009 }
+{ "_id" : { "city" : "BRUSH PRAIRIE", "state" : "WA" }, "pop" : 6663 }
+{ "_id" : { "city" : "COOK", "state" : "WA" }, "pop" : 954 }
+{ "_id" : { "city" : "AMBOY", "state" : "WA" }, "pop" : 1910 }
+{ "_id" : { "city" : "ARIEL", "state" : "WA" }, "pop" : 735 }
+{ "_id" : { "city" : "WESTPORT", "state" : "WA" }, "pop" : 2463 }
+{ "_id" : { "city" : "VADER", "state" : "WA" }, "pop" : 523 }
+{ "_id" : { "city" : "TAHUYA", "state" : "WA" }, "pop" : 3794 }
+{ "_id" : { "city" : "TENINO", "state" : "WA" }, "pop" : 6451 }
+{ "_id" : { "city" : "SOUTH BEND", "state" : "WA" }, "pop" : 2575 }
+Type "it" for more
+> "it"
+it
+> it
+{ "_id" : { "city" : "SILVER CREEK", "state" : "WA" }, "pop" : 697 }
+{ "_id" : { "city" : "ROCHESTER", "state" : "WA" }, "pop" : 8231 }
+{ "_id" : { "city" : "RAYMOND", "state" : "WA" }, "pop" : 6144 }
+{ "_id" : { "city" : "ONALASKA", "state" : "WA" }, "pop" : 3077 }
+{ "_id" : { "city" : "OAKVILLE", "state" : "WA" }, "pop" : 1915 }
+{ "_id" : { "city" : "OCEAN CITY", "state" : "WA" }, "pop" : 2307 }
+{ "_id" : { "city" : "MOCLIPS", "state" : "WA" }, "pop" : 574 }
+{ "_id" : { "city" : "MC CLEARY", "state" : "WA" }, "pop" : 2644 }
+{ "_id" : { "city" : "LILLIWAUP", "state" : "WA" }, "pop" : 635 }
+{ "_id" : { "city" : "GRAPEVIEW", "state" : "WA" }, "pop" : 3234 }
+{ "_id" : { "city" : "HOODSPORT", "state" : "WA" }, "pop" : 1165 }
+{ "_id" : { "city" : "ELMA", "state" : "WA" }, "pop" : 7356 }
+{ "_id" : { "city" : "CURTIS", "state" : "WA" }, "pop" : 449 }
+{ "_id" : { "city" : "COSMOPOLIS", "state" : "WA" }, "pop" : 1424 }
+{ "_id" : { "city" : "BEAR CREEK", "state" : "WA" }, "pop" : 2351 }
+{ "_id" : { "city" : "COPALIS CROSSING", "state" : "WA" }, "pop" : 685 }
+{ "_id" : { "city" : "CINEBAR", "state" : "WA" }, "pop" : 796 }
+{ "_id" : { "city" : "ALLYN", "state" : "WA" }, "pop" : 2049 }
+{ "_id" : { "city" : "ABERDEEN", "state" : "WA" }, "pop" : 22346 }
+{ "_id" : { "city" : "FIRCREST", "state" : "WA" }, "pop" : 22719 }
+Type "it" for more
+> it
+{ "_id" : { "city" : "FORT LEWIS", "state" : "WA" }, "pop" : 27463 }
+{ "_id" : { "city" : "TACOMA", "state" : "WA" }, "pop" : 194282 }
+{ "_id" : { "city" : "SUQUAMISH", "state" : "WA" }, "pop" : 1880 }
+{ "_id" : { "city" : "STEILACOOM", "state" : "WA" }, "pop" : 6099 }
+{ "_id" : { "city" : "SPANAWAY", "state" : "WA" }, "pop" : 24035 }
+{ "_id" : { "city" : "SEABECK", "state" : "WA" }, "pop" : 2555 }
+{ "_id" : { "city" : "QUILCENE", "state" : "WA" }, "pop" : 1592 }
+{ "_id" : { "city" : "POULSBO", "state" : "WA" }, "pop" : 20554 }
+{ "_id" : { "city" : "ORTING", "state" : "WA" }, "pop" : 4493 }
+{ "_id" : { "city" : "MORTON", "state" : "WA" }, "pop" : 2530 }
+{ "_id" : { "city" : "LONGBRANCH", "state" : "WA" }, "pop" : 733 }
+{ "_id" : { "city" : "KINGSTON", "state" : "WA" }, "pop" : 5507 }
+{ "_id" : { "city" : "GRAHAM", "state" : "WA" }, "pop" : 11136 }
+{ "_id" : { "city" : "GIG HARBOR", "state" : "WA" }, "pop" : 33115 }
+{ "_id" : { "city" : "CARBONADO", "state" : "WA" }, "pop" : 495 }
+{ "_id" : { "city" : "CLALLAM BAY", "state" : "WA" }, "pop" : 384 }
+{ "_id" : { "city" : "BRINNON", "state" : "WA" }, "pop" : 1049 }
+{ "_id" : { "city" : "BREMERTON", "state" : "WA" }, "pop" : 77915 }
+{ "_id" : { "city" : "BEAVER", "state" : "WA" }, "pop" : 695 }
+{ "_id" : { "city" : "ASHFORD", "state" : "WA" }, "pop" : 339 }
+Type "it" for more
+> it
+{ "_id" : { "city" : "ANDERSON ISLAND", "state" : "WA" }, "pop" : 548 }
+{ "_id" : { "city" : "SKYKOMISH", "state" : "WA" }, "pop" : 388 }
+{ "_id" : { "city" : "DUTCH HARBOR", "state" : "AK" }, "pop" : 3 }
+{ "_id" : { "city" : "MUKILTEO", "state" : "WA" }, "pop" : 10373 }
+{ "_id" : { "city" : "LYNDEN", "state" : "WA" }, "pop" : 12896 }
+{ "_id" : { "city" : "MARYSVILLE", "state" : "WA" }, "pop" : 39709 }
+{ "_id" : { "city" : "LA CONNER", "state" : "WA" }, "pop" : 3154 }
+{ "_id" : { "city" : "LUMMI ISLAND", "state" : "WA" }, "pop" : 628 }
+{ "_id" : { "city" : "LOPEZ", "state" : "WA" }, "pop" : 4147 }
+{ "_id" : { "city" : "LANGLEY", "state" : "WA" }, "pop" : 6036 }
+{ "_id" : { "city" : "GREENBANK", "state" : "WA" }, "pop" : 926 }
+{ "_id" : { "city" : "LAKE STEVENS", "state" : "WA" }, "pop" : 12728 }
+{ "_id" : { "city" : "GRANITE FALLS", "state" : "WA" }, "pop" : 3634 }
+{ "_id" : { "city" : "FRIDAY HARBOR", "state" : "WA" }, "pop" : 2508 }
+{ "_id" : { "city" : "FREELAND", "state" : "WA" }, "pop" : 2321 }
+{ "_id" : { "city" : "EVERSON", "state" : "WA" }, "pop" : 6986 }
+{ "_id" : { "city" : "GLACIER", "state" : "WA" }, "pop" : 2110 }
+{ "_id" : { "city" : "COUPEVILLE", "state" : "WA" }, "pop" : 5753 }
+{ "_id" : { "city" : "CLINTON", "state" : "WA" }, "pop" : 3242 }
+{ "_id" : { "city" : "BOW", "state" : "WA" }, "pop" : 3245 }
+Type "it" for more
+> it
+{ "_id" : { "city" : "ARLINGTON", "state" : "WA" }, "pop" : 24435 }
+{ "_id" : { "city" : "ANACORTES", "state" : "WA" }, "pop" : 12986 }
+{ "_id" : { "city" : "ACME", "state" : "WA" }, "pop" : 471 }
+{ "_id" : { "city" : "DES MOINES", "state" : "WA" }, "pop" : 20550 }
+{ "_id" : { "city" : "LK FOREST PARK", "state" : "WA" }, "pop" : 38296 }
+{ "_id" : { "city" : "SEATTLE", "state" : "WA" }, "pop" : 520096 }
+{ "_id" : { "city" : "RENTON", "state" : "WA" }, "pop" : 100042 }
+{ "_id" : { "city" : "REDMOND", "state" : "WA" }, "pop" : 59751 }
+{ "_id" : { "city" : "RAVENSDALE", "state" : "WA" }, "pop" : 3778 }
+{ "_id" : { "city" : "LYNNWOOD", "state" : "WA" }, "pop" : 36995 }
+{ "_id" : { "city" : "NORTH BEND", "state" : "WA" }, "pop" : 10083 }
+{ "_id" : { "city" : "KIRKLAND", "state" : "WA" }, "pop" : 66477 }
+{ "_id" : { "city" : "ENUMCLAW", "state" : "WA" }, "pop" : 34850 }
+{ "_id" : { "city" : "ISSAQUAH", "state" : "WA" }, "pop" : 37255 }
+{ "_id" : { "city" : "EDMONDS", "state" : "WA" }, "pop" : 33385 }
+{ "_id" : { "city" : "WOODWAY", "state" : "WA" }, "pop" : 17396 }
+{ "_id" : { "city" : "MILL CREEK", "state" : "WA" }, "pop" : 19247 }
+{ "_id" : { "city" : "BOTHELL", "state" : "WA" }, "pop" : 50998 }
+{ "_id" : { "city" : "BLACK DIAMOND", "state" : "WA" }, "pop" : 1817 }
+{ "_id" : { "city" : "BELLEVUE", "state" : "WA" }, "pop" : 87005 }
+Type "it" for more
+> it
+{ "_id" : { "city" : "BEAUX ARTS", "state" : "WA" }, "pop" : 23724 }
+{ "_id" : { "city" : "FEDERAL WAY", "state" : "WA" }, "pop" : 72865 }
+{ "_id" : { "city" : "AUBURN", "state" : "WA" }, "pop" : 38163 }
+{ "_id" : { "city" : "VALE", "state" : "OR" }, "pop" : 3940 }
+{ "_id" : { "city" : "RIVERSIDE", "state" : "OR" }, "pop" : 65 }
+{ "_id" : { "city" : "NYSSA", "state" : "OR" }, "pop" : 5288 }
+{ "_id" : { "city" : "JUNTURA", "state" : "OR" }, "pop" : 83 }
+{ "_id" : { "city" : "JORDAN VALLEY", "state" : "OR" }, "pop" : 879 }
+{ "_id" : { "city" : "UNITY", "state" : "OR" }, "pop" : 315 }
+{ "_id" : { "city" : "HARPER", "state" : "OR" }, "pop" : 326 }
+{ "_id" : { "city" : "WALLOWA", "state" : "OR" }, "pop" : 1250 }
+{ "_id" : { "city" : "AROCK", "state" : "OR" }, "pop" : 846 }
+{ "_id" : { "city" : "WESTON", "state" : "OR" }, "pop" : 1007 }
+{ "_id" : { "city" : "UNION", "state" : "OR" }, "pop" : 2463 }
+{ "_id" : { "city" : "RITTER", "state" : "OR" }, "pop" : 71 }
+{ "_id" : { "city" : "SENECA", "state" : "OR" }, "pop" : 352 }
+{ "_id" : { "city" : "LONG CREEK", "state" : "OR" }, "pop" : 442 }
+{
+        "_id" : {
+                "city" : "MILTON FREEWATER",
+                "state" : "OR"
+        },
+        "pop" : 9723
+}
+{ "_id" : { "city" : "MONUMENT", "state" : "OR" }, "pop" : 410 }
+{ "_id" : { "city" : "KIMBERLY", "state" : "OR" }, "pop" : 62 }
+Type "it" for more
+> it
+{ "_id" : { "city" : "LOSTINE", "state" : "OR" }, "pop" : 456 }
+{ "_id" : { "city" : "IRRIGON", "state" : "OR" }, "pop" : 2301 }
+{ "_id" : { "city" : "IMBLER", "state" : "OR" }, "pop" : 561 }
+{ "_id" : { "city" : "IMNAHA", "state" : "OR" }, "pop" : 255 }
+{ "_id" : { "city" : "HERMISTON", "state" : "OR" }, "pop" : 16982 }
+{ "_id" : { "city" : "CONDON", "state" : "OR" }, "pop" : 1009 }
+{ "_id" : { "city" : "ENTERPRISE", "state" : "OR" }, "pop" : 3201 }
+{ "_id" : { "city" : "ECHO", "state" : "OR" }, "pop" : 648 }
+{ "_id" : { "city" : "COVE", "state" : "OR" }, "pop" : 1280 }
+{ "_id" : { "city" : "CANYON CITY", "state" : "OR" }, "pop" : 2806 }
+{ "_id" : { "city" : "ATHENA", "state" : "OR" }, "pop" : 1334 }
+{ "_id" : { "city" : "ADAMS", "state" : "OR" }, "pop" : 609 }
+{ "_id" : { "city" : "PENDLETON", "state" : "OR" }, "pop" : 20225 }
+{ "_id" : { "city" : "BURNS", "state" : "OR" }, "pop" : 5844 }
+{
+        "_id" : {
+                "city" : "CROOKED RIVER RA",
+                "state" : "OR"
+        },
+        "pop" : 2101
+}
+{ "_id" : { "city" : "WARM SPRINGS", "state" : "OR" }, "pop" : 2400 }
+{
+        "_id" : {
+                "city" : "BLACK BUTTE RANC",
+                "state" : "OR"
+        },
+        "pop" : 3534
+}
+{ "_id" : { "city" : "RILEY", "state" : "OR" }, "pop" : 157 }
+{ "_id" : { "city" : "POWELL BUTTE", "state" : "OR" }, "pop" : 1056 }
+{ "_id" : { "city" : "MADRAS", "state" : "OR" }, "pop" : 8294 }
+Type "it" for more
+> it
+{ "_id" : { "city" : "LA PINE", "state" : "OR" }, "pop" : 4815 }
+{ "_id" : { "city" : "BEVERLY", "state" : "WA" }, "pop" : 315 }
+{ "_id" : { "city" : "CULVER", "state" : "OR" }, "pop" : 2517 }
+{ "_id" : { "city" : "CRESCENT", "state" : "OR" }, "pop" : 1848 }
+{ "_id" : { "city" : "PLUSH", "state" : "OR" }, "pop" : 126 }
+{ "_id" : { "city" : "BROTHERS", "state" : "OR" }, "pop" : 41 }
+{ "_id" : { "city" : "ASHWOOD", "state" : "OR" }, "pop" : 114 }
+{ "_id" : { "city" : "SUMMER LAKE", "state" : "OR" }, "pop" : 1 }
+{ "_id" : { "city" : "MERRILL", "state" : "OR" }, "pop" : 1344 }
+{ "_id" : { "city" : "CHILOQUIN", "state" : "OR" }, "pop" : 3608 }
+{ "_id" : { "city" : "KENO", "state" : "OR" }, "pop" : 2696 }
+{ "_id" : { "city" : "DAIRY", "state" : "OR" }, "pop" : 8 }
+{ "_id" : { "city" : "BEATTY", "state" : "OR" }, "pop" : 95 }
+{ "_id" : { "city" : "SELMA", "state" : "OR" }, "pop" : 2065 }
+{ "_id" : { "city" : "SHADY COVE", "state" : "OR" }, "pop" : 2364 }
+{ "_id" : { "city" : "ROGUE RIVER", "state" : "OR" }, "pop" : 6131 }
+{ "_id" : { "city" : "PHOENIX", "state" : "OR" }, "pop" : 6054 }
+{ "_id" : { "city" : "O BRIEN", "state" : "OR" }, "pop" : 247 }
+{ "_id" : { "city" : "MERLIN", "state" : "OR" }, "pop" : 1806 }
+{ "_id" : { "city" : "KERBY", "state" : "OR" }, "pop" : 78 }
+Type "it" for more
+> it
+{ "_id" : { "city" : "GOLD HILL", "state" : "OR" }, "pop" : 6650 }
+{ "_id" : { "city" : "EAGLE POINT", "state" : "OR" }, "pop" : 7468 }
+{ "_id" : { "city" : "MEDFORD", "state" : "OR" }, "pop" : 30933 }
+{ "_id" : { "city" : "CENTRAL POINT", "state" : "OR" }, "pop" : 17293 }
+{ "_id" : { "city" : "SUNNY VALLEY", "state" : "OR" }, "pop" : 1253 }
+{ "_id" : { "city" : "TILLER", "state" : "OR" }, "pop" : 534 }
+{ "_id" : { "city" : "WESTLAKE", "state" : "OR" }, "pop" : 272 }
+{ "_id" : { "city" : "WESTFIR", "state" : "OR" }, "pop" : 514 }
+{ "_id" : { "city" : "WALTON", "state" : "OR" }, "pop" : 298 }
+{ "_id" : { "city" : "VIDA", "state" : "OR" }, "pop" : 1040 }
+{ "_id" : { "city" : "LEABURG", "state" : "OR" }, "pop" : 432 }
+{ "_id" : { "city" : "TENMILE", "state" : "OR" }, "pop" : 1231 }
+{ "_id" : { "city" : "VENETA", "state" : "OR" }, "pop" : 6004 }
+{ "_id" : { "city" : "REMOTE", "state" : "OR" }, "pop" : 121 }
+{ "_id" : { "city" : "KENAI", "state" : "AK" }, "pop" : 10508 }
+{ "_id" : { "city" : "SUTHERLIN", "state" : "OR" }, "pop" : 7304 }
+{ "_id" : { "city" : "SPRINGFIELD", "state" : "OR" }, "pop" : 59905 }
+{ "_id" : { "city" : "SIXES", "state" : "OR" }, "pop" : 412 }
+{ "_id" : { "city" : "RIDDLE", "state" : "OR" }, "pop" : 2698 }
+{ "_id" : { "city" : "SCOTTSBURG", "state" : "OR" }, "pop" : 329 }
+Type "it" for more
+> tit
+2018-12-28T14:58:01.181+0530 E QUERY    [thread1] ReferenceError: tit is not defined :
+@(shell):1:1
+> it
+{ "_id" : { "city" : "WINCHESTER BAY", "state" : "OR" }, "pop" : 6723 }
+{ "_id" : { "city" : "MYRTLE POINT", "state" : "OR" }, "pop" : 5246 }
+{ "_id" : { "city" : "MONROE", "state" : "OR" }, "pop" : 2478 }
+{ "_id" : { "city" : "NORTH BEND", "state" : "OR" }, "pop" : 15269 }
+{ "_id" : { "city" : "LAKESIDE", "state" : "OR" }, "pop" : 994 }
+{ "_id" : { "city" : "PLEASANT HILL", "state" : "OR" }, "pop" : 2218 }
+{ "_id" : { "city" : "MARCOLA", "state" : "OR" }, "pop" : 1442 }
+{ "_id" : { "city" : "MAPLETON", "state" : "OR" }, "pop" : 1104 }
+{ "_id" : { "city" : "LOWELL", "state" : "OR" }, "pop" : 792 }
+{ "_id" : { "city" : "LORANE", "state" : "OR" }, "pop" : 499 }
+{ "_id" : { "city" : "JUNCTION CITY", "state" : "OR" }, "pop" : 10456 }
+{ "_id" : { "city" : "IDLEYLD PARK", "state" : "OR" }, "pop" : 222 }
+{ "_id" : { "city" : "ELMIRA", "state" : "OR" }, "pop" : 2424 }
+{ "_id" : { "city" : "PISTOL RIVER", "state" : "OR" }, "pop" : 4760 }
+{ "_id" : { "city" : "FALL CREEK", "state" : "OR" }, "pop" : 1581 }
+{ "_id" : { "city" : "GLENDALE", "state" : "OR" }, "pop" : 2050 }
+{ "_id" : { "city" : "COTTAGE GROVE", "state" : "OR" }, "pop" : 15067 }
+{ "_id" : { "city" : "DRAIN", "state" : "OR" }, "pop" : 2331 }
+{ "_id" : { "city" : "DEXTER", "state" : "OR" }, "pop" : 2980 }
+{ "_id" : { "city" : "CULP CREEK", "state" : "OR" }, "pop" : 317 }
+Type "it" for more
+> it
+{ "_id" : { "city" : "COQUILLE", "state" : "OR" }, "pop" : 8374 }
+{ "_id" : { "city" : "CHARLESTON", "state" : "OR" }, "pop" : 24343 }
+{ "_id" : { "city" : "BANDON", "state" : "OR" }, "pop" : 4852 }
+{ "_id" : { "city" : "CANYONVILLE", "state" : "OR" }, "pop" : 1670 }
+{ "_id" : { "city" : "CAMAS VALLEY", "state" : "OR" }, "pop" : 972 }
+{ "_id" : { "city" : "HARBOR", "state" : "OR" }, "pop" : 11673 }
+{ "_id" : { "city" : "BLACHLY", "state" : "OR" }, "pop" : 495 }
+{ "_id" : { "city" : "WILLAMINA", "state" : "OR" }, "pop" : 2697 }
+{ "_id" : { "city" : "WALDPORT", "state" : "OR" }, "pop" : 3302 }
+{ "_id" : { "city" : "SHEDD", "state" : "OR" }, "pop" : 1067 }
+{ "_id" : { "city" : "SCOTTS MILLS", "state" : "OR" }, "pop" : 1326 }
+{ "_id" : { "city" : "SWEET HOME", "state" : "OR" }, "pop" : 11237 }
+{ "_id" : { "city" : "SUBLIMITY", "state" : "OR" }, "pop" : 2881 }
+{ "_id" : { "city" : "SEAL ROCK", "state" : "OR" }, "pop" : 1845 }
+{ "_id" : { "city" : "SHERIDAN", "state" : "OR" }, "pop" : 6591 }
+{ "_id" : { "city" : "SCIO", "state" : "OR" }, "pop" : 7170 }
+{ "_id" : { "city" : "LINCOLN CITY", "state" : "OR" }, "pop" : 6786 }
+{ "_id" : { "city" : "MONMOUTH", "state" : "OR" }, "pop" : 8071 }
+{ "_id" : { "city" : "MILL CITY", "state" : "OR" }, "pop" : 2340 }
+{ "_id" : { "city" : "INDEPENDENCE", "state" : "OR" }, "pop" : 5955 }
+Type "it" for more
+> it
+{ "_id" : { "city" : "LEBANON", "state" : "OR" }, "pop" : 23147 }
+{ "_id" : { "city" : "JEFFERSON", "state" : "OR" }, "pop" : 5829 }
+{ "_id" : { "city" : "GRAND RONDE", "state" : "OR" }, "pop" : 1151 }
+{ "_id" : { "city" : "DEPOE BAY", "state" : "OR" }, "pop" : 3022 }
+{ "_id" : { "city" : "CORVALLIS", "state" : "OR" }, "pop" : 54338 }
+{ "_id" : { "city" : "CASCADIA", "state" : "OR" }, "pop" : 163 }
+{ "_id" : { "city" : "BLODGETT", "state" : "OR" }, "pop" : 657 }
+{ "_id" : { "city" : "BROWNSVILLE", "state" : "OR" }, "pop" : 3249 }
+{ "_id" : { "city" : "ALBANY", "state" : "OR" }, "pop" : 42908 }
+{ "_id" : { "city" : "WEST STAYTON", "state" : "OR" }, "pop" : 4185 }
+{ "_id" : { "city" : "ALSEA", "state" : "OR" }, "pop" : 1008 }
+{ "_id" : { "city" : "SALEM", "state" : "OR" }, "pop" : 114577 }
+{ "_id" : { "city" : "OAK GROVE", "state" : "OR" }, "pop" : 29597 }
+{
+        "_id" : {
+                "city" : "ROCKWOOD CORNERS",
+                "state" : "OR"
+        },
+        "pop" : 30643
+}
+{ "_id" : { "city" : "GARDEN HOME", "state" : "OR" }, "pop" : 33529 }
+{ "_id" : { "city" : "CEDAR HILLS", "state" : "OR" }, "pop" : 20934 }
+{ "_id" : { "city" : "PORTLAND", "state" : "OR" }, "pop" : 518543 }
+{ "_id" : { "city" : "TOLOVANA PARK", "state" : "OR" }, "pop" : 1114 }
+{ "_id" : { "city" : "WARRENTON", "state" : "OR" }, "pop" : 4224 }
+{ "_id" : { "city" : "TILLAMOOK", "state" : "OR" }, "pop" : 11010 }
+Type "it" for more
+> it
+{ "_id" : { "city" : "ROCKAWAY", "state" : "OR" }, "pop" : 3164 }
+{ "_id" : { "city" : "NEWBERG", "state" : "OR" }, "pop" : 18911 }
+{ "_id" : { "city" : "GASTON", "state" : "OR" }, "pop" : 3844 }
+{ "_id" : { "city" : "MANNING", "state" : "OR" }, "pop" : 549 }
+{ "_id" : { "city" : "HILLSBORO", "state" : "OR" }, "pop" : 44704 }
+{ "_id" : { "city" : "HEBO", "state" : "OR" }, "pop" : 366 }
+{ "_id" : { "city" : "HAMMOND", "state" : "OR" }, "pop" : 627 }
+{ "_id" : { "city" : "GALES CREEK", "state" : "OR" }, "pop" : 374 }
+{ "_id" : { "city" : "CLOVERDALE", "state" : "OR" }, "pop" : 1269 }
+{ "_id" : { "city" : "ASTORIA", "state" : "OR" }, "pop" : 19140 }
+{ "_id" : { "city" : "AMITY", "state" : "OR" }, "pop" : 2810 }
+{ "_id" : { "city" : "VERNONIA", "state" : "OR" }, "pop" : 2931 }
+{ "_id" : { "city" : "WILSONVILLE", "state" : "OR" }, "pop" : 9397 }
+{ "_id" : { "city" : "WEST LINN", "state" : "OR" }, "pop" : 19962 }
+{ "_id" : { "city" : "WASCO", "state" : "OR" }, "pop" : 564 }
+{ "_id" : { "city" : "ALLAKAKET", "state" : "AK" }, "pop" : 170 }
+{ "_id" : { "city" : "TUALATIN", "state" : "OR" }, "pop" : 16371 }
+{ "_id" : { "city" : "SAINT HELENS", "state" : "OR" }, "pop" : 10355 }
+{ "_id" : { "city" : "TROUTDALE", "state" : "OR" }, "pop" : 4849 }
+{ "_id" : { "city" : "SHANIKO", "state" : "OR" }, "pop" : 81 }
+Type "it" for more
+> it
+{ "_id" : { "city" : "SCAPPOOSE", "state" : "OR" }, "pop" : 7812 }
+{ "_id" : { "city" : "DEER ISLAND", "state" : "OR" }, "pop" : 1317 }
+{ "_id" : { "city" : "ODELL", "state" : "OR" }, "pop" : 0 }
+{ "_id" : { "city" : "MULINO", "state" : "OR" }, "pop" : 2935 }
+{ "_id" : { "city" : "MORO", "state" : "OR" }, "pop" : 550 }
+{ "_id" : { "city" : "GRASS VALLEY", "state" : "OR" }, "pop" : 415 }
+{ "_id" : { "city" : "GLADSTONE", "state" : "OR" }, "pop" : 10148 }
+{ "_id" : { "city" : "GERVAIS", "state" : "OR" }, "pop" : 992 }
+{ "_id" : { "city" : "TIMBERLINE LODGE", "state" : "OR" }, "pop" : 268 }
+{ "_id" : { "city" : "FRIEND", "state" : "OR" }, "pop" : 1111 }
+{ "_id" : { "city" : "BORING", "state" : "OR" }, "pop" : 11406 }
+{ "_id" : { "city" : "ALOHA", "state" : "OR" }, "pop" : 67233 }
+{ "_id" : { "city" : "BEAVERTON", "state" : "OR" }, "pop" : 46660 }
+{ "_id" : { "city" : "ANTELOPE", "state" : "OR" }, "pop" : 129 }
+{ "_id" : { "city" : "HONOLULU", "state" : "HI" }, "pop" : 396643 }
+{ "_id" : { "city" : "WAIPAHU", "state" : "HI" }, "pop" : 52411 }
+{ "_id" : { "city" : "WAIMANALO", "state" : "HI" }, "pop" : 9055 }
+{ "_id" : { "city" : "PAIA", "state" : "HI" }, "pop" : 2311 }
+{ "_id" : { "city" : "MILILANI", "state" : "HI" }, "pop" : 34734 }
+{ "_id" : { "city" : "VOLCANO", "state" : "HI" }, "pop" : 2639 }
+Type "it" for more
+> it
+{ "_id" : { "city" : "PAPAALOA", "state" : "HI" }, "pop" : 208 }
+{ "_id" : { "city" : "PEARL CITY", "state" : "HI" }, "pop" : 38207 }
+{ "_id" : { "city" : "PAPAIKOU", "state" : "HI" }, "pop" : 1700 }
+{ "_id" : { "city" : "PAHOA", "state" : "HI" }, "pop" : 6702 }
+{ "_id" : { "city" : "MOUNTAIN VIEW", "state" : "HI" }, "pop" : 3170 }
+{ "_id" : { "city" : "PAHALA", "state" : "HI" }, "pop" : 1616 }
+{ "_id" : { "city" : "MAUNALOA", "state" : "HI" }, "pop" : 497 }
+{ "_id" : { "city" : "MAKAWELI", "state" : "HI" }, "pop" : 797 }
+{ "_id" : { "city" : "LIHUE", "state" : "HI" }, "pop" : 10663 }
+{ "_id" : { "city" : "LANAI CITY", "state" : "HI" }, "pop" : 2426 }
+{ "_id" : { "city" : "KAPAAU", "state" : "HI" }, "pop" : 2550 }
+{ "_id" : { "city" : "BATTLE GROUND", "state" : "WA" }, "pop" : 16072 }
+{ "_id" : { "city" : "LAIE", "state" : "HI" }, "pop" : 8481 }
+{ "_id" : { "city" : "KOLOA", "state" : "HI" }, "pop" : 4906 }
+{ "_id" : { "city" : "LAHAINA", "state" : "HI" }, "pop" : 14508 }
+{ "_id" : { "city" : "KAUNAKAKAI", "state" : "HI" }, "pop" : 4419 }
+{ "_id" : { "city" : "KAUMAKANI", "state" : "HI" }, "pop" : 819 }
+{ "_id" : { "city" : "KANEOHE", "state" : "HI" }, "pop" : 55236 }
+{ "_id" : { "city" : "KAMUELA", "state" : "HI" }, "pop" : 9140 }
+{ "_id" : { "city" : "KALAUPAPA", "state" : "HI" }, "pop" : 130 }
+Type "it" for more
+> it
+{ "_id" : { "city" : "KAILUA KONA", "state" : "HI" }, "pop" : 19616 }
+{ "_id" : { "city" : "KAHULUI", "state" : "HI" }, "pop" : 17289 }
+{ "_id" : { "city" : "HANA", "state" : "HI" }, "pop" : 1895 }
+{ "_id" : { "city" : "HONOKAA", "state" : "HI" }, "pop" : 3681 }
+{ "_id" : { "city" : "HONAUNAU", "state" : "HI" }, "pop" : 1583 }
+{ "_id" : { "city" : "PRINCEVILLE", "state" : "HI" }, "pop" : 4631 }
+{ "_id" : { "city" : "HAWI", "state" : "HI" }, "pop" : 1741 }
+{ "_id" : { "city" : "HAUULA", "state" : "HI" }, "pop" : 3477 }
+{ "_id" : { "city" : "HAKALAU", "state" : "HI" }, "pop" : 198 }
+{ "_id" : { "city" : "AIEA", "state" : "HI" }, "pop" : 43273 }
+{ "_id" : { "city" : "KINGS BEACH", "state" : "CA" }, "pop" : 3247 }
+{ "_id" : { "city" : "TAHOMA", "state" : "CA" }, "pop" : 1029 }
+{ "_id" : { "city" : "TERMO", "state" : "CA" }, "pop" : 199 }
+{ "_id" : { "city" : "SUSANVILLE", "state" : "CA" }, "pop" : 19347 }
+{ "_id" : { "city" : "STANDISH", "state" : "CA" }, "pop" : 340 }
+{ "_id" : { "city" : "SIERRA CITY", "state" : "CA" }, "pop" : 311 }
+{ "_id" : { "city" : "HOPE VALLEY", "state" : "CA" }, "pop" : 850 }
+{ "_id" : { "city" : "DOYLE", "state" : "CA" }, "pop" : 985 }
+{ "_id" : { "city" : "LITCHFIELD", "state" : "CA" }, "pop" : 23 }
+{ "_id" : { "city" : "LAKE CITY", "state" : "CA" }, "pop" : 234 }
+Type "it" for more
+> it
+{ "_id" : { "city" : "JANESVILLE", "state" : "CA" }, "pop" : 2655 }
+{ "_id" : { "city" : "HERLONG", "state" : "CA" }, "pop" : 1518 }
+{ "_id" : { "city" : "FORT BIDWELL", "state" : "CA" }, "pop" : 226 }
+{ "_id" : { "city" : "DAVIS CREEK", "state" : "CA" }, "pop" : 285 }
+{ "_id" : { "city" : "COLEVILLE", "state" : "CA" }, "pop" : 1370 }
+{ "_id" : { "city" : "CEDARVILLE", "state" : "CA" }, "pop" : 991 }
+{ "_id" : { "city" : "VENETIE", "state" : "AK" }, "pop" : 184 }
+{ "_id" : { "city" : "WHITMORE", "state" : "CA" }, "pop" : 593 }
+{ "_id" : { "city" : "CROMBERG", "state" : "CA" }, "pop" : 1774 }
+{ "_id" : { "city" : "YREKA", "state" : "CA" }, "pop" : 9151 }
+{ "_id" : { "city" : "EDGEWOOD", "state" : "CA" }, "pop" : 5506 }
+{ "_id" : { "city" : "WEAVERVILLE", "state" : "CA" }, "pop" : 3188 }
+{ "_id" : { "city" : "PALO CEDRO", "state" : "CA" }, "pop" : 3905 }
+{ "_id" : { "city" : "OLD STATION", "state" : "CA" }, "pop" : 213 }
+{ "_id" : { "city" : "SHINGLETOWN", "state" : "CA" }, "pop" : 3681 }
+{ "_id" : { "city" : "SCOTT BAR", "state" : "CA" }, "pop" : 21 }
+{ "_id" : { "city" : "RED BLUFF", "state" : "CA" }, "pop" : 25180 }
+{ "_id" : { "city" : "PAYNES CREEK", "state" : "CA" }, "pop" : 773 }
+{ "_id" : { "city" : "MANTON", "state" : "CA" }, "pop" : 344 }
+{ "_id" : { "city" : "OAK RUN", "state" : "CA" }, "pop" : 1160 }
+Type "it" for more
+> it
+{ "_id" : { "city" : "MINERAL", "state" : "CA" }, "pop" : 172 }
+{ "_id" : { "city" : "LAKEHEAD", "state" : "CA" }, "pop" : 1709 }
+{ "_id" : { "city" : "KLAMATH RIVER", "state" : "CA" }, "pop" : 174 }
+{ "_id" : { "city" : "IGO", "state" : "CA" }, "pop" : 205 }
+{ "_id" : { "city" : "HELENA", "state" : "CA" }, "pop" : 606 }
+{ "_id" : { "city" : "HAPPY CAMP", "state" : "CA" }, "pop" : 1885 }
+{
+        "_id" : {
+                "city" : "FALL RIVER MILLS",
+                "state" : "CA"
+        },
+        "pop" : 1843
+}
+{ "_id" : { "city" : "FRENCH GULCH", "state" : "CA" }, "pop" : 640 }
+{ "_id" : { "city" : "SAWYERS BAR", "state" : "CA" }, "pop" : 2326 }
+{ "_id" : { "city" : "DOUGLAS CITY", "state" : "CA" }, "pop" : 727 }
+{ "_id" : { "city" : "SHASTA LAKE", "state" : "CA" }, "pop" : 6405 }
+{ "_id" : { "city" : "CASSEL", "state" : "CA" }, "pop" : 566 }
+{ "_id" : { "city" : "CORNING", "state" : "CA" }, "pop" : 12436 }
+{ "_id" : { "city" : "BURNEY", "state" : "CA" }, "pop" : 4666 }
+{ "_id" : { "city" : "SUTTER", "state" : "CA" }, "pop" : 3090 }
+{ "_id" : { "city" : "BELLA VISTA", "state" : "CA" }, "pop" : 1218 }
+{ "_id" : { "city" : "TWAIN", "state" : "CA" }, "pop" : 211 }
+{ "_id" : { "city" : "REDDING", "state" : "CA" }, "pop" : 90587 }
+{ "_id" : { "city" : "YUBA CITY", "state" : "CA" }, "pop" : 49836 }
+{ "_id" : { "city" : "WILLIAMS", "state" : "CA" }, "pop" : 3094 }
+Type "it" for more
+> it
+{ "_id" : { "city" : "TAYLORSVILLE", "state" : "CA" }, "pop" : 177 }
+{ "_id" : { "city" : "ROUGH AND READY", "state" : "CA" }, "pop" : 1811 }
+{ "_id" : { "city" : "RACKERBY", "state" : "CA" }, "pop" : 260 }
+{ "_id" : { "city" : "ORLAND", "state" : "CA" }, "pop" : 14720 }
+{ "_id" : { "city" : "OROVILLE", "state" : "CA" }, "pop" : 27286 }
+{ "_id" : { "city" : "PALERMO", "state" : "CA" }, "pop" : 1843 }
+{ "_id" : { "city" : "MAXWELL", "state" : "CA" }, "pop" : 1410 }
+{ "_id" : { "city" : "OLIVEHURST", "state" : "CA" }, "pop" : 6418 }
+{ "_id" : { "city" : "NORTH SAN JUAN", "state" : "CA" }, "pop" : 228 }
+{ "_id" : { "city" : "MEADOW VALLEY", "state" : "CA" }, "pop" : 91 }
+{ "_id" : { "city" : "PENN VALLEY", "state" : "CA" }, "pop" : 7603 }
+{ "_id" : { "city" : "GOODYEARS BAR", "state" : "CA" }, "pop" : 377 }
+{ "_id" : { "city" : "BUTTE MEADOWS", "state" : "CA" }, "pop" : 91 }
+{ "_id" : { "city" : "ELK CREEK", "state" : "CA" }, "pop" : 497 }
+{ "_id" : { "city" : "DUNNIGAN", "state" : "CA" }, "pop" : 850 }
+{ "_id" : { "city" : "DURHAM", "state" : "CA" }, "pop" : 3327 }
+{ "_id" : { "city" : "CRESCENT MILLS", "state" : "CA" }, "pop" : 189 }
+{ "_id" : { "city" : "COLUSA", "state" : "CA" }, "pop" : 7042 }
+{ "_id" : { "city" : "ALLEGHANY", "state" : "CA" }, "pop" : 0 }
+{ "_id" : { "city" : "BROWNSVILLE", "state" : "CA" }, "pop" : 1013 }
+Type "it" for more
+> it
+{ "_id" : { "city" : "BERRY CREEK", "state" : "CA" }, "pop" : 1285 }
+{ "_id" : { "city" : "ARBUCKLE", "state" : "CA" }, "pop" : 3851 }
+{ "_id" : { "city" : "BELDEN", "state" : "CA" }, "pop" : 32 }
+{ "_id" : { "city" : "BANGOR", "state" : "CA" }, "pop" : 110 }
+{ "_id" : { "city" : "MARYSVILLE", "state" : "CA" }, "pop" : 43785 }
+{ "_id" : { "city" : "ALTA", "state" : "CA" }, "pop" : 751 }
+{ "_id" : { "city" : "NORDEN", "state" : "CA" }, "pop" : 316 }
+{ "_id" : { "city" : "MEADOW VISTA", "state" : "CA" }, "pop" : 3314 }
+{ "_id" : { "city" : "KYBURZ", "state" : "CA" }, "pop" : 159 }
+{ "_id" : { "city" : "GOLD RUN", "state" : "CA" }, "pop" : 79 }
+{ "_id" : { "city" : "THE DALLES", "state" : "OR" }, "pop" : 16319 }
+{ "_id" : { "city" : "CAMINO", "state" : "CA" }, "pop" : 4394 }
+{ "_id" : { "city" : "DUTCH FLAT", "state" : "CA" }, "pop" : 533 }
+{ "_id" : { "city" : "ZAMORA", "state" : "CA" }, "pop" : 317 }
+{ "_id" : { "city" : "APPLEGATE", "state" : "CA" }, "pop" : 1898 }
+{ "_id" : { "city" : "VOLCANO", "state" : "CA" }, "pop" : 1004 }
+{ "_id" : { "city" : "WOODLAND", "state" : "CA" }, "pop" : 44587 }
+{ "_id" : { "city" : "WINTERS", "state" : "CA" }, "pop" : 6253 }
+{ "_id" : { "city" : "WILTON", "state" : "CA" }, "pop" : 4082 }
+{ "_id" : { "city" : "WHEATLAND", "state" : "CA" }, "pop" : 2532 }
+Type "it" for more
+> it
+{
+        "_id" : {
+                "city" : "WEST SACRAMENTO",
+                "state" : "CA"
+        },
+        "pop" : 17301
+}
+{ "_id" : { "city" : "RANCHO MURIETA", "state" : "CA" }, "pop" : 3035 }
+{ "_id" : { "city" : "SOMERSET", "state" : "CA" }, "pop" : 2892 }
+{ "_id" : { "city" : "RUMSEY", "state" : "CA" }, "pop" : 228 }
+{ "_id" : { "city" : "RIO OSO", "state" : "CA" }, "pop" : 1102 }
+{ "_id" : { "city" : "WILDWOOD", "state" : "CA" }, "pop" : 119 }
+{ "_id" : { "city" : "PLYMOUTH", "state" : "CA" }, "pop" : 969 }
+{ "_id" : { "city" : "PENRYN", "state" : "CA" }, "pop" : 2048 }
+{ "_id" : { "city" : "ROSEVILLE", "state" : "CA" }, "pop" : 57442 }
+{ "_id" : { "city" : "TROWBRIDGE", "state" : "CA" }, "pop" : 802 }
+{ "_id" : { "city" : "NEWCASTLE", "state" : "CA" }, "pop" : 5998 }
+{ "_id" : { "city" : "LOOMIS", "state" : "CA" }, "pop" : 12973 }
+{ "_id" : { "city" : "KELSEY", "state" : "CA" }, "pop" : 531 }
+{ "_id" : { "city" : "HERALD", "state" : "CA" }, "pop" : 1009 }
+{ "_id" : { "city" : "IONE", "state" : "CA" }, "pop" : 8440 }
+{ "_id" : { "city" : "FAIR OAKS", "state" : "CA" }, "pop" : 40502 }
+{ "_id" : { "city" : "GARDEN VALLEY", "state" : "CA" }, "pop" : 3628 }
+{ "_id" : { "city" : "FORESTHILL", "state" : "CA" }, "pop" : 4626 }
+{ "_id" : { "city" : "GALT", "state" : "CA" }, "pop" : 14173 }
+{
+        "_id" : {
+                "city" : "EL DORADO HILLS",
+                "state" : "CA"
+        },
+        "pop" : 38587
+}
+Type "it" for more
+> it
+{ "_id" : { "city" : "ELK GROVE", "state" : "CA" }, "pop" : 36947 }
+{ "_id" : { "city" : "LIBERTY FARMS", "state" : "CA" }, "pop" : 14536 }
+{ "_id" : { "city" : "DIAMOND SPRINGS", "state" : "CA" }, "pop" : 6747 }
+{ "_id" : { "city" : "TALKEETNA", "state" : "AK" }, "pop" : 1420 }
+{ "_id" : { "city" : "EL MACERO", "state" : "CA" }, "pop" : 1126 }
+{ "_id" : { "city" : "DAVIS", "state" : "CA" }, "pop" : 52224 }
+{ "_id" : { "city" : "CAPAY", "state" : "CA" }, "pop" : 175 }
+{ "_id" : { "city" : "BROOKS", "state" : "CA" }, "pop" : 162 }
+{ "_id" : { "city" : "BRYTE", "state" : "CA" }, "pop" : 11611 }
+{ "_id" : { "city" : "SAMOA", "state" : "CA" }, "pop" : 527 }
+{ "_id" : { "city" : "HALEIWA", "state" : "HI" }, "pop" : 7870 }
+{ "_id" : { "city" : "WILLOW CREEK", "state" : "CA" }, "pop" : 1503 }
+{ "_id" : { "city" : "AUBURN", "state" : "CA" }, "pop" : 32535 }
+{ "_id" : { "city" : "WESTHAVEN", "state" : "CA" }, "pop" : 3143 }
+{ "_id" : { "city" : "LOLETA", "state" : "CA" }, "pop" : 1244 }
+{ "_id" : { "city" : "ORICK", "state" : "CA" }, "pop" : 314 }
+{ "_id" : { "city" : "MYERS FLAT", "state" : "CA" }, "pop" : 3791 }
+{ "_id" : { "city" : "KORBEL", "state" : "CA" }, "pop" : 187 }
+{ "_id" : { "city" : "KNEELAND", "state" : "CA" }, "pop" : 265 }
+{ "_id" : { "city" : "HYDESVILLE", "state" : "CA" }, "pop" : 919 }
+Type "it" for more
+> db.zipcodes.aggregate([{$group:{_id:{city:"$city",state:"$state"},pop:{$sum:"$pop"}}},{$sort:{pop:-1}}]).pretty()
+{ "_id" : { "city" : "CHICAGO", "state" : "IL" }, "pop" : 2452177 }
+{ "_id" : { "city" : "BROOKLYN", "state" : "NY" }, "pop" : 2300504 }
+{ "_id" : { "city" : "LOS ANGELES", "state" : "CA" }, "pop" : 2102295 }
+{ "_id" : { "city" : "HOUSTON", "state" : "TX" }, "pop" : 2095918 }
+{ "_id" : { "city" : "PHILADELPHIA", "state" : "PA" }, "pop" : 1610956 }
+{ "_id" : { "city" : "NEW YORK", "state" : "NY" }, "pop" : 1476790 }
+{ "_id" : { "city" : "BRONX", "state" : "NY" }, "pop" : 1209548 }
+{ "_id" : { "city" : "SAN DIEGO", "state" : "CA" }, "pop" : 1049298 }
+{ "_id" : { "city" : "DETROIT", "state" : "MI" }, "pop" : 963243 }
+{ "_id" : { "city" : "DALLAS", "state" : "TX" }, "pop" : 940191 }
+{ "_id" : { "city" : "PHOENIX", "state" : "AZ" }, "pop" : 890853 }
+{ "_id" : { "city" : "MIAMI", "state" : "FL" }, "pop" : 825232 }
+{ "_id" : { "city" : "SAN JOSE", "state" : "CA" }, "pop" : 816653 }
+{ "_id" : { "city" : "SAN ANTONIO", "state" : "TX" }, "pop" : 811792 }
+{ "_id" : { "city" : "BALTIMORE", "state" : "MD" }, "pop" : 733081 }
+{ "_id" : { "city" : "SAN FRANCISCO", "state" : "CA" }, "pop" : 723993 }
+{ "_id" : { "city" : "MEMPHIS", "state" : "TN" }, "pop" : 632837 }
+{ "_id" : { "city" : "SACRAMENTO", "state" : "CA" }, "pop" : 628279 }
+{ "_id" : { "city" : "JACKSONVILLE", "state" : "FL" }, "pop" : 610160 }
+{ "_id" : { "city" : "ATLANTA", "state" : "GA" }, "pop" : 609591 }
+Type "it" for more
+> it
+{ "_id" : { "city" : "WASHINGTON", "state" : "DC" }, "pop" : 606879 }
+{ "_id" : { "city" : "LAS VEGAS", "state" : "NV" }, "pop" : 597557 }
+{ "_id" : { "city" : "MILWAUKEE", "state" : "WI" }, "pop" : 597324 }
+{ "_id" : { "city" : "TUCSON", "state" : "AZ" }, "pop" : 586451 }
+{ "_id" : { "city" : "CLEVELAND", "state" : "OH" }, "pop" : 536759 }
+{ "_id" : { "city" : "AUSTIN", "state" : "TX" }, "pop" : 530049 }
+{ "_id" : { "city" : "SEATTLE", "state" : "WA" }, "pop" : 520096 }
+{ "_id" : { "city" : "COLUMBUS", "state" : "OH" }, "pop" : 520096 }
+{ "_id" : { "city" : "PORTLAND", "state" : "OR" }, "pop" : 518543 }
+{ "_id" : { "city" : "EL PASO", "state" : "TX" }, "pop" : 511351 }
+{ "_id" : { "city" : "TAMPA", "state" : "FL" }, "pop" : 498997 }
+{ "_id" : { "city" : "NEW ORLEANS", "state" : "LA" }, "pop" : 496937 }
+{ "_id" : { "city" : "CHARLOTTE", "state" : "NC" }, "pop" : 465833 }
+{ "_id" : { "city" : "FORT WORTH", "state" : "TX" }, "pop" : 451415 }
+{ "_id" : { "city" : "DENVER", "state" : "CO" }, "pop" : 451182 }
+{ "_id" : { "city" : "ALBUQUERQUE", "state" : "NM" }, "pop" : 449584 }
+{ "_id" : { "city" : "SAINT LOUIS", "state" : "MO" }, "pop" : 397802 }
+{ "_id" : { "city" : "HONOLULU", "state" : "HI" }, "pop" : 396643 }
+{ "_id" : { "city" : "ROCHESTER", "state" : "NY" }, "pop" : 396013 }
+{ "_id" : { "city" : "TULSA", "state" : "OK" }, "pop" : 389072 }
+Type "it" for more
+> it
+{
+        "_id" : {
+                "city" : "VIRGINIA BEACH",
+                "state" : "VA"
+        },
+        "pop" : 385080
+}
+{ "_id" : { "city" : "STATEN ISLAND", "state" : "NY" }, "pop" : 378977 }
+{ "_id" : { "city" : "BUFFALO", "state" : "NY" }, "pop" : 375479 }
+{ "_id" : { "city" : "OKLAHOMA CITY", "state" : "OK" }, "pop" : 368141 }
+{ "_id" : { "city" : "KANSAS CITY", "state" : "MO" }, "pop" : 360182 }
+{ "_id" : { "city" : "OMAHA", "state" : "NE" }, "pop" : 358930 }
+{ "_id" : { "city" : "NASHVILLE", "state" : "TN" }, "pop" : 349822 }
+{ "_id" : { "city" : "INDIANAPOLIS", "state" : "IN" }, "pop" : 348868 }
+{ "_id" : { "city" : "FRESNO", "state" : "CA" }, "pop" : 347905 }
+{ "_id" : { "city" : "MINNEAPOLIS", "state" : "MN" }, "pop" : 344719 }
+{ "_id" : { "city" : "CINCINNATI", "state" : "OH" }, "pop" : 342537 }
+{
+        "_id" : {
+                "city" : "COLORADO SPRINGS",
+                "state" : "CO"
+        },
+        "pop" : 340404
+}
+{ "_id" : { "city" : "TOLEDO", "state" : "OH" }, "pop" : 328078 }
+{ "_id" : { "city" : "MESA", "state" : "AZ" }, "pop" : 316356 }
+{ "_id" : { "city" : "OAKLAND", "state" : "CA" }, "pop" : 314487 }
+{ "_id" : { "city" : "LONG BEACH", "state" : "CA" }, "pop" : 299651 }
+{ "_id" : { "city" : "ORLANDO", "state" : "FL" }, "pop" : 297711 }
+{ "_id" : { "city" : "WICHITA", "state" : "KS" }, "pop" : 295115 }
+{ "_id" : { "city" : "BATON ROUGE", "state" : "LA" }, "pop" : 291688 }
+{
+        "_id" : {
+                "city" : "SAINT PETERSBURG",
+                "state" : "FL"
+        },
+        "pop" : 290866
+}
+Type "it" for more
+> it
+{ "_id" : { "city" : "RICHMOND", "state" : "VA" }, "pop" : 289601 }
+{ "_id" : { "city" : "LOUISVILLE", "state" : "KY" }, "pop" : 288058 }
+{ "_id" : { "city" : "SPOKANE", "state" : "WA" }, "pop" : 283986 }
+{ "_id" : { "city" : "NEWARK", "state" : "NJ" }, "pop" : 275572 }
+{ "_id" : { "city" : "RALEIGH", "state" : "NC" }, "pop" : 273470 }
+{ "_id" : { "city" : "ANAHEIM", "state" : "CA" }, "pop" : 272327 }
+{ "_id" : { "city" : "BAKERSFIELD", "state" : "CA" }, "pop" : 271347 }
+{ "_id" : { "city" : "COLUMBIA", "state" : "SC" }, "pop" : 269521 }
+{ "_id" : { "city" : "STOCKTON", "state" : "CA" }, "pop" : 267258 }
+{ "_id" : { "city" : "ARLINGTON", "state" : "TX" }, "pop" : 266013 }
+{ "_id" : { "city" : "AKRON", "state" : "OH" }, "pop" : 265195 }
+{ "_id" : { "city" : "FORT WAYNE", "state" : "IN" }, "pop" : 261863 }
+{
+        "_id" : {
+                "city" : "CORPUS CHRISTI",
+                "state" : "TX"
+        },
+        "pop" : 261612
+}
+{ "_id" : { "city" : "DAYTON", "state" : "OH" }, "pop" : 259633 }
+{ "_id" : { "city" : "RIVERSIDE", "state" : "CA" }, "pop" : 253478 }
+{ "_id" : { "city" : "MARIETTA", "state" : "GA" }, "pop" : 247328 }
+{ "_id" : { "city" : "HIALEAH", "state" : "FL" }, "pop" : 242836 }
+{ "_id" : { "city" : "BIRMINGHAM", "state" : "AL" }, "pop" : 242606 }
+{ "_id" : { "city" : "AURORA", "state" : "CO" }, "pop" : 237454 }
+{ "_id" : { "city" : "MOBILE", "state" : "AL" }, "pop" : 235452 }
+Type "it" for more
+> it
+{ "_id" : { "city" : "SANTA ANA", "state" : "CA" }, "pop" : 234472 }
+{ "_id" : { "city" : "NORFOLK", "state" : "VA" }, "pop" : 233150 }
+{ "_id" : { "city" : "PENSACOLA", "state" : "FL" }, "pop" : 231031 }
+{ "_id" : { "city" : "JERSEY CITY", "state" : "NJ" }, "pop" : 228537 }
+{ "_id" : { "city" : "LEXINGTON", "state" : "KY" }, "pop" : 227262 }
+{ "_id" : { "city" : "GREENSBORO", "state" : "NC" }, "pop" : 224777 }
+{ "_id" : { "city" : "FLUSHING", "state" : "NY" }, "pop" : 224162 }
+{ "_id" : { "city" : "MODESTO", "state" : "CA" }, "pop" : 216459 }
+{ "_id" : { "city" : "CHARLESTON", "state" : "SC" }, "pop" : 212488 }
+{ "_id" : { "city" : "KNOXVILLE", "state" : "TN" }, "pop" : 211476 }
+{ "_id" : { "city" : "JACKSON", "state" : "MS" }, "pop" : 204788 }
+{ "_id" : { "city" : "LUBBOCK", "state" : "TX" }, "pop" : 201288 }
+{ "_id" : { "city" : "LINCOLN", "state" : "NE" }, "pop" : 200630 }
+{ "_id" : { "city" : "WINSTON SALEM", "state" : "NC" }, "pop" : 196581 }
+{ "_id" : { "city" : "JAMAICA", "state" : "NY" }, "pop" : 195205 }
+{ "_id" : { "city" : "SAINT PAUL", "state" : "MN" }, "pop" : 194893 }
+{ "_id" : { "city" : "TACOMA", "state" : "WA" }, "pop" : 194282 }
+{ "_id" : { "city" : "MONTGOMERY", "state" : "AL" }, "pop" : 193811 }
+{ "_id" : { "city" : "LITTLE ROCK", "state" : "AR" }, "pop" : 192895 }
+{ "_id" : { "city" : "TALLAHASSEE", "state" : "FL" }, "pop" : 192493 }
+Type "it" for more
+> it
+{ "_id" : { "city" : "MADISON", "state" : "WI" }, "pop" : 190189 }
+{
+        "_id" : {
+                "city" : "SALT LAKE CITY",
+                "state" : "UT"
+        },
+        "pop" : 186346
+}
+{ "_id" : { "city" : "GRAND RAPIDS", "state" : "MI" }, "pop" : 185579 }
+{ "_id" : { "city" : "SYRACUSE", "state" : "NY" }, "pop" : 184963 }
+{ "_id" : { "city" : "ANCHORAGE", "state" : "AK" }, "pop" : 183987 }
+{
+        "_id" : {
+                "city" : "HUNTINGTON BEACH",
+                "state" : "CA"
+        },
+        "pop" : 183542
+}
+{ "_id" : { "city" : "GLENDALE", "state" : "AZ" }, "pop" : 182751 }
+{ "_id" : { "city" : "GARLAND", "state" : "TX" }, "pop" : 180453 }
+{
+        "_id" : {
+                "city" : "FORT LAUDERDALE",
+                "state" : "FL"
+        },
+        "pop" : 178969
+}
+{
+        "_id" : {
+                "city" : "SAN BERNARDINO",
+                "state" : "CA"
+        },
+        "pop" : 177552
+}
+{ "_id" : { "city" : "CRANSTON", "state" : "RI" }, "pop" : 176404 }
+{ "_id" : { "city" : "HUNTSVILLE", "state" : "AL" }, "pop" : 176118 }
+{ "_id" : { "city" : "SPRINGFIELD", "state" : "MO" }, "pop" : 175749 }
+{ "_id" : { "city" : "GREENVILLE", "state" : "SC" }, "pop" : 174902 }
+{ "_id" : { "city" : "FREMONT", "state" : "CA" }, "pop" : 173374 }
+{ "_id" : { "city" : "AMARILLO", "state" : "TX" }, "pop" : 173158 }
+{ "_id" : { "city" : "KALAMAZOO", "state" : "MI" }, "pop" : 172224 }
+{ "_id" : { "city" : "YONKERS", "state" : "NY" }, "pop" : 172131 }
+{ "_id" : { "city" : "RENO", "state" : "NV" }, "pop" : 171542 }
+{ "_id" : { "city" : "ARLINGTON", "state" : "VA" }, "pop" : 171441 }
+Type "it" for more
+> it
+{ "_id" : { "city" : "CLEARWATER", "state" : "FL" }, "pop" : 171284 }
+{ "_id" : { "city" : "NEWPORT NEWS", "state" : "VA" }, "pop" : 170048 }
+{ "_id" : { "city" : "WORCESTER", "state" : "MA" }, "pop" : 169856 }
+{ "_id" : { "city" : "SCOTTSDALE", "state" : "AZ" }, "pop" : 169083 }
+{ "_id" : { "city" : "LANSING", "state" : "MI" }, "pop" : 168874 }
+{ "_id" : { "city" : "ROCKFORD", "state" : "IL" }, "pop" : 167031 }
+{ "_id" : { "city" : "COLUMBUS", "state" : "GA" }, "pop" : 166166 }
+{ "_id" : { "city" : "EVANSVILLE", "state" : "IN" }, "pop" : 165800 }
+{ "_id" : { "city" : "ASTORIA", "state" : "NY" }, "pop" : 165629 }
+{ "_id" : { "city" : "BOISE", "state" : "ID" }, "pop" : 165522 }
+{ "_id" : { "city" : "GLENDALE", "state" : "CA" }, "pop" : 163666 }
+{ "_id" : { "city" : "SANTA ROSA", "state" : "CA" }, "pop" : 158398 }
+{ "_id" : { "city" : "TORRANCE", "state" : "CA" }, "pop" : 158183 }
+{ "_id" : { "city" : "DURHAM", "state" : "NC" }, "pop" : 157214 }
+{ "_id" : { "city" : "OXNARD", "state" : "CA" }, "pop" : 156061 }
+{ "_id" : { "city" : "POMPANO BEACH", "state" : "FL" }, "pop" : 155191 }
+{ "_id" : { "city" : "IRVING", "state" : "TX" }, "pop" : 154459 }
+{ "_id" : { "city" : "SAGINAW", "state" : "MI" }, "pop" : 154319 }
+{ "_id" : { "city" : "SHREVEPORT", "state" : "LA" }, "pop" : 151468 }
+{ "_id" : { "city" : "GARDEN GROVE", "state" : "CA" }, "pop" : 149554 }
+Type "it" for more
+> db.zipcodes.aggregate([{$match:{"city":"Texas"}},{$group:{_id:{city:"$city",state:"$state"},pop:{$sum:"$pop"}}},{$sort:{pop:-1}},{$limit:3}]).pretty()
+> db.zipcodes.aggregate([{$match:{"city":"Texas"}},{$group:{_id:{city:"$city",state:"$state"},pop:{$sum:"$pop"}}},{$sort:{pop:-1}},{$limit:3}]).pretty()
+> db.zipcodes.aggregate([{$match:{"city":"TEXAS"}},{$group:{_id:{city:"$city",state:"$state"},pop:{$sum:"$pop"}}},{$sort:{pop:-1}},{$limit:3}]).pretty()
+> db.zipcodes.aggregate([{$match:{"city":"TEXAS"}},{$group:{_id:{city:"$city",state:"$state"},pop:{$sum:"$pop"}}},{$sort:{pop:-1}},{$limit:3}]).pretty()
+> db.zipcodes.aggregate([{$match:{"city":"TEXAS"}},{$group:{_id:{city:"$city",state:"$state"},pop:{$sum:"$pop"}}},{$sort:{pop:-1}},{$limit:3}]).pretty()
+> db.zipcodes.aggregate([{$match:{"city":"TEXAS"}},{$group:{_id:{city:"$city",state:"$state"},pop:{$sum:"$pop"}}},{$sort:{pop:-1}},{$limit:3}]).pretty()
+> db.zipcodes.aggregate([{$match:{"city":"TEXAS"}},{$group:{_id:{city:"$city",state:"$state"},pop:{$sum:"$pop"}}},{$sort:{pop:-1}},{$limit:3}]).pretty()
+> db.zipcodes.aggregate([{$group:{_id:{city:"TEXAS"},pop:{$sum:"$pop"}}},{$sort:{pop:-1}},{$limit:3}]).pretty()
+{ "_id" : { "city" : "TEXAS" }, "pop" : 248408400 }
+> db.zipcodes.aggregate([{$group:{_id:{city:"TEXAS"},pop:{pop:"$pop"}}},{$sort:{pop:-1}},{$limit:3}]).pretty()
+assert: command failed: {
+        "ok" : 0,
+        "errmsg" : "The field 'pop' must be an accumulator object",
+        "code" : 40234,
+        "codeName" : "Location40234"
+} : aggregate failed
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+doassert@src/mongo/shell/assert.js:16:14
+assert.commandWorked@src/mongo/shell/assert.js:370:5
+DBCollection.prototype.aggregate@src/mongo/shell/collection.js:1319:5
+@(shell):1:1
+
+2018-12-28T15:07:21.237+0530 E QUERY    [thread1] Error: command failed: {
+        "ok" : 0,
+        "errmsg" : "The field 'pop' must be an accumulator object",
+        "code" : 40234,
+        "codeName" : "Location40234"
+} : aggregate failed :
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+doassert@src/mongo/shell/assert.js:16:14
+assert.commandWorked@src/mongo/shell/assert.js:370:5
+DBCollection.prototype.aggregate@src/mongo/shell/collection.js:1319:5
+@(shell):1:1
+> db.zipcodes.aggregate([{$group:{_id:"$state",city:{$avg:"$pop"}}},{$sort:{pop:-1}},{$limit:3}]).pretty()
+{ "_id" : "AK", "city" : 2793.3230769230768 }
+{ "_id" : "AZ", "city" : 13574.918518518518 }
+{ "_id" : "UT", "city" : 8404.146341463415 }
+> db.zipcodes.aggregate([{$group:{_id:"$state",city:{$avg:"$pop"}}}]).pretty()
+{ "_id" : "AK", "city" : 2793.3230769230768 }
+{ "_id" : "AZ", "city" : 13574.918518518518 }
+{ "_id" : "UT", "city" : 8404.146341463415 }
+{ "_id" : "WY", "city" : 3239.4857142857145 }
+{ "_id" : "CO", "city" : 7955.929951690821 }
+{ "_id" : "ID", "city" : 4126.020491803279 }
+{ "_id" : "OK", "city" : 5367.892491467577 }
+{ "_id" : "AR", "city" : 4066.998269896194 }
+{ "_id" : "LA", "city" : 9089.644396551725 }
+{ "_id" : "NV", "city" : 11556.086538461539 }
+{ "_id" : "NE", "city" : 2749.3710801393727 }
+{ "_id" : "KS", "city" : 3461.937062937063 }
+{ "_id" : "MO", "city" : 5141.496981891348 }
+{ "_id" : "IL", "city" : 9238.137429264349 }
+{ "_id" : "OH", "city" : 10771.119165839125 }
+{ "_id" : "KY", "city" : 4543.243510506799 }
+{ "_id" : "IN", "city" : 8201.384615384615 }
+{ "_id" : "WI", "city" : 6832.079608938548 }
+{ "_id" : "HI", "city" : 13852.8625 }
+{ "_id" : "MS", "city" : 7088.749311294766 }
+Type "it" for more
+> it
+{ "_id" : "IA", "city" : 3011.301518438178 }
+{ "_id" : "AL", "city" : 7126.255731922399 }
+{ "_id" : "FL", "city" : 15779.407960199005 }
+{ "_id" : "MI", "city" : 10611.069634703197 }
+{ "_id" : "OR", "city" : 7401.877604166667 }
+{ "_id" : "GA", "city" : 10201.914960629922 }
+{ "_id" : "NC", "city" : 9402.321985815603 }
+{ "_id" : "MT", "city" : 2544.420382165605 }
+{ "_id" : "ND", "city" : 1632.4092071611253 }
+{ "_id" : "MD", "city" : 11384.235714285714 }
+{ "_id" : "MN", "city" : 4958.02947845805 }
+{ "_id" : "DC", "city" : 25287.5 }
+{ "_id" : "DE", "city" : 12569.207547169812 }
+{ "_id" : "WV", "city" : 2733.454268292683 }
+{ "_id" : "NJ", "city" : 14315.162962962962 }
+{ "_id" : "TN", "city" : 8378.792096219931 }
+{ "_id" : "VA", "city" : 7575.341911764706 }
+{ "_id" : "WA", "city" : 10055.148760330578 }
+{ "_id" : "CT", "city" : 12498.539923954373 }
+{ "_id" : "NY", "city" : 11279.248902821317 }
+Type "it" for more
+> it
+{ "_id" : "SC", "city" : 9962.00857142857 }
+{ "_id" : "PA", "city" : 8149.275034293552 }
+{ "_id" : "VT", "city" : 2315.8765432098767 }
+{ "_id" : "TX", "city" : 10164.333333333334 }
+{ "_id" : "SD", "city" : 1810.9296875 }
+{ "_id" : "NH", "city" : 5088.311926605505 }
+{ "_id" : "CA", "city" : 19627.236147757256 }
+{ "_id" : "NM", "city" : 5489.380434782609 }
+{ "_id" : "RI", "city" : 14539.391304347826 }
+{ "_id" : "ME", "city" : 2991.8243902439026 }
+{ "_id" : "MA", "city" : 12692.879746835442 }
+> it
+no cursor
+>
